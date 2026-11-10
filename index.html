@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title id="htmlTitle">Instrukcja montażu półki na drabinę (pod tablet) — Lean Pipe Ø28 mm</title>
+  <title id="htmlTitle">Instrukcja montażu kieszeni bocznej na drabinę — Lean Pipe Ø28 mm</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Three.js + OrbitControls -->
@@ -30,9 +30,7 @@
               blue: '#3888FF'
             }
           },
-          screens: {
-            'xs': '420px'
-          }
+          screens: { 'xs': '420px' }
         }
       }
     }
@@ -60,14 +58,9 @@
       border: 1px solid #262C3A;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
-    .bybit-card {
-      background: #181C26;
-      border: 1px solid #262C3A;
-    }
+    .bybit-card { background: #181C26; border: 1px solid #262C3A; }
     .bybit-btn-gold {
-      background: #F7A600;
-      color: #0B0E14;
-      font-weight: 700;
+      background: #F7A600; color: #0B0E14; font-weight: 700;
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .bybit-btn-gold:hover {
@@ -76,16 +69,10 @@
       transform: translateY(-1px);
     }
     .bybit-btn-secondary {
-      background: #181C26;
-      border: 1px solid #262C3A;
-      color: #ADB5BD;
+      background: #181C26; border: 1px solid #262C3A; color: #ADB5BD;
       transition: all 0.2s ease;
     }
-    .bybit-btn-secondary:hover {
-      background: #202634;
-      border-color: #384256;
-      color: #FFFFFF;
-    }
+    .bybit-btn-secondary:hover { background: #202634; border-color: #384256; color: #FFFFFF; }
 
     @keyframes bybitSlideUp {
       0% { opacity: 0; transform: translateY(10px) scale(0.99); }
@@ -107,17 +94,17 @@
   <header class="border-b border-bybit-border bg-bybit-surface/95 backdrop-blur z-40 px-2.5 py-2 sm:px-4 sm:py-2.5 flex items-center justify-between shadow-lg flex-shrink-0">
     <div class="flex items-center gap-2 sm:gap-3 min-w-0">
       <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-bybit-gold to-amber-600 flex items-center justify-center font-black text-bybit-black text-xs sm:text-sm shadow-md shadow-bybit-gold/25 tracking-tighter flex-shrink-0">
-        L·S
+        L·P
       </div>
       <div class="min-w-0">
         <h1 class="text-xs sm:text-sm font-bold text-white flex items-center gap-1.5 truncate">
-          <span id="headerTitle" class="truncate">Instrukcja montażu półki na drabinę (pod tablet)</span>
+          <span id="headerTitle" class="truncate">Instrukcja montażu kieszeni bocznej na drabinę</span>
           <span id="headerBadge" class="hidden md:inline-block text-[10px] bg-bybit-gold/15 text-bybit-gold border border-bybit-gold/30 px-2 py-0.5 rounded font-mono font-semibold flex-shrink-0">
-            Ø28 mm • 14× HJ-1
+            Ø28 mm • 8× HJ-1 + 4× HJ-2
           </span>
         </h1>
         <p id="headerSubtitle" class="hidden sm:block text-[11px] text-bybit-gray truncate">
-          Wysięg na zewnątrz 350 mm • Odstępy 5 cm • Podwójne mocowanie do 2 poręczy drabiny
+          Kieszeń 490×440×110 mm na zewnątrz boku drabiny • Odstępy 5 cm • Montaż na 2 poręczach
         </p>
       </div>
     </div>
@@ -132,7 +119,7 @@
 
       <button id="btnOpenDrawing" class="px-2.5 py-1.5 rounded-lg bybit-btn-secondary flex items-center gap-1.5 text-xs active-scale" title="Rysunek techniczny / Эскиз">
         <span>📐</span>
-        <span id="btnDrawingText" class="hidden md:inline">Szkic i HJ-1</span>
+        <span id="btnDrawingText" class="hidden md:inline">Szkic i zaciski</span>
       </button>
 
       <a href="https://github.com/VladNameof/ladder-shelf-guide" target="_blank" rel="noopener" class="px-2.5 py-1.5 rounded-lg bybit-btn-secondary flex items-center gap-1.5 text-xs active-scale" title="GitHub Repository">
@@ -168,7 +155,7 @@
         <div class="pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg text-xs shadow-xl max-w-[210px] sm:max-w-xs">
           <div class="font-bold text-white flex items-center gap-1.5 truncate">
             <span class="w-2 h-2 rounded-full bg-bybit-gold animate-pulse flex-shrink-0"></span>
-            <span id="hudStatus" class="truncate text-[11px] sm:text-xs">Półka wspornikowa pod tablet</span>
+            <span id="hudStatus" class="truncate text-[11px] sm:text-xs">Kieszeń boczna na drabinę</span>
           </div>
           <div id="hudRotate" class="hidden md:block text-[10px] text-bybit-gray mt-0.5">
             • Obrót: <strong>LPM / 1 palec</strong> | Przybliżenie: <strong>kółko / 2 palce</strong>
@@ -189,16 +176,16 @@
                 <button id="btnCloseViews" class="text-bybit-gray hover:text-white px-1">✕</button>
               </div>
               <button data-cam="iso" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg bg-bybit-gold/15 text-bybit-gold font-semibold transition hover:bg-bybit-gold/25">
-                📐 <span id="camIso">Izometria (widok ogólny)</span>
+                📐 <span id="camIso">Izometria (kieszeń z boku)</span>
               </button>
               <button data-cam="sketchSide" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
-                ✏️ <span id="camSide">Widok z boku (wg szkicu)</span>
+                ✏️ <span id="camSide">Profil z boku (wg szkicu)</span>
               </button>
               <button data-cam="photo1" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
                 👷 <span id="camInside">Widok z podestu operatora</span>
               </button>
               <button data-cam="photo2" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
-                🗄️ <span id="camOutside">Widok z zewnątrz (przy szafie)</span>
+                🗄️ <span id="camOutside">Widok z zewnątrz (front kieszeni)</span>
               </button>
               <button data-cam="top" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
                 🔽 <span id="camTop">Z góry (odstępy 5 cm)</span>
@@ -212,7 +199,7 @@
               <span id="layersBtnLabel">⚙️ Warstwy</span>
               <span class="text-[10px] text-bybit-gold">▾</span>
             </button>
-            <div id="layersDropdown" class="hidden absolute right-0 top-9 w-56 bybit-panel p-2.5 rounded-xl text-xs space-y-2 shadow-2xl z-30 border border-bybit-border">
+            <div id="layersDropdown" class="hidden absolute right-0 top-9 w-60 bybit-panel p-2.5 rounded-xl text-xs space-y-2 shadow-2xl z-30 border border-bybit-border">
               <div class="font-bold text-bybit-gold text-[11px] uppercase tracking-wider flex items-center justify-between pb-1 border-b border-bybit-border/60">
                 <span id="layersDropdownTitle">Warstwy 3D i kolor</span>
                 <button id="btnCloseLayers" class="text-bybit-gray hover:text-white px-1">✕</button>
@@ -222,12 +209,16 @@
                 <span id="lblDims" class="text-bybit-gold font-semibold">📏 Wymiary i odstępy 5 cm</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer text-slate-300 hover:text-white">
+                <input type="checkbox" id="chkGhost" class="accent-bybit-gold rounded">
+                <span id="lblGhost" class="text-sky-400 font-semibold">👻 Przezroczyste ścianki (wnętrze)</span>
+              </label>
+              <label class="flex items-center gap-2 cursor-pointer text-slate-300 hover:text-white">
                 <input type="checkbox" id="chkLadder" checked class="accent-bybit-gold rounded">
                 <span id="lblLadder">🪜 Drabina i podest</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer text-slate-300 hover:text-white">
-                <input type="checkbox" id="chkTablet" checked class="accent-bybit-gold rounded">
-                <span id="lblTablet">📱 Podstawka + tablet</span>
+                <input type="checkbox" id="chkItems" checked class="accent-bybit-gold rounded">
+                <span id="lblItems">📱 Tablet i narzędzia w kieszeni</span>
               </label>
               <label class="flex items-center gap-2 cursor-pointer text-slate-300 hover:text-white">
                 <input type="checkbox" id="chkRack" checked class="accent-bybit-gold rounded">
@@ -251,18 +242,16 @@
         </div>
       </div>
 
-      <!-- Bottom-Left Sliders inside 3D Viewport (Explode + Tablet Swivel) -->
+      <!-- Bottom-Left Quick Controls (Explode + Wall X-ray Toggle) -->
       <div class="absolute bottom-2.5 left-2.5 right-12 sm:right-auto z-20 flex flex-wrap items-center gap-2 pointer-events-none">
         <div class="pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg flex items-center gap-2 text-[11px]">
           <span id="lblExplode" class="text-bybit-gray whitespace-nowrap">💥 Rozstrzał:</span>
-          <input id="explodedSlider" type="range" min="0" max="100" value="0" class="w-16 sm:w-20 accent-bybit-gold cursor-pointer">
+          <input id="explodedSlider" type="range" min="0" max="100" value="0" class="w-16 sm:w-24 accent-bybit-gold cursor-pointer">
           <span id="explodedVal" class="font-mono text-bybit-gold w-7 text-right">0%</span>
         </div>
-        <div class="pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg hidden xs:flex items-center gap-2 text-[11px]">
-          <span id="lblSwivel" class="text-bybit-gray whitespace-nowrap">🔄 Kąt tabletu:</span>
-          <input id="tabletSwivelSlider" type="range" min="-35" max="45" value="15" class="w-16 sm:w-20 accent-bybit-gold cursor-pointer">
-          <span id="swivelVal" class="font-mono text-white w-8 text-right">15°</span>
-        </div>
+        <button id="btnQuickXray" class="pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg text-[11px] font-semibold text-slate-300 hover:text-white active-scale">
+          👻 <span id="lblQuickXray">Prześwit ścianek</span>
+        </button>
       </div>
 
       <!-- Bottom-Right Camera Zoom / Reset Buttons -->
@@ -288,7 +277,6 @@
 
       <!-- TAB 1: STEP-BY-STEP GUIDE -->
       <div id="panelStepper" class="flex-1 flex flex-col overflow-y-auto custom-scroll min-h-0">
-        <!-- Progress Header -->
         <div class="p-3 border-b border-bybit-border bg-bybit-surface/90 sticky top-0 z-10 backdrop-blur">
           <div class="flex items-center justify-between mb-2">
             <span id="stepBadge" class="text-xs font-bold uppercase tracking-wider text-bybit-gold">Gotowy model</span>
@@ -302,7 +290,6 @@
           <div class="w-full bg-bybit-card h-1.5 rounded-full overflow-hidden">
             <div id="progressBar" class="bg-bybit-gold h-full transition-all duration-300" style="width: 100%"></div>
           </div>
-          <!-- Quick Step Pills 0..5 -->
           <div class="grid grid-cols-6 gap-1 mt-2.5">
             <button data-goto="0" class="goto-pill py-1 rounded text-[11px] font-bold bg-bybit-gold text-bybit-black">★</button>
             <button data-goto="1" class="goto-pill py-1 rounded text-[11px] font-bold bg-bybit-card text-bybit-gray hover:text-white">1</button>
@@ -313,17 +300,11 @@
           </div>
         </div>
 
-        <!-- Dynamic Step Content -->
         <div id="stepContent" class="p-3.5 sm:p-4 flex-1 space-y-3"></div>
 
-        <!-- Step Prev / Next Footer -->
         <div id="stepFooterNav" class="p-3 border-t border-bybit-border bg-bybit-surface flex items-center justify-between gap-2 safe-bottom flex-shrink-0">
-          <button id="btnPrev" class="px-3.5 py-2 rounded-lg bybit-btn-secondary font-medium text-xs transition active-scale">
-            ← Wstecz
-          </button>
-          <button id="btnNext" class="flex-1 py-2 px-4 rounded-lg bybit-btn-gold text-xs transition shadow-md active-scale">
-            Rozpocznij montaż (Krok 1 z 5) →
-          </button>
+          <button id="btnPrev" class="px-3.5 py-2 rounded-lg bybit-btn-secondary font-medium text-xs transition active-scale">← Wstecz</button>
+          <button id="btnNext" class="flex-1 py-2 px-4 rounded-lg bybit-btn-gold text-xs transition shadow-md active-scale">Rozpocznij montaż (Krok 1 z 5) →</button>
         </div>
       </div>
 
@@ -332,87 +313,84 @@
     </div>
   </main>
 
-  <!-- MODAL: TECHNICAL DRAWING (SZKIC) & HJ-1 CLAMP SPEC -->
+  <!-- MODAL: TECHNICAL DRAWING (SZKIC) & HJ-1 / HJ-2 CLAMP SPEC -->
   <div id="modalDrawing" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 hidden">
     <div class="bybit-panel w-full max-w-3xl rounded-2xl border border-bybit-border p-4 sm:p-6 max-h-[90vh] overflow-y-auto custom-scroll">
       <div class="flex items-center justify-between pb-3 border-b border-bybit-border">
         <div>
-          <h3 id="modalDrawTitle" class="text-sm sm:text-base font-bold text-white">Rysunek techniczny półki i węzła HJ-1</h3>
-          <p id="modalDrawSub" class="text-xs text-bybit-gray">Schemat boczny (kratownica 32°), odstępy montażowe 5 cm oraz zacisk teowy HJ-1</p>
+          <h3 id="modalDrawTitle" class="text-sm sm:text-base font-bold text-white">Rysunek techniczny kieszeni i złączy HJ-1 / HJ-2</h3>
+          <p id="modalDrawSub" class="text-xs text-bybit-gray">Przekrój boczny kieszeni na poręczach drabiny, odstępy 5 cm oraz schemat zacisków</p>
         </div>
         <button id="btnCloseDrawing" class="w-8 h-8 rounded-lg bg-bybit-card text-bybit-gray hover:text-white border border-bybit-border flex items-center justify-center font-bold">✕</button>
       </div>
 
-      <!-- Clean Vector Engineering Blueprint SVG -->
       <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- SVG 1: Side View («Widok z boku») -->
+        <!-- SVG 1: Side View (bok drabiny + kieszeń) -->
         <div class="bybit-card rounded-xl p-3">
-          <div id="svgTitleSide" class="text-xs font-bold text-bybit-gold mb-2">1. Widok z boku (przekrój wspornika)</div>
+          <div id="svgTitleSide" class="text-xs font-bold text-bybit-gold mb-2">1. Przekrój z boku („bok лестницы” + „карман”)</div>
           <svg viewBox="0 0 320 250" class="w-full h-auto bg-[#0D1119] rounded-lg border border-bybit-border">
-            <!-- Grid lines -->
-            <line x1="0" y1="75" x2="320" y2="75" stroke="#1E2636" stroke-dasharray="3,3"/>
-            <line x1="0" y1="215" x2="320" y2="215" stroke="#1E2636" stroke-dasharray="3,3"/>
-            <!-- Vertical Leg (Right) -->
-            <rect x="234" y="70" width="12" height="150" rx="5" fill="#82182B" stroke="#E2E8F0" stroke-width="1"/>
-            <!-- Ladder Top & Mid Round Rails -->
-            <circle cx="240" cy="75" r="9" fill="#CBD5E1" stroke="#475569" stroke-width="2"/>
-            <circle cx="240" cy="215" r="9" fill="#CBD5E1" stroke="#475569" stroke-width="2"/>
-            <!-- Middle Crossbar + Clamp -->
-            <circle cx="240" cy="145" r="8" fill="#505A67" stroke="#F7A600" stroke-width="1.5"/>
-            <!-- Outward Horizontal Shelf Arm (Left) -->
-            <rect x="65" y="69" width="175" height="12" rx="5" fill="#82182B" stroke="#E2E8F0" stroke-width="1"/>
-            <!-- Diagonal Strut 32° -->
-            <line x1="72" y1="75" x2="240" y2="145" stroke="#A6223C" stroke-width="11" stroke-linecap="round"/>
-            <line x1="72" y1="75" x2="240" y2="145" stroke="#F8FAFC" stroke-width="1" stroke-opacity="0.4"/>
-            <!-- Shelf Board 16mm -->
-            <rect x="58" y="59" width="190" height="8" rx="2" fill="#C47B35"/>
-            <!-- Tablet Stand & Tablet -->
-            <polygon points="105,59 185,59 185,52 105,52" fill="#263042"/>
-            <line x1="175" y1="59" x2="175" y2="45" stroke="#F7A600" stroke-width="3"/>
-            <line x1="170" y1="53" x2="132" y2="16" stroke="#0EA5E9" stroke-width="6" stroke-linecap="round"/>
+            <!-- Ladder vertical side -->
+            <rect x="110" y="30" width="14" height="205" fill="#CBD5E1" opacity="0.25"/>
+            <circle cx="117" cy="45" r="9" fill="#CBD5E1" stroke="#475569" stroke-width="2"/>
+            <circle cx="117" cy="185" r="9" fill="#CBD5E1" stroke="#475569" stroke-width="2"/>
+            <!-- Back pipe -->
+            <rect x="112" y="42" width="10" height="145" rx="4" fill="#82182B"/>
+            <!-- Top & Bottom Standoffs 110mm -->
+            <rect x="117" y="40" width="58" height="10" rx="4" fill="#82182B"/>
+            <rect x="117" y="180" width="58" height="10" rx="4" fill="#82182B"/>
+            <!-- Front vertical pipe -->
+            <rect x="169" y="42" width="10" height="145" rx="4" fill="#82182B"/>
+            <!-- HJ-2 front corners -->
+            <circle cx="174" cy="45" r="9" fill="#505A67" stroke="#F7A600" stroke-width="1.5"/>
+            <circle cx="174" cy="185" r="9" fill="#505A67" stroke="#F7A600" stroke-width="1.5"/>
+            <!-- Pocket bottom floor & panels -->
+            <rect x="125" y="176" width="44" height="8" fill="#C47B35"/>
+            <!-- Tablet inside pocket -->
+            <rect x="140" y="24" width="10" height="148" rx="2" fill="#0EA5E9"/>
             <!-- Labels -->
-            <text x="145" y="13" fill="#38BDF8" font-size="10" font-weight="bold" text-anchor="middle">Podstawka + Tablet (62°)</text>
-            <text x="150" y="96" fill="#F7A600" font-size="10" font-family="monospace" text-anchor="middle">350 mm (wysięg)</text>
-            <text x="142" y="132" fill="#93C5FD" font-size="10" font-family="monospace" text-anchor="middle">410 mm (32°)</text>
-            <text x="280" y="80" fill="#CBD5E1" font-size="9" text-anchor="middle">Poręcz 1</text>
-            <text x="280" y="218" fill="#CBD5E1" font-size="9" text-anchor="middle">Poręcz 2</text>
-            <text x="280" y="150" fill="#10B981" font-size="10" font-family="monospace" text-anchor="middle">440 mm</text>
+            <text x="64" y="118" fill="#CBD5E1" font-size="10" font-weight="bold" text-anchor="middle">Bok drabiny</text>
+            <text x="64" y="132" fill="#94A3B8" font-size="9" text-anchor="middle">(2 poręcze)</text>
+            <text x="235" y="110" fill="#F7A600" font-size="11" font-weight="bold" text-anchor="middle">Kieszeń</text>
+            <text x="235" y="125" fill="#CBD5E1" font-size="10" font-family="monospace" text-anchor="middle">440 mm wys.</text>
+            <text x="146" y="210" fill="#10B981" font-size="10" font-family="monospace" text-anchor="middle">110 mm (85 mm wewn.)</text>
+            <text x="146" y="16" fill="#38BDF8" font-size="10" font-weight="bold" text-anchor="middle">Otwór od góry (Tablet A4)</text>
           </svg>
         </div>
 
-        <!-- SVG 2: Top Rail Margins («Odstępy 5 cm») + HJ-1 Spec -->
+        <!-- SVG 2: Top Rail Margins (5 cm) + HJ-1/HJ-2 summary -->
         <div class="bybit-card rounded-xl p-3 flex flex-col justify-between gap-3">
           <div>
-            <div id="svgTitleTop" class="text-xs font-bold text-bybit-gold mb-2">2. Odstępy 5 cm na poręczy bocznej (600 mm)</div>
+            <div id="svgTitleTop" class="text-xs font-bold text-bybit-gold mb-2">2. Odstępy 5 cm od końców poręczy (600 mm)</div>
             <svg viewBox="0 0 320 115" class="w-full h-auto bg-[#0D1119] rounded-lg border border-bybit-border">
-              <!-- Square Posts Left & Right -->
               <rect x="16" y="44" width="20" height="24" fill="#CBD5E1" stroke="#64748B"/>
               <rect x="284" y="44" width="20" height="24" fill="#CBD5E1" stroke="#64748B"/>
-              <!-- Round Top Rail -->
               <rect x="36" y="50" width="248" height="12" fill="#94A3B8"/>
-              <!-- Right Black Scanner Clamp in 5cm zone -->
+              <!-- Scanner holder right -->
               <rect x="260" y="45" width="22" height="22" rx="3" fill="#18181B" stroke="#F7A600" stroke-width="1"/>
-              <!-- HJ-1 Clamps at ±235 & ±185 -->
-              <rect x="62" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
-              <rect x="84" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
-              <rect x="222" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
-              <rect x="244" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
-              <!-- 5 cm Braces -->
-              <line x1="36" y1="30" x2="62" y2="30" stroke="#10B981" stroke-width="2"/>
-              <text x="49" y="23" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
-              <line x1="258" y1="30" x2="284" y2="30" stroke="#10B981" stroke-width="2"/>
-              <text x="271" y="23" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
-              <text x="160" y="92" fill="#F7A600" font-size="10" font-family="monospace" text-anchor="middle">Rozstaw ramy: 500 mm (blat 540 mm)</text>
+              <!-- HJ-1 Clamps -->
+              <rect x="60" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
+              <rect x="82" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
+              <rect x="224" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
+              <rect x="246" y="46" width="14" height="20" rx="2" fill="#505A67" stroke="#E2E8F0" stroke-width="1"/>
+              <!-- Pocket top opening -->
+              <rect x="62" y="18" width="196" height="24" rx="3" fill="none" stroke="#82182B" stroke-width="3"/>
+              <!-- 5 cm marks -->
+              <line x1="36" y1="34" x2="60" y2="34" stroke="#10B981" stroke-width="2"/>
+              <text x="48" y="28" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
+              <line x1="260" y1="34" x2="284" y2="34" stroke="#10B981" stroke-width="2"/>
+              <text x="272" y="28" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
+              <text x="160" y="92" fill="#F7A600" font-size="10" font-family="monospace" text-anchor="middle">Szerokość kieszeni: 490 mm (wnętrze 440×85 mm)</text>
             </svg>
           </div>
 
-          <div class="p-2.5 rounded-lg bg-[#0D1119] border border-bybit-border text-xs space-y-1">
+          <div class="p-2.5 rounded-lg bg-[#0D1119] border border-bybit-border text-xs space-y-1.5">
             <div class="flex items-center justify-between">
-              <span id="hjSpecTitle" class="font-bold text-white">🔩 Zunifikowany zacisk HJ-1 (Trójnik T)</span>
-              <span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold">14 szt.</span>
+              <span id="hjSpecTitle" class="font-bold text-white">🔩 Zaciski z projektu Compute Shelf:</span>
+              <span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold">8× HJ-1 + 4× HJ-2</span>
             </div>
             <p id="hjSpecDesc" class="text-[11px] text-bybit-gray">
-              Cała konstrukcja wymaga wyłącznie jednego typu złącza (HJ-1). Śruba M6×25 na klucz imbusowy 5 mm, moment dokręcania 9,8–10 N·m.
+              • <strong>8× HJ-1 (trójnik T):</strong> mocują rury kieszeni do górnej i środkowej poręczy drabiny.<br>
+              • <strong>4× HJ-2 (narożnik 3D):</strong> łączą 4 przednie narożniki kieszeni pod kątem 90°×90°×90° bez wystających końcówek.
             </p>
           </div>
         </div>
@@ -423,38 +401,39 @@
   <!-- MULTILINGUAL DICTIONARY + THREE.JS ENGINE -->
   <script>
     // =========================================================================
-    // 1. COMPLETE TRANSLATIONS (PL DEFAULT | RU | EN)
+    // 1. TRANSLATIONS (PL DEFAULT | RU | EN)
     // =========================================================================
     const I18N = {
       pl: {
-        pageTitle: "Instrukcja montażu półki na drabinę (pod tablet) — Lean Pipe Ø28 mm",
-        headerTitle: "Instrukcja montażu półki na drabinę (pod tablet)",
-        headerBadge: "Ø28 mm • 14× HJ-1",
-        headerSubtitle: "Wysięg na zewnątrz 350 mm • Odstępy 5 cm • Podwójne mocowanie do 2 poręczy drabiny",
-        btnDrawingText: "Szkic i HJ-1",
+        pageTitle: "Instrukcja montażu kieszeni bocznej na drabinę — Lean Pipe Ø28 mm",
+        headerTitle: "Instrukcja montażu kieszeni bocznej na drabinę",
+        headerBadge: "Ø28 mm • 8× HJ-1 + 4× HJ-2",
+        headerSubtitle: "Kieszeń 490×440×110 mm na zewnątrz boku drabiny • Odstępy 5 cm • Montaż na 2 poręczach",
+        btnDrawingText: "Szkic i zaciski",
         modeSplit: "📱 Podział",
         mode3D: "🧊 Model 3D",
         modeSteps: "📝 Instrukcja",
-        hudStatus: "Półka wspornikowa pod tablet",
+        hudStatus: "Kieszeń boczna na drabinę",
         hudRotate: "• Obrót: <strong>LPM / 1 palec</strong> | Przybliżenie: <strong>kółko / 2 palce</strong>",
         viewsBtnLabel: "📐 Widoki",
         viewsDropdownTitle: "Ujęcia kamery",
-        camIso: "Izometria (widok ogólny)",
-        camSide: "Widok z boku (wg szkicu)",
+        camIso: "Izometria (kieszeń z boku)",
+        camSide: "Profil z boku (wg szkicu)",
         camInside: "Widok z podestu operatora",
-        camOutside: "Widok z zewnątrz (przy szafie)",
+        camOutside: "Widok z zewnątrz (front kieszeni)",
         camTop: "Z góry (odstępy 5 cm)",
         layersBtnLabel: "⚙️ Warstwy",
         layersDropdownTitle: "Warstwy 3D i kolor",
         lblDims: "📏 Wymiary i odstępy 5 cm",
+        lblGhost: "👻 Przezroczyste ścianki (wnętrze)",
         lblLadder: "🪜 Drabina i podest",
-        lblTablet: "📱 Podstawka + tablet",
+        lblItems: "📱 Tablet i narzędzia w kieszeni",
         lblRack: "🗄️ Szafa rack + Compute Shelf",
         lblScanner: "🔦 Uchwyt skanera",
         lblPipeColor: "Kolor rur Ø28 mm:",
         pipeColors: ["Bordowy", "ESD", "Chrom"],
         lblExplode: "💥 Rozstrzał:",
-        lblSwivel: "🔄 Kąt tabletu:",
+        lblQuickXray: "Prześwit ścianek",
         tabStepper: "Etapy montażu (1–5)",
         tabBOM: "📋 Specyfikacja BOM",
         stepBadgeIntro: "Gotowy model",
@@ -468,131 +447,120 @@
         btnFinish: "✓ Zakończ (Cały model)",
         reqPartsTitle: "Wymagane elementy w tym kroku:",
         overview: {
-          title: "Stabilna półka boczna pod tablet serwisowy",
-          desc: "Półka montowana jest na <strong>lewej poręczy bocznej drabiny</strong> i wystaje <strong>350 mm na zewnątrz</strong> — nie zabiera miejsca na podeście operatora i nie przeszkadza przy podjeżdżaniu do szafy Compute Shelf. Podwójne zakotwienie do 2 poręczy oraz ukośna kratownica 32° gwarantują brak ugięć i drgań przy obsłudze ekranu dotykowego.",
-          m1Label: "Wysięg na zewnątrz:", m1Val: "350 mm (blat 540×370)",
-          m2Label: "Odstępy boczne:", m2Val: "po 5 cm (z lewej i od skanera)",
-          m3Label: "Rury Ø28 mm:", m3Val: "8 szt. (3,25 m łącznie)",
-          m4Label: "Zaciski i nośność:", m4Val: "14× HJ-1 • do 45 kg",
+          title: "Kieszeń robocza na bok drabiny (z rur Lean Pipe i HJ-1/HJ-2)",
+          desc: "Zamiast wystającej półki konstrukcja tworzy <strong>smukłą pionową kieszeń (490×440×110 mm)</strong> na zewnętrznej stronie lewej poręczy drabiny, pomiędzy górną a środkową poprzeczką. Zachowuje <strong>po 5 cm (50 mm) odstępu</strong> po bokach, mieści tablet serwisowy, podkładkę A4, rękawice i narzędzia oraz nie koliduje z szafą Compute Shelf.",
+          m1Label: "Wymiary kieszeni:", m1Val: "490 × 440 × 110 mm",
+          m2Label: "Odstępy boczne:", m2Val: "po 5 cm (lewo i skaner)",
+          m3Label: "Rury Ø28 mm:", m3Val: "10 szt. (3,00 m netto)",
+          m4Label: "Zaciski:", m4Val: "8× HJ-1 + 4× HJ-2",
           btnBOMCard: "Otwórz kartę cięcia rur i wykaz BOM →",
-          btnSketchCard: "Zobacz rysunek techniczny (widok z boku + 5 cm) →"
+          btnSketchCard: "Zobacz rysunek techniczny (przekrój + 5 cm) →"
         },
         steps: [
           {
-            title: "Montaż słupków pionowych i poprzeczki na poręczach drabiny",
-            desc: "Zachowaj po 5 cm (50 mm) odstępu od tylnego słupka oraz od fabrycznego uchwytu skanera z przodu. Zamocuj 2 pionowe rury (420 mm) pomiędzy górną a środkową okrągłą poręczą drabiny za pomocą 4 zacisków HJ-1 — całkowicie blokuje to obrót wokół górnej rury. W połowie wysokości połącz słupki poziomą poprzeczką 370 mm (2× HJ-1).",
-            parts: ["2 szt. × 420 mm (słupki pionowe)", "1 szt. × 370 mm (poprzeczka środkowa)", "6 szt. zacisków HJ-1 + śruby M6"]
+            title: "Montaż tylnych słupków kieszeni na poręczach drabiny",
+            desc: "Odmierz po 5 cm (50 mm) od tylnego słupka kwadratowego i przedniego uchwytu skanera. Przymocuj 2 tylne rury pionowe (420 mm, X = ±195 mm) do górnej oraz środkowej okrągłej poręczy drabiny za pomocą 4 zacisków teowych HJ-1. Tworzy to sztywną bazę tylnej ścianki kieszeni.",
+            parts: ["2 szt. × 420 mm (słupki tylne)", "4 szt. zacisków HJ-1 + śruby M6"]
           },
           {
-            title: "Montaż poziomej ramy wysięgnika półki (350 mm na zewnątrz)",
-            desc: "Na górnej poręczy drabiny (na zewnątrz słupków, X = ±235 mm) zamontuj 2 poziome wsporniki wysięgu po 350 mm skierowane na zewnątrz drabiny (2× HJ-1). Połącz ich przednie końce belką poprzeczną 520 mm za pomocą 2 kolejnych zacisków HJ-1.",
-            parts: ["2 szt. × 350 mm (wsporniki wysięgu)", "1 szt. × 520 mm (belka przednia)", "4 szt. zacisków HJ-1"]
+            title: "Montaż 4 wsporników dystansowych (głębokość 110 mm)",
+            desc: "Na zewnątrz od słupków tylnych (X = ±240 mm) zamontuj 4 krótkie rury dystansowe po 100 mm skierowane na zewnątrz drabiny: 2 na górnej poręczy i 2 na środkowej poręczy za pomocą 4 zacisków HJ-1. Odstęp 45 mm między zaciskami pozwala na swobodny montaż bez kolizji.",
+            parts: ["4 szt. × 100 mm (dystanse wyjścia)", "4 szt. zacisków HJ-1"]
           },
           {
-            title: "Montaż zastrzałów ukośnych 32° (trójkątna kratownica)",
-            desc: "Połącz przednią belkę półki ze środkową poprzeczką słupków za pomocą 2 ukośnych zastrzałów po 410 mm i 4 zacisków HJ-1. Dzięki swobodnemu obrotowi zacisków HJ-1 wokół poziomych rur poprzecznych kąt 32° ustawia się bez naprężeń. Załóż 2 zaślepki ochronne Ø28 mm na końce przedniej belki.",
-            parts: ["2 szt. × 410 mm (zastrzały 32°)", "4 szt. zacisków HJ-1", "2 szt. zaślepek Ø28 mm"]
+            title: "Złożenie przedniej ramy kieszeni na narożnikach 3D (HJ-2)",
+            desc: "Połącz 2 przednie rury pionowe (420 mm) i 2 przednie belki poziome (460 mm) z końcami rur dystansowych używając 4 przestrzennych zacisków narożnych HJ-2 (każdy dokręcany 2 śrubami M6 w rowkach, klucz imbusowy 5 mm). Powstaje zwarta, gładka klatka bez wystających krawędzi.",
+            parts: ["2 szt. × 420 mm (słupki przednie)", "2 szt. × 460 mm (belki przednie)", "4 szt. zacisków narożnych HJ-2 (8 śrub M6)"]
           },
           {
-            title: "Przykręcenie blatu półki (540×370×16 mm) z matą gumową i rantem",
-            desc: "Ułóż płytę wiórową/sklejkę 16 mm (540×370 mm) z naklejoną matą antypoślizgową ESD oraz niskim rantem zabezpieczającym na rurach wysięgnika. Przykręć blat od góry/dołu 6 wkrętami samowiercącymi z podkładką 4,2×32 mm bezpośrednio do rur Lean Pipe.",
-            parts: ["Płyta 540×370×16 mm", "Mata antypoślizgowa ESD + rant", "6 szt. wkrętów 4,2×32 mm"]
+            title: "Montaż ścianek i dna kieszeni (z wkładką amortyzującą)",
+            desc: "Przykręć wkrętami z podkładką ścianki kieszeni z lekkiej sklejki/PCW 8 mm: tylną (490×440 mm), przednią (490×440 mm), dwie boczne (110×440 mm) oraz sztywne dno (490×110×12 mm) wyłożone pianką/gumą ochronną.",
+            parts: ["Ścianki przód/tył 490×440×8 mm (2 szt.)", "Ścianki boczne 110×440×8 mm (2 szt.)", "Dno 490×110×12 mm + mata piankowa + 16 wkrętów"]
           },
           {
-            title: "Montaż podstawki pod tablet i osadzenie tabletu",
-            desc: "Zamocuj pochyloną podstawkę pod tablet (kąt 62°) z przednim progiem zabezpieczającym 18 mm wyłożonym miękką gumą. Centralna śruba M6 pozwala obrócić ekran o 15°–35° w stronę szafy serwerowej, zapewniając idealną widoczność podczas pracy przy Compute Shelf.",
-            parts: ["Podstawka pod tablet 285×175 mm (62°)", "Śruba obrotowa M6 z pokrętłem", "Tablet serwisowy w etui"]
+            title: "Gotowa kieszeń w pracy przy szafie Compute Shelf",
+            desc: "Kieszeń jest gotowa! Otwarta od góry komora o świetle ok. 440×85 mm bezpiecznie mieści tablet w etui ochronnym, dokumentację A4 oraz wkrętaki, wystając jedynie 11 cm poza obrys drabiny.",
+            parts: ["Tablet serwisowy i podkładka A4", "Kompletna kieszeń zamontowana na drabinie"]
           }
         ],
         dims: {
-          out: ["350 mm", "wysięg na zewn."],
-          width: ["540 mm", "szerokość półki"],
-          rails: ["440 mm", "2 poręcze"],
+          depth: ["110 mm", "głębokość kieszeni"],
+          width: ["490 mm", "szerokość kieszeni"],
+          height: ["440 mm", "wysokość (2 poręcze)"],
           left5: ["5 cm (50 mm)", "odstęp z lewej"],
-          right5: ["5 cm (50 mm)", "strefa skanera"],
-          diag: ["410 mm", "zastrzał 32°"]
-        },
-        screen: {
-          header: "⚡ DIAGNOSTYKA SZAFY • COMPUTE SHELF #04",
-          slot: "STATUS GNIAZDA U38",
-          checklist: "LISTA KONTROLNA:",
-          c1: "☑ Skanowanie S/N półki",
-          c2: "☑ Blokada szyn w szafie",
-          c3: "☑ Test portów 10GbE / BMC",
-          btn: "POTWIERDŹ KONTROLĘ WĘZŁA",
-          footer: "Stacja Lean Pipe Ø28 • Stabilna kratownica"
+          right5: ["5 cm (50 mm)", "strefa skanera"]
         },
         bom: {
           title: "Karta cięcia rur i wykaz materiałów (BOM)",
-          sub: "Kompletny zestaw z tych samych rur Ø28 mm i zacisków HJ-1 co stacja Compute Shelf.",
+          sub: "Konstrukcja w 100% kompatybilna z rurami Ø28 mm i zaciskami HJ-1 / HJ-2 z projektu Compute Shelf.",
           sec1: "1. Karta cięcia rur Lean Pipe Ø28 mm",
-          badge1: "8 odcinków",
+          badge1: "10 odcinków",
           colPart: "Element", colLen: "Długość", colQty: "Ilość",
           pipes: [
-            { n: "Słupki pionowe (między 2 poręczami)*", l: "420 mm", q: "2 szt." },
-            { n: "Poprzeczka środkowa słupków", l: "370 mm", q: "1 szt." },
-            { n: "Wsporniki poziome wysięgu (na zewnątrz)", l: "350 mm", q: "2 szt." },
-            { n: "Belka poprzeczna przednia półki", l: "520 mm", q: "1 szt." },
-            { n: "Zastrzały ukośne usztywniające (32°)", l: "410 mm", q: "2 szt." }
+            { n: "Słupki pionowe tylne (X = ±195 mm)*", l: "420 mm", q: "2 szt." },
+            { n: "Słupki pionowe przednie (X = ±240 mm)*", l: "420 mm", q: "2 szt." },
+            { n: "Dystanse poziome głębokości (góra + dół)", l: "100 mm", q: "4 szt." },
+            { n: "Belki poziome przednie (góra + dół)", l: "460 mm", q: "2 szt." }
           ],
-          note: "* Przed cięciem słupków pionowych zmierz prześwit między górną a środkową poręczą drabiny (~410–440 mm).",
+          note: "* Przed cięciem słupków zmierz dokładny rozstaw osiowy między górną a środkową poręczą Twojej drabiny (~420–440 mm).",
           totalLabel: "Całkowita długość rur netto:",
-          totalVal: "3,25 m (3 250 mm)",
-          orderTip: "💡 <strong>Zapotrzebowanie:</strong> wystarczą <strong>2 odcinki po 2,0 m</strong> lub <strong>2 standardowe laski po 3,0 m</strong>.",
-          sec2: "2. Zaciski, blat i wyposażenie",
+          totalVal: "3,00 m (3 000 mm)",
+          orderTip: "💡 <strong>Zakup rur:</strong> wystarczą <strong>2 odcinki po 2,0 m</strong> (lub 1 laska 3,0 m + drobny zapas na rzaz piły).",
+          sec2: "2. Zaciski HJ-1 / HJ-2 i panele kieszeni",
           items: [
-            { n: "Zacisk teowy HJ-1 (ze śrubą i nakrętką M6)", q: "14 szt.", d: "Jeden uniwersalny typ złącza na całą konstrukcję (moment 10 N·m)." },
-            { n: "Płyta blatu 540 × 370 × 16 mm + mata ESD", q: "1 kpl.", d: "Sklejka / płyta wiórowa z gumą antypoślizgową i rantem ochronnym." },
-            { n: "Podstawka pod tablet 285 × 175 mm (kąt 62°)", q: "1 szt.", d: "Z przednim progiem 18 mm trzymającym tablet oraz obrotem M6." },
-            { n: "Wkręty samowiercące 4,2 × 32 mm + zaślepki Ø28", q: "6 + 2 szt.", d: "6 wkrętów z podkładką pod blat + 2 zaślepki na belkę przednią." }
+            { n: "Zacisk teowy HJ-1 (1 śruba M6)", q: "8 szt.", d: "4× na słupki tylne + 4× na dystanse poziome do poręczy drabiny." },
+            { n: "Zacisk narożny 3D HJ-2 (2 śruby M6)", q: "4 szt.", d: "4 przednie narożniki kieszeni 90°×90°×90° (jak w tylnych narożach stacji Compute Shelf)." },
+            { n: "Panele kieszeni (PCW spienione / sklejka 8–12 mm)", q: "5 szt.", d: "Przód/Tył 490×440 (2×), Boki 110×440 (2×), Dno 490×110×12 mm (1×) + pianka amortyzująca." },
+            { n: "Wkręty samowiercące z podkładką 4,2 × 25 mm", q: "16 szt.", d: "Mocowanie paneli bezpośrednio do rur Lean Pipe." }
           ],
           sec3: "3. Wymagane narzędzia",
           tools: [
-            "Klucz imbusowy 5 mm (wszystkie 14 zacisków HJ-1)",
-            "Wkrętarka z bitem PH2 (montaż blatu)",
-            "Obcinak krążkowy do rur Ø28 mm + gratownik do krawędzi",
+            "Klucz imbusowy 5 mm (16 śrub M6 w zaciskach HJ-1 i HJ-2, 10 N·m)",
+            "Wkrętarka z bitem PH2 (przykręcenie ścianek kieszeni)",
+            "Obcinak krążkowy do rur Ø28 mm + gratownik",
             "Miarka zwijana 3 m i marker"
           ]
         },
         modal: {
-          title: "Rysunek techniczny półki i węzła HJ-1",
-          sub: "Schemat boczny (kratownica 32°), odstępy montażowe 5 cm oraz zacisk teowy HJ-1",
-          side: "1. Widok z boku (przekrój wspornika)",
-          top: "2. Odstępy 5 cm na poręczy bocznej (600 mm)",
-          hjTitle: "🔩 Zunifikowany zacisk HJ-1 (Trójnik T)",
-          hjDesc: "Cała konstrukcja wymaga wyłącznie jednego typu złącza (HJ-1). Śruba M6×25 na klucz imbusowy 5 mm, moment dokręcania 9,8–10 N·m."
+          title: "Rysunek techniczny kieszeni i złączy HJ-1 / HJ-2",
+          sub: "Przekrój boczny kieszeni na poręczach drabiny, odstępy 5 cm oraz schemat zacisków",
+          side: "1. Przekrój z boku („bok лестницы” + „карман”)",
+          top: "2. Odstępy 5 cm od końców poręczy (600 mm)",
+          hjTitle: "🔩 Zaciski z projektu Compute Shelf:",
+          hjDesc: "• <strong>8× HJ-1 (trójnik T):</strong> mocują rury kieszeni do górnej i środkowej poręczy drabiny.<br>• <strong>4× HJ-2 (narożnik 3D):</strong> łączą 4 przednie narożniki kieszeni pod kątem 90°×90°×90° bez wystających końcówek."
         }
       },
 
       ru: {
-        pageTitle: "Выносная полка под планшет на лестницу — 3D Инструкция (Lean Pipe Ø28 мм)",
-        headerTitle: "Выносная полка под планшет на лестницу",
-        headerBadge: "Ø28 мм • 14× HJ-1",
-        headerSubtitle: "Вылет наружу 350 мм • Отступы по 5 см • Жесткая фиксация на 2 поручня лестницы",
-        btnDrawingText: "Эскиз и HJ-1",
+        pageTitle: "Карман на боковое ограждение лестницы — 3D Инструкция (Lean Pipe Ø28 мм)",
+        headerTitle: "Карман на боковое ограждение лестницы",
+        headerBadge: "Ø28 мм • 8× HJ-1 + 4× HJ-2",
+        headerSubtitle: "Карман 490×440×110 мм снаружи боковины лестницы • Отступы по 5 см • Крепление на 2 поручня",
+        btnDrawingText: "Эскиз и зажимы",
         modeSplit: "📱 50/50",
         mode3D: "🧊 3D Модель",
         modeSteps: "📝 Инструкция",
-        hudStatus: "Выносная полка под планшет",
+        hudStatus: "Боковой карман на лестницу",
         hudRotate: "• Вращение: <strong>ЛКМ / 1 палец</strong> | Зум: <strong>колесо / 2 пальца</strong>",
         viewsBtnLabel: "📐 Виды",
         viewsDropdownTitle: "Ракурсы камеры",
-        camIso: "Изометрия (общий вид)",
-        camSide: "Вид сбоку (по эскизу)",
+        camIso: "Изометрия (карман сбоку)",
+        camSide: "Профиль сбоку (по эскизу)",
         camInside: "Вид с площадки оператора",
-        camOutside: "Вид снаружи (у стойки)",
+        camOutside: "Вид снаружи (лицо кармана)",
         camTop: "Сверху (отступы 5 см)",
         layersBtnLabel: "⚙️ Слои",
         layersDropdownTitle: "Слои 3D и цвет труб",
         lblDims: "📏 Размеры и отступы 5 см",
+        lblGhost: "👻 Прозрачные стенки (внутрь)",
         lblLadder: "🪜 Лестница и площадка",
-        lblTablet: "📱 Подставка + планшет",
+        lblItems: "📱 Планшет и инструмент внутри",
         lblRack: "🗄️ Стойка + Compute Shelf",
         lblScanner: "🔦 Держатель сканера",
         lblPipeColor: "Цвет труб Ø28 мм:",
         pipeColors: ["Бордо", "ESD", "Хром"],
         lblExplode: "💥 Взрыв:",
-        lblSwivel: "🔄 Угол планшета:",
+        lblQuickXray: "Просветить стенки",
         tabStepper: "Этапы сборки (1–5)",
         tabBOM: "📋 Спецификация BOM",
         stepBadgeIntro: "Готовая модель",
@@ -606,131 +574,120 @@
         btnFinish: "✓ Завершить (Вся модель)",
         reqPartsTitle: "Детали на этом шаге:",
         overview: {
-          title: "Стабильная боковая полка под рабочий планшет",
-          desc: "Полка ставится на <strong>левое боковое ограждение лестницы</strong> и выступает <strong>на 350 мм наружу</strong> — не занимает место на площадке оператора и не мешает подкатывать лестницу к стойке Compute Shelf. Охват сразу двух поручней и диагональная ферма 32° дают полную жесткость при нажатии на экран планшета.",
-          m1Label: "Вылет наружу:", m1Val: "350 мм (стол 540×370)",
-          m2Label: "Отступы по краям:", m2Val: "по 5 см (слева и у сканера)",
-          m3Label: "Трубы Ø28 мм:", m3Val: "8 шт. (всего 3.25 м)",
-          m4Label: "Зажимы и запас:", m4Val: "14× HJ-1 • до 45 кг",
-          btnBOMCard: "Открыть карту нарезки труб и BOM →",
-          btnSketchCard: "Открыть тех. схему (вид сбоку + 5 см) →"
+          title: "Рабочий карман на боковину лестницы (Lean Pipe + HJ-1/HJ-2)",
+          desc: "Вместо выступающей полки собирается <strong>компактный вертикальный карман (490×440×110 мм)</strong> на внешней стороне левой боковины лестницы, ровно между верхним и средним поручнями. Сохраняет <strong>отступы по 5 см (50 мм)</strong> слева и у сканера, вмещает планшет, папку А4 и инструмент, почти не увеличивая габарит лестницы.",
+          m1Label: "Габариты кармана:", m1Val: "490 × 440 × 110 мм",
+          m2Label: "Отступы с боков:", m2Val: "по 5 см (лево и сканер)",
+          m3Label: "Трубы Ø28 мм:", m3Val: "10 шт. (3.00 м нетто)",
+          m4Label: "Зажимы:", m4Val: "8× HJ-1 + 4× HJ-2",
+          btnBOMCard: "Открыть карту нарезки и BOM →",
+          btnSketchCard: "Открыть схему (вид сбоку + 5 см) →"
         },
         steps: [
           {
-            title: "Монтаж вертикальных стоек и перекладины на поручнях",
-            desc: "Отступите по 5 см (50 мм) от задней стойки и от штатного держателя сканера спереди. Закрепите 2 вертикальные трубы (420 мм) между верхним и средним круглыми поручнями лестницы на 4 зажимах HJ-1 — это полностью исключает проворот. Посередине свяжите стойки перекладиной 370 мм (2× HJ-1).",
-            parts: ["2 шт. × 420 мм (вертикальные стойки)", "1 шт. × 370 мм (средняя перекладина)", "6 шт. зажимов HJ-1 + болты М6"]
+            title: "Монтаж задних стоек кармана на поручнях лестницы",
+            desc: "Отступите по 5 см (50 мм) от задней квадратной стойки и от держателя сканера спереди. Закрепите 2 задние вертикальные трубы (420 мм, X = ±195 мм) между верхним и средним круглыми поручнями лестницы 4 Т-зажимами HJ-1.",
+            parts: ["2 шт. × 420 мм (задние стойки)", "4 шт. зажимов HJ-1 + болты М6"]
           },
           {
-            title: "Монтаж выносной консольной рамки полки (350 мм наружу)",
-            desc: "На верхний поручень снаружи стоек (X = ±235 мм) закрепите 2 горизонтальные консоли по 350 мм наружу за габарит лестницы (2× HJ-1). Свяжите их передние концы поперечной балкой 520 мм двумя зажимами HJ-1.",
-            parts: ["2 шт. × 350 мм (консоли вылета)", "1 шт. × 520 мм (передняя балка)", "4 шт. зажимов HJ-1"]
+            title: "Монтаж 4 коротких распорок глубины (110 мм наружу)",
+            desc: "Снаружи от задних стоек (X = ±240 мм) закрепите на верхнем и среднем поручнях лестницы 4 короткие трубки по 100 мм, направленные наружу (4× HJ-1). Зазор 45 мм между хомутами позволяет легко затянуть их шестигранником.",
+            parts: ["4 шт. × 100 мм (выносные трубки)", "4 шт. зажимов HJ-1"]
           },
           {
-            title: "Монтаж диагональных укосин жесткости 32° (треугольная ферма)",
-            desc: "Соедините переднюю балку полки со средней перекладиной стоек двумя укосинами по 410 мм на 4 поворотных зажимах HJ-1. Вокруг поперечных труб хомуты HJ-1 свободно встают точно под углом 32°. Наденьте 2 защитные заглушки Ø28 мм на торцы передней балки.",
-            parts: ["2 шт. × 410 мм (укосины 32°)", "4 шт. зажимов HJ-1", "2 шт. заглушек Ø28 мм"]
+            title: "Сборка передней рамки кармана на 3D-углах HJ-2",
+            desc: "Соедините 2 передние стойки (420 мм) и 2 передние горизонтальные трубы (460 мм) с выносными трубками при помощи 4 угловых 3D-зажимов HJ-2 (как в задних углах фикстуры Compute Shelf, по 2 болта М6 в пазах). Передние углы получаются абсолютно гладкими без торчащих концов.",
+            parts: ["2 шт. × 420 мм (передние стойки)", "2 шт. × 460 мм (передние перекладины)", "4 шт. зажимов HJ-2 (8 болтов М6)"]
           },
           {
-            title: "Крепление плиты полки (540×370×16 мм) с ковриком и бортиком",
-            desc: "Уложите плиту ДСП/фанеры 16 мм (540×370 мм) с противоскользящим резиновым ковриком и защитным бортиком на трубы консоли. Притяните 6 саморезами со сверлом и прессшайбой 4.2×32 мм напрямую в трубы каркаса.",
-            parts: ["Плита 540×370×16 мм", "Резиновый коврик + бортик", "6 шт. саморезов 4.2×32 мм"]
+            title: "Обшивка стенок и установка дна кармана",
+            desc: "Прикрутите саморезами с прессшайбой листы фанеры/ПВХ 8 мм: заднюю стенку (490×440 мм), переднюю (490×440 мм), две боковых (110×440 мм) и жесткое дно (490×110×12 мм) с мягкой вставкой на дне против ударов.",
+            parts: ["Стенки перед/зад 490×440×8 мм (2 шт.)", "Боковины 110×440×8 мм (2 шт.)", "Дно 490×110×12 мм + мягкий коврик + 16 саморезов"]
           },
           {
-            title: "Установка подставки под планшет и размещение планшета",
-            desc: "Закрепите наклонную подставку под планшет (угол 62°) с удерживающим передним пазом 18 мм. Центральный винт М6 позволяет довернуть экран на 15°–35° в сторону серверной стойки для удобной работы.",
-            parts: ["Подставка под планшет 285×175 мм (62°)", "Поворотный крепеж М6", "Рабочий планшет"]
+            title: "Готовый карман с планшетом и инструментом у стойки",
+            desc: "Карман готов к работе! Полезный внутренний проем 440×85 мм уверенно удерживает защищенный планшет, планшетку А4, маркеры и отвертки. Выступает за бок лестницы всего на 11 см.",
+            parts: ["Планшет, папка А4 и инструмент", "Карман полностью закреплен на лестнице"]
           }
         ],
         dims: {
-          out: ["350 мм", "вылет наружу"],
-          width: ["540 мм", "ширина полки"],
-          rails: ["440 мм", "2 поручня"],
+          depth: ["110 мм", "глубина кармана"],
+          width: ["490 мм", "ширина кармана"],
+          height: ["440 мм", "высота (2 поручня)"],
           left5: ["5 см (50 мм)", "отступ слева"],
-          right5: ["5 см (50 мм)", "под сканер"],
-          diag: ["410 мм", "укосина 32°"]
-        },
-        screen: {
-          header: "⚡ ДИАГНОСТИКА СТОЙКИ • COMPUTE SHELF #04",
-          slot: "СТАТУС СЛОТА U38",
-          checklist: "ЧЕК-ЛИСТ МОНТАЖА:",
-          c1: "☑ Сканирование S/N полки",
-          c2: "☑ Фиксация рельс в стойке",
-          c3: "☑ Проверка 10GbE / BMC",
-          btn: "ПОДТВЕРДИТЬ ПРОВЕРКУ УЗЛА",
-          footer: "Станция Lean Pipe Ø28 • Жесткая ферма"
+          right5: ["5 см (50 мм)", "зона сканера"]
         },
         bom: {
           title: "Карта нарезки труб и комплектация (BOM)",
-          sub: "Те же трубы Ø28 мм и Т-зажимы HJ-1, что и в фикстуре Compute Shelf.",
+          sub: "Собирается из тех же труб Ø28 мм и зажимов HJ-1 / HJ-2, что и фикстура Compute Shelf.",
           sec1: "1. Нарезка труб Lean Pipe Ø28 мм",
-          badge1: "8 деталей",
+          badge1: "10 деталей",
           colPart: "Деталь", colLen: "Длина", colQty: "Кол-во",
           pipes: [
-            { n: "Вертикальные опорные стойки (между поручнями)*", l: "420 мм", q: "2 шт." },
-            { n: "Средняя горизонтальная перекладина", l: "370 мм", q: "1 шт." },
-            { n: "Горизонтальные консоли вылета (наружу)", l: "350 мм", q: "2 шт." },
-            { n: "Передняя поперечная балка полки", l: "520 мм", q: "1 шт." },
-            { n: "Диагональные укосины жесткости (32°)", l: "410 мм", q: "2 шт." }
+            { n: "Вертикальные стойки задние (X = ±195 мм)*", l: "420 мм", q: "2 шт." },
+            { n: "Вертикальные стойки передние (X = ±240 мм)*", l: "420 мм", q: "2 шт." },
+            { n: "Распорки глубины наружу (верх + низ)", l: "100 мм", q: "4 шт." },
+            { n: "Перекладины передние (верх + низ)", l: "460 мм", q: "2 шт." }
           ],
-          note: "* Перед резкой поз. 1 замерьте точный просвет между верхним и средним поручнями стремянки (~410–440 мм).",
-          totalLabel: "Суммарный метраж труб:",
-          totalVal: "3.25 м (3 250 мм)",
-          orderTip: "💡 <strong>Закупка:</strong> достаточно <strong>2 отрезков по 2.0 м</strong> или <strong>2 хлыстов по 3.0 м</strong>.",
-          sec2: "2. Зажимы, столешница и оснастка",
+          note: "* Перед резкой стоек измерьте точный просвет между верхним и средним поручнями вашей лестницы (~420–440 мм).",
+          totalLabel: "Суммарный метраж труб нетто:",
+          totalVal: "3.00 м (3 000 мм)",
+          orderTip: "💡 <strong>Закупка:</strong> достаточно <strong>2 отрезков по 2.0 м</strong> (или 1 хлыста 3.0 м с учетом запаса на распил).",
+          sec2: "2. Зажимы HJ-1 / HJ-2 и стенки кармана",
           items: [
-            { n: "Зажим Т-образный HJ-1 (с болтом и гайкой М6)", q: "14 шт.", d: "Один универсальный тип зажима на все 14 узлов (момент 10 Н·м)." },
-            { n: "Плита полки 540 × 370 × 16 мм + коврик ESD", q: "1 компл.", d: "ДСП / фанера с нескользящей резиной и страховочным бортиком." },
-            { n: "Подставка под планшет 285 × 175 мм (62°)", q: "1 шт.", d: "С передним удерживающим пазом 18 мм и регулировкой поворота." },
-            { n: "Саморезы 4.2 × 32 мм + заглушки Ø28 мм", q: "6 + 2 шт.", d: "6 саморезов с прессшайбой для плиты + 2 колпачка на балку." }
+            { n: "Зажим Т-образный HJ-1 (1 болт М6)", q: "8 шт.", d: "4× для задних стоек + 4× для выносных распорок на поручнях лестницы." },
+            { n: "Зажим 3D-угловой HJ-2 (2 болта М6)", q: "4 шт.", d: "4 передних угла кармана 90°×90°×90° (те же, что на фикстуре Compute Shelf)." },
+            { n: "Стенки и дно (ПВХ / фанера 8–12 мм)", q: "5 дет.", d: "Перед/Зад 490×440 (2×), Бока 110×440 (2×), Дно 490×110×12 мм (1×) + мягкий вкладыш." },
+            { n: "Саморезы с прессшайбой 4.2 × 25 мм", q: "16 шт.", d: "Крепление обшивки кармана непосредственно к трубам Lean Pipe." }
           ],
           sec3: "3. Инструмент",
           tools: [
-            "Шестигранный ключ 5 мм (все 14 зажимов HJ-1)",
-            "Шуруповерт с битой PH2 (монтаж столешницы)",
+            "Шестигранный ключ 5 мм (16 болтов М6 в зажимах HJ-1 и HJ-2, 10 Н·м)",
+            "Шуруповерт с битой PH2 (прикручивание стенок)",
             "Труборез для труб Ø28 мм + гратосниматель",
             "Рулетка 3 м и маркер"
           ]
         },
         modal: {
-          title: "Техническая схема полки и узла HJ-1",
-          sub: "Профиль сбоку (ферма 32°), отступы по 5 см на поручне и спецификация HJ-1",
-          side: "1. Вид сбоку (профиль консоли по эскизу)",
-          top: "2. Отступы по 5 см на боковом поручне (600 мм)",
-          hjTitle: "🔩 Единый зажим HJ-1 (Т-образный)",
-          hjDesc: "Вся полка собирается на одном типе зажима (HJ-1). Болт М6×25 под шестигранник 5 мм, момент затяжки 9.8–10 Н·м."
+          title: "Техническая схема кармана и узлов HJ-1 / HJ-2",
+          sub: "Профиль сбоку на поручнях лестницы, отступы 5 см и спецификация зажимов",
+          side: "1. Вид сбоку («бок лестницы» + «карман»)",
+          top: "2. Отступы по 5 см от краев поручня (600 мм)",
+          hjTitle: "🔩 Зажимы из проекта Compute Shelf:",
+          hjDesc: "• <strong>8× HJ-1 (Т-стык):</strong> крепят трубы кармана к верхнему и среднему поручням лестницы.<br>• <strong>4× HJ-2 (3D-угол):</strong> формируют 4 передних угла кармана 90°×90°×90° без торчащих концов труб."
         }
       },
 
       en: {
-        pageTitle: "Ladder Tablet Shelf Assembly Guide — Lean Pipe Ø28 mm",
-        headerTitle: "Ladder Tablet Shelf — 3D Assembly Guide",
-        headerBadge: "Ø28 mm • 14× HJ-1",
-        headerSubtitle: "350 mm Outward Overhang • 5 cm Side Margins • Dual-Rail Anti-Rotation Lock",
-        btnDrawingText: "Blueprint & HJ-1",
+        pageTitle: "Ladder Side Pocket Assembly Guide — Lean Pipe Ø28 mm",
+        headerTitle: "Ladder Side Pocket — 3D Assembly Guide",
+        headerBadge: "Ø28 mm • 8× HJ-1 + 4× HJ-2",
+        headerSubtitle: "490×440×110 mm Outer Side Pocket • 5 cm Margins • Dual-Rail Mount",
+        btnDrawingText: "Blueprint & Clamps",
         modeSplit: "📱 Split",
         mode3D: "🧊 3D Model",
         modeSteps: "📝 Guide",
-        hudStatus: "Cantilever Tablet Shelf",
+        hudStatus: "Ladder Side Tool & Tablet Pocket",
         hudRotate: "• Orbit: <strong>LMB / 1 finger</strong> | Zoom: <strong>wheel / pinch</strong>",
         viewsBtnLabel: "📐 Views",
         viewsDropdownTitle: "Camera Presets",
-        camIso: "Isometric Overview",
+        camIso: "Isometric Side Pocket",
         camSide: "Side Profile (Sketch View)",
         camInside: "Platform Operator POV",
-        camOutside: "Floor / Rack Side POV",
+        camOutside: "Outside Front Face POV",
         camTop: "Top View (5 cm Margins)",
         layersBtnLabel: "⚙️ Layers",
         layersDropdownTitle: "3D Layers & Finish",
         lblDims: "📏 Dimensions & 5 cm Margins",
+        lblGhost: "👻 Transparent Walls (X-Ray)",
         lblLadder: "🪜 Ladder & Platform",
-        lblTablet: "📱 Tablet Stand + Tablet",
+        lblItems: "📱 Tablet & Tools Inside",
         lblRack: "🗄️ Server Rack + Compute Shelf",
         lblScanner: "🔦 Scanner Mount",
         lblPipeColor: "Ø28 mm Pipe Finish:",
         pipeColors: ["Burgundy", "ESD", "Chrome"],
         lblExplode: "💥 Explode:",
-        lblSwivel: "🔄 Swivel:",
+        lblQuickXray: "X-Ray Walls",
         tabStepper: "Assembly Steps (1–5)",
         tabBOM: "📋 BOM & Cut List",
         stepBadgeIntro: "Complete Assembly",
@@ -744,116 +701,104 @@
         btnFinish: "✓ Finish (Full Model)",
         reqPartsTitle: "Components for this step:",
         overview: {
-          title: "Rock-Solid Outward Tablet Shelf for Platform Ladder",
-          desc: "Mounts onto the <strong>left side guardrail</strong> and protrudes <strong>350 mm outward</strong> — preserving 100% of operator standing space inside the basket and clearing the server rack. Clamping across both top and mid rails plus a 32° triangulated truss eliminates flex when using the touchscreen.",
-          m1Label: "Outward Overhang:", m1Val: "350 mm (540×370 top)",
+          title: "Side-Mounted Ladder Pocket (Lean Pipe + HJ-1 / HJ-2)",
+          desc: "Replaces the protruding shelf with a <strong>slim vertical pocket (490×440×110 mm)</strong> mounted on the outside of the left ladder guardrail between the top and middle rails. Preserves <strong>5 cm (50 mm) clearance</strong> on both sides, safely holds a service tablet, A4 clipboard, and tools, and adds just 11 cm to ladder width.",
+          m1Label: "Pocket Size:", m1Val: "490 × 440 × 110 mm",
           m2Label: "Side Margins:", m2Val: "5 cm left & scanner side",
-          m3Label: "Ø28 mm Pipes:", m3Val: "8 pcs (3.25 m total)",
-          m4Label: "Clamps & Rating:", m4Val: "14× HJ-1 • up to 45 kg",
+          m3Label: "Ø28 mm Pipes:", m3Val: "10 pcs (3.00 m net)",
+          m4Label: "Clamps:", m4Val: "8× HJ-1 + 4× HJ-2",
           btnBOMCard: "Open Pipe Cut List & BOM →",
           btnSketchCard: "View Technical Blueprint (Side + 5 cm) →"
         },
         steps: [
           {
-            title: "Mount Vertical Posts & Middle Crossbar onto Ladder Rails",
-            desc: "Leave 5 cm (50 mm) clearance from the rear square post and the front scanner holder. Clamp 2 vertical pipes (420 mm) across both the top and middle round ladder rails using 4× HJ-1 clamps to lock out rotation. Connect them midway with the 370 mm crossbar (2× HJ-1).",
-            parts: ["2 pcs × 420 mm (vertical posts)", "1 pc × 370 mm (mid crossbar)", "6 pcs HJ-1 clamps + M6 bolts"]
+            title: "Mount Rear Vertical Posts onto Top & Mid Ladder Rails",
+            desc: "Leave 5 cm (50 mm) margins from the rear post and front scanner mount. Clamp 2 rear vertical pipes (420 mm, X = ±195 mm) across the top and middle round ladder rails using 4× HJ-1 T-clamps.",
+            parts: ["2 pcs × 420 mm (rear vertical posts)", "4 pcs HJ-1 clamps + M6 bolts"]
           },
           {
-            title: "Assemble Outward Cantilever Frame (350 mm Overhang)",
-            desc: "Clamp 2 horizontal cantilever pipes (350 mm) onto the top rail outside the vertical posts (X = ±235 mm) pointing outward (2× HJ-1). Join their front tips with the 520 mm front crossbar (2× HJ-1).",
-            parts: ["2 pcs × 350 mm (cantilever arms)", "1 pc × 520 mm (front crossbar)", "4 pcs HJ-1 clamps"]
+            title: "Install 4 Outward Standoff Pipes (110 mm Depth)",
+            desc: "Outside the rear posts (X = ±240 mm), clamp 4 short 100 mm pipes pointing outward on both the top and middle rails using 4× HJ-1 clamps. The 45 mm gap keeps collars collision-free.",
+            parts: ["4 pcs × 100 mm (depth standoffs)", "4 pcs HJ-1 clamps"]
           },
           {
-            title: "Install 32° Diagonal Truss Braces",
-            desc: "Connect the front crossbar down to the middle crossbar using 2 diagonal struts (410 mm) and 4× swiveling HJ-1 clamps. Fit 2 protective Ø28 mm end caps onto the front bar ends.",
-            parts: ["2 pcs × 410 mm (32° truss struts)", "4 pcs HJ-1 clamps", "2 pcs Ø28 mm end caps"]
+            title: "Assemble Front Frame with 4× HJ-2 3D Corner Clamps",
+            desc: "Join 2 front vertical pipes (420 mm) and 2 front horizontal bars (460 mm) to the standoff tips using 4× HJ-2 3D corner joints (2× M6 bolts each, 5 mm Allen key). Creates a flush snag-free front frame.",
+            parts: ["2 pcs × 420 mm (front verticals)", "2 pcs × 460 mm (front horizontals)", "4 pcs HJ-2 3D corners (8× M6 bolts)"]
           },
           {
-            title: "Fasten 540×370×16 mm Shelf Board, ESD Mat & Safety Rim",
-            desc: "Place the 16 mm plywood/MDF top with bonded ESD rubber mat and perimeter retaining lip onto the cantilever frame, then secure with 6× 4.2×32 mm self-drilling screws.",
-            parts: ["540×370×16 mm board", "ESD rubber mat + safety rim", "6 pcs 4.2×32 mm screws"]
+            title: "Attach Pocket Walls & Cushioned Bottom Floor",
+            desc: "Fasten 8 mm PVC/plywood panels with self-drilling screws: front (490×440 mm), back (490×440 mm), two sides (110×440 mm), and bottom floor (490×110×12 mm) lined with foam/rubber.",
+            parts: ["Front/Back 490×440×8 mm (2 pcs)", "Sides 110×440×8 mm (2 pcs)", "Bottom 490×110×12 mm + pad + 16 screws"]
           },
           {
-            title: "Mount Swiveling Tablet Cradle & Service Tablet",
-            desc: "Bolt the 62° angled tablet stand with 18 mm cushioned front retaining channel onto the shelf. Adjust swivel (15°–35°) toward the server rack for ergonomic visibility.",
-            parts: ["Tablet stand 285×175 mm (62°)", "M6 swivel fastener", "Rugged service tablet"]
+            title: "Ready Pocket with Service Tablet & Clipboard",
+            desc: "Pocket assembly is complete! The 440×85 mm internal bay securely cradles a rugged tablet, A4 clipboard, and hand tools while protruding just 11 cm outside the ladder.",
+            parts: ["Service tablet, A4 clipboard & tools", "Complete pocket mounted on ladder"]
           }
         ],
         dims: {
-          out: ["350 mm", "outward overhang"],
-          width: ["540 mm", "shelf width"],
-          rails: ["440 mm", "2 ladder rails"],
+          depth: ["110 mm", "pocket depth"],
+          width: ["490 mm", "pocket width"],
+          height: ["440 mm", "height (2 rails)"],
           left5: ["5 cm (50 mm)", "left margin"],
-          right5: ["5 cm (50 mm)", "scanner zone"],
-          diag: ["410 mm", "32° strut"]
-        },
-        screen: {
-          header: "⚡ RACK DIAGNOSTICS • COMPUTE SHELF #04",
-          slot: "SLOT U38 STATUS",
-          checklist: "INSTALL CHECKLIST:",
-          c1: "☑ Scan shelf S/N barcode",
-          c2: "☑ Verify rack rail locks",
-          c3: "☑ Check 10GbE / BMC link",
-          btn: "CONFIRM NODE VERIFICATION",
-          footer: "Lean Pipe Ø28 Station • Zero-Sway Truss"
+          right5: ["5 cm (50 mm)", "scanner zone"]
         },
         bom: {
           title: "Pipe Cutting Chart & Bill of Materials (BOM)",
-          sub: "Built with the exact same Ø28 mm Lean Pipes and HJ-1 T-clamps as the Compute Shelf fixture.",
+          sub: "Uses the exact same Ø28 mm Lean Pipes and HJ-1 / HJ-2 clamps as the Compute Shelf fixture.",
           sec1: "1. Lean Pipe Ø28 mm Cut List",
-          badge1: "8 cuts",
+          badge1: "10 cuts",
           colPart: "Component", colLen: "Length", colQty: "Qty",
           pipes: [
-            { n: "Vertical mounting posts (between 2 rails)*", l: "420 mm", q: "2 pcs" },
-            { n: "Middle horizontal crossbar", l: "370 mm", q: "1 pc" },
-            { n: "Outward horizontal cantilever arms", l: "350 mm", q: "2 pcs" },
-            { n: "Front transverse shelf bar", l: "520 mm", q: "1 pc" },
-            { n: "Diagonal 32° truss struts", l: "410 mm", q: "2 pcs" }
+            { n: "Rear vertical posts (X = ±195 mm)*", l: "420 mm", q: "2 pcs" },
+            { n: "Front vertical posts (X = ±240 mm)*", l: "420 mm", q: "2 pcs" },
+            { n: "Outward depth standoffs (top + bottom)", l: "100 mm", q: "4 pcs" },
+            { n: "Front horizontal bars (top + bottom)", l: "460 mm", q: "2 pcs" }
           ],
-          note: "* Verify exact spacing between top and middle round rails on your ladder (~410–440 mm) before cutting item 1.",
+          note: "* Measure exact spacing between top and middle round rails on your ladder (~420–440 mm) before cutting.",
           totalLabel: "Total net pipe length:",
-          totalVal: "3.25 m (3 250 mm)",
-          orderTip: "💡 <strong>Pipe stock:</strong> requires only <strong>2× 2.0 m</strong> or <strong>2× 3.0 m</strong> standard pipes.",
-          sec2: "2. Clamps, Tabletop & Tablet Cradle",
+          totalVal: "3.00 m (3 000 mm)",
+          orderTip: "💡 <strong>Stock:</strong> <strong>2× 2.0 m</strong> (or 1× 3.0 m pipe + small kerf spare).",
+          sec2: "2. Clamps & Enclosure Panels",
           items: [
-            { n: "HJ-1 T-Clamp (with M6×25 bolt & nut)", q: "14 pcs", d: "Single unified joint type across all 14 nodes (10 N·m torque)." },
-            { n: "540 × 370 × 16 mm Board + ESD Mat & Rim", q: "1 set", d: "Plywood/MDF core with anti-slip rubber top and retaining lip." },
-            { n: "62° Angled Tablet Stand (285 × 175 mm)", q: "1 pc", d: "18 mm cushioned front lip channel + M6 swivel adjustment." },
-            { n: "4.2 × 32 mm Screws + Ø28 mm End Caps", q: "6 + 2 pcs", d: "6 self-drilling screws for board + 2 protective end caps." }
+            { n: "HJ-1 T-Clamp (1× M6 bolt)", q: "8 pcs", d: "4× for rear posts + 4× for depth standoffs onto ladder rails." },
+            { n: "HJ-2 3D Corner Clamp (2× M6 bolts)", q: "4 pcs", d: "4 front 90°×90°×90° pocket corners (same as Compute Shelf rear corners)." },
+            { n: "Pocket Panels (8–12 mm PVC / Plywood)", q: "5 pcs", d: "Front/Back 490×440 (2×), Sides 110×440 (2×), Bottom 490×110×12 mm (1×) + foam pad." },
+            { n: "4.2 × 25 mm Self-Drilling Screws", q: "16 pcs", d: "Secures enclosure panels directly to Lean Pipe frame." }
           ],
           sec3: "3. Required Tools",
           tools: [
-            "5 mm Hex Allen key (all 14× HJ-1 clamps)",
+            "5 mm Hex Allen key (16× M6 bolts in HJ-1 & HJ-2, 10 N·m)",
             "Cordless drill/driver with PH2 bit",
             "Ø28 mm rotary pipe cutter + deburring tool",
             "3 m tape measure & marker"
           ]
         },
         modal: {
-          title: "Technical Blueprint & HJ-1 Clamp Spec",
-          sub: "Side truss section (32°), 5 cm rail margins & HJ-1 T-clamp details",
-          side: "1. Side Profile (Cantilever Truss)",
+          title: "Technical Blueprint & HJ-1 / HJ-2 Clamp Spec",
+          sub: "Side profile between ladder rails, 5 cm margins & clamp details",
+          side: "1. Side Profile (Ladder Side + Pocket)",
           top: "2. 5 cm Side Rail Margins (600 mm Span)",
-          hjTitle: "🔩 Unified HJ-1 T-Clamp",
-          hjDesc: "All 14 joints use standard HJ-1 clamps with M6×25 hex socket bolts (5 mm Allen key, 9.8–10 N·m)."
+          hjTitle: "🔩 Compute Shelf Fixture Clamps:",
+          hjDesc: "• <strong>8× HJ-1 (T-joint):</strong> clamp pocket frame to top & middle ladder rails.<br>• <strong>4× HJ-2 (3D corner):</strong> connect the 4 front 90°×90°×90° pocket corners cleanly."
         }
       }
     };
 
     const urlLang = new URLSearchParams(window.location.search).get('lang');
     let currentLang = (urlLang && I18N[urlLang]) ? urlLang : 'pl';
-    let currentStep = 0; // 0 = Overview (Full Model), 1..5 = Assembly Steps
+    let currentStep = 0; // 0 = Full Pocket Overview
 
     // =========================================================================
-    // 2. THREE.JS 1:1 MILLIMETER SCENE INITIALIZATION
+    // 2. THREE.JS SCENE SETUP (1 unit = 1 mm)
     // =========================================================================
     const container = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x0B0E14);
 
     const camera = new THREE.PerspectiveCamera(42, Math.max(1, container.clientWidth) / Math.max(1, container.clientHeight), 5, 8000);
-    camera.position.set(-780, 480, 920);
+    camera.position.set(-720, 380, 880);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -865,9 +810,9 @@
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.08;
-    controls.target.set(0, -60, 120);
-    controls.maxPolarAngle = Math.PI * 0.62;
-    controls.minDistance = 260;
+    controls.target.set(0, -180, 40);
+    controls.maxPolarAngle = Math.PI * 0.65;
+    controls.minDistance = 240;
     controls.maxDistance = 3200;
 
     scene.add(new THREE.HemisphereLight(0xffffff, 0x1e293b, 0.85));
@@ -877,12 +822,9 @@
     mainLight.position.set(-500, 1200, 900);
     mainLight.castShadow = true;
     mainLight.shadow.mapSize.set(2048, 2048);
-    mainLight.shadow.camera.near = 100;
-    mainLight.shadow.camera.far = 3500;
-    mainLight.shadow.camera.left = -1200;
-    mainLight.shadow.camera.right = 1200;
-    mainLight.shadow.camera.top = 1200;
-    mainLight.shadow.camera.bottom = -1200;
+    mainLight.shadow.camera.near = 100; mainLight.shadow.camera.far = 3500;
+    mainLight.shadow.camera.left = -1200; mainLight.shadow.camera.right = 1200;
+    mainLight.shadow.camera.top = 1200; mainLight.shadow.camera.bottom = -1200;
     mainLight.shadow.bias = -0.0005;
     scene.add(mainLight);
 
@@ -905,33 +847,32 @@
     const pipeBraceMat   = new THREE.MeshStandardMaterial({ color: 0x9B1C33, metalness: 0.40, roughness: 0.24 });
     const clampMetalMat  = new THREE.MeshStandardMaterial({ color: 0x505A67, metalness: 0.84, roughness: 0.32 });
     const clampBoltMat   = new THREE.MeshStandardMaterial({ color: 0x94A3B8, metalness: 0.88, roughness: 0.22 });
-    const woodMat        = new THREE.MeshStandardMaterial({ color: 0xC47B35, roughness: 0.58, metalness: 0.04 });
-    const rubberMat      = new THREE.MeshStandardMaterial({ color: 0x1E2530, roughness: 0.82, metalness: 0.05 });
-    const redCapMat      = new THREE.MeshStandardMaterial({ color: 0xEF4444, roughness: 0.35, metalness: 0.10 });
+    const slotDepthMat   = new THREE.MeshStandardMaterial({ color: 0x262C36, metalness: 0.75, roughness: 0.45 });
+
+    const pocketWallMat  = new THREE.MeshStandardMaterial({
+      color: 0x263040, roughness: 0.52, metalness: 0.14, transparent: true, opacity: 1.0
+    });
+    const pocketSideMat  = new THREE.MeshStandardMaterial({
+      color: 0x334155, roughness: 0.48, metalness: 0.18, transparent: true, opacity: 1.0
+    });
+    const pocketFloorMat = new THREE.MeshStandardMaterial({ color: 0xC47B35, roughness: 0.58, metalness: 0.04 });
+    const rubberMat      = new THREE.MeshStandardMaterial({ color: 0x181E27, roughness: 0.85, metalness: 0.05 });
+
     const ladderPaintMat = new THREE.MeshStandardMaterial({ color: 0xD4D9DF, metalness: 0.28, roughness: 0.42 });
     const ladderDarkMat  = new THREE.MeshStandardMaterial({ color: 0x64748B, metalness: 0.65, roughness: 0.38 });
 
     // =========================================================================
-    // 4. PIPE & HJ-1 GENERATORS (1 unit = 1 mm)
+    // 4. PIPE, HJ-1 (T-CLAMP) & HJ-2 (3D CORNER) GENERATORS
     // =========================================================================
     const R_pipe = 14;
 
     function createPipe(p1, p2, mat = pipePrimaryMat, radius = R_pipe) {
       const v = new THREE.Vector3().subVectors(p2, p1);
       const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius, radius, v.length(), 28), mat);
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
+      mesh.castShadow = true; mesh.receiveShadow = true;
       mesh.position.copy(p1).addScaledVector(v, 0.5);
       mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.clone().normalize());
       return mesh;
-    }
-
-    function createEndCap(pos, dirVec) {
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(R_pipe + 2.0, R_pipe + 2.0, 14, 24), redCapMat);
-      cap.position.copy(pos);
-      cap.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dirVec.clone().normalize());
-      cap.castShadow = true;
-      return cap;
     }
 
     function createHJ1(pos, throughDir, buttDir) {
@@ -944,32 +885,28 @@
       vN.normalize();
 
       const rOuter = R_pipe + 3.6;
-      const collarLen = 38;
-      const sleeveLen = 44;
+      const collarLen = 38, sleeveLen = 44;
 
-      const collarMesh = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, collarLen, 26), clampMetalMat);
+      const collarMesh = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, collarLen, 24), clampMetalMat);
       collarMesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vT);
       collarMesh.castShadow = true;
       g.add(collarMesh);
 
-      const lipGeo = new THREE.CylinderGeometry(rOuter + 1.6, rOuter + 1.6, 3.2, 26);
+      const lipGeo = new THREE.CylinderGeometry(rOuter + 1.6, rOuter + 1.6, 3.2, 24);
       const lip1 = new THREE.Mesh(lipGeo, clampMetalMat);
-      lip1.position.copy(vT.clone().multiplyScalar(collarLen / 2 - 1.6));
-      lip1.quaternion.copy(collarMesh.quaternion);
+      lip1.position.copy(vT.clone().multiplyScalar(collarLen / 2 - 1.6)); lip1.quaternion.copy(collarMesh.quaternion);
       const lip2 = new THREE.Mesh(lipGeo, clampMetalMat);
-      lip2.position.copy(vT.clone().multiplyScalar(-collarLen / 2 + 1.6));
-      lip2.quaternion.copy(collarMesh.quaternion);
+      lip2.position.copy(vT.clone().multiplyScalar(-collarLen / 2 + 1.6)); lip2.quaternion.copy(collarMesh.quaternion);
       g.add(lip1, lip2);
 
-      const sleeveMesh = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, sleeveLen, 26), clampMetalMat);
+      const sleeveMesh = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, sleeveLen, 24), clampMetalMat);
       sleeveMesh.position.copy(vB.clone().multiplyScalar(sleeveLen / 2 + 2));
       sleeveMesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vB);
       sleeveMesh.castShadow = true;
       g.add(sleeveMesh);
 
       const lip3 = new THREE.Mesh(lipGeo, clampMetalMat);
-      lip3.position.copy(vB.clone().multiplyScalar(sleeveLen + 0.5));
-      lip3.quaternion.copy(sleeveMesh.quaternion);
+      lip3.position.copy(vB.clone().multiplyScalar(sleeveLen + 0.5)); lip3.quaternion.copy(sleeveMesh.quaternion);
       g.add(lip3);
 
       const earGeo = new THREE.BoxGeometry(3.2, sleeveLen * 0.72, 7.5);
@@ -983,43 +920,94 @@
 
       const boltCenter = vB.clone().multiplyScalar(sleeveLen * 0.55);
       const boltRod = new THREE.Mesh(new THREE.CylinderGeometry(3.0, 3.0, rOuter * 2.7, 14), clampBoltMat);
-      boltRod.position.copy(boltCenter);
-      boltRod.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vN);
-      g.add(boltRod);
-
+      boltRod.position.copy(boltCenter); boltRod.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vN);
       const washerGeo = new THREE.CylinderGeometry(6.8, 6.8, 1.4, 16);
-      const w1 = new THREE.Mesh(washerGeo, clampBoltMat);
-      w1.position.copy(boltCenter).addScaledVector(vN, rOuter + 1.0);
-      w1.quaternion.copy(boltRod.quaternion);
-      const w2 = new THREE.Mesh(washerGeo, clampBoltMat);
-      w2.position.copy(boltCenter).addScaledVector(vN, -rOuter - 1.0);
-      w2.quaternion.copy(boltRod.quaternion);
-      g.add(w1, w2);
-
+      const w1 = new THREE.Mesh(washerGeo, clampBoltMat); w1.position.copy(boltCenter).addScaledVector(vN, rOuter + 1.0); w1.quaternion.copy(boltRod.quaternion);
+      const w2 = new THREE.Mesh(washerGeo, clampBoltMat); w2.position.copy(boltCenter).addScaledVector(vN, -rOuter - 1.0); w2.quaternion.copy(boltRod.quaternion);
       const headMesh = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 5.5, 16), clampBoltMat);
-      headMesh.position.copy(boltCenter).addScaledVector(vN, rOuter + 4.2);
-      headMesh.quaternion.copy(boltRod.quaternion);
+      headMesh.position.copy(boltCenter).addScaledVector(vN, rOuter + 4.2); headMesh.quaternion.copy(boltRod.quaternion);
       const nutMesh = new THREE.Mesh(new THREE.CylinderGeometry(5.6, 5.6, 5.0, 6), clampBoltMat);
-      nutMesh.position.copy(boltCenter).addScaledVector(vN, -rOuter - 4.0);
-      nutMesh.quaternion.copy(boltRod.quaternion);
-      g.add(headMesh, nutMesh);
+      nutMesh.position.copy(boltCenter).addScaledVector(vN, -rOuter - 4.0); nutMesh.quaternion.copy(boltRod.quaternion);
+      g.add(boltRod, w1, w2, headMesh, nutMesh);
 
       return g;
     }
 
+    // High-fidelity 3D Corner Clamp HJ-2 (same geometry as Compute Shelf fixture)
+    function createHJ2(pos, xDir, yDir, zDir) {
+      const g = new THREE.Group();
+      g.position.copy(pos);
+      const vx = xDir.clone().normalize();
+      const vy = yDir.clone().normalize();
+      const vz = zDir.clone().normalize();
+
+      const rOuter = R_pipe + 3.6;
+      const sleeveLen = 44;
+
+      // Vertical sleeve along vy
+      const meshY = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, sleeveLen, 24), clampMetalMat);
+      meshY.position.copy(vy.clone().multiplyScalar(sleeveLen * 0.48));
+      meshY.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vy);
+      meshY.castShadow = true;
+      g.add(meshY);
+
+      const vLip = new THREE.Mesh(new THREE.CylinderGeometry(rOuter + 1.4, rOuter + 1.4, 3.2, 24), clampMetalMat);
+      vLip.position.copy(vy.clone().multiplyScalar(sleeveLen * 0.94));
+      vLip.quaternion.copy(meshY.quaternion);
+      g.add(vLip);
+
+      // 3D Apex Corner Sphere
+      const cornerMesh = new THREE.Mesh(new THREE.SphereGeometry(rOuter * 1.15, 18, 18), clampMetalMat);
+      cornerMesh.castShadow = true;
+      g.add(cornerMesh);
+
+      function addBranch(dir, boltNorm) {
+        const vD = dir.clone().normalize();
+        const vN = boltNorm.clone().normalize();
+        const sMesh = new THREE.Mesh(new THREE.CylinderGeometry(rOuter, rOuter, sleeveLen, 24), clampMetalMat);
+        sMesh.position.copy(vD.clone().multiplyScalar(sleeveLen * 0.50));
+        sMesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), vD);
+        sMesh.castShadow = true;
+        g.add(sMesh);
+
+        const lip = new THREE.Mesh(new THREE.CylinderGeometry(rOuter + 1.4, rOuter + 1.4, 3.2, 24), clampMetalMat);
+        lip.position.copy(vD.clone().multiplyScalar(sleeveLen - 1.5));
+        lip.quaternion.copy(sMesh.quaternion);
+        g.add(lip);
+
+        const boltCenter = vD.clone().multiplyScalar(sleeveLen * 0.55);
+        const qBolt = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), vN);
+        const pIn1 = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 5.5, 2.5, 14), slotDepthMat);
+        pIn1.position.copy(boltCenter).addScaledVector(vN, rOuter * 0.9); pIn1.quaternion.copy(qBolt);
+        const pIn2 = new THREE.Mesh(new THREE.CylinderGeometry(5.5, 5.5, 2.5, 14), slotDepthMat);
+        pIn2.position.copy(boltCenter).addScaledVector(vN, -rOuter * 0.9); pIn2.quaternion.copy(qBolt);
+        const boltRod = new THREE.Mesh(new THREE.CylinderGeometry(2.8, 2.8, rOuter * 2.7, 12), clampBoltMat);
+        boltRod.position.copy(boltCenter); boltRod.quaternion.copy(qBolt);
+        const head = new THREE.Mesh(new THREE.CylinderGeometry(5.0, 5.0, 4.5, 6), clampBoltMat);
+        head.position.copy(boltCenter).addScaledVector(vN, rOuter + 3.2); head.quaternion.copy(qBolt);
+        const nut = new THREE.Mesh(new THREE.CylinderGeometry(5.2, 5.2, 4.5, 6), clampBoltMat);
+        nut.position.copy(boltCenter).addScaledVector(vN, -rOuter - 3.2); nut.quaternion.copy(qBolt);
+        g.add(pIn1, pIn2, boltRod, head, nut);
+      }
+
+      addBranch(vx, vz);
+      addBranch(vz, vx);
+      return g;
+    }
+
     // =========================================================================
-    // 5. BUILD SCENE GEOMETRY
+    // 5. BUILD LADDER, SCANNER, RACK & 5-STEP POCKET MODEL
     // =========================================================================
     const ladderGroup = new THREE.Group();
     const scannerGroup = new THREE.Group();
     const rackGroup = new THREE.Group();
     const dimsGroup = new THREE.Group();
 
-    const step1Group = new THREE.Group();
-    const step2Group = new THREE.Group();
-    const step3Group = new THREE.Group();
-    const step4Group = new THREE.Group();
-    const step5Group = new THREE.Group();
+    const step1Group = new THREE.Group(); // Back vertical posts (420mm) + 4× HJ-1
+    const step2Group = new THREE.Group(); // 4× Standoffs (100mm) + 4× HJ-1
+    const step3Group = new THREE.Group(); // Front vertical + horizontal frame + 4× HJ-2
+    const step4Group = new THREE.Group(); // 5 Pocket walls + bottom floor + foam pad
+    const step5Group = new THREE.Group(); // Service tablet + A4 clipboard + tools inside pocket
 
     scene.add(ladderGroup, scannerGroup, rackGroup, dimsGroup);
     scene.add(step1Group, step2Group, step3Group, step4Group, step5Group);
@@ -1028,32 +1016,25 @@
     const yTopRail = 0, yMidRail = -440, yPlatform = -900;
     const basketWidthZ = 580;
 
-    // Ladder Left Side Panel + Guardrails
+    // Ladder Guardrail & Platform
     ladderGroup.add(createPipe(new THREE.Vector3(xRearInner, yTopRail, 0), new THREE.Vector3(xFrontInner + 15, yTopRail, 0), ladderPaintMat, 14));
     ladderGroup.add(createPipe(new THREE.Vector3(xRearInner, yMidRail, 0), new THREE.Vector3(xFrontInner + 15, yMidRail, 0), ladderPaintMat, 14));
 
     const greenDot = new THREE.Mesh(new THREE.CylinderGeometry(7, 7, 1.5, 16), new THREE.MeshStandardMaterial({ color: 0x15803d, roughness: 0.4 }));
-    greenDot.position.set(xRearInner + 38, yTopRail + 13.8, 4);
-    greenDot.rotation.x = 0.25;
+    greenDot.position.set(xRearInner + 38, yTopRail + 13.8, 4); greenDot.rotation.x = 0.25;
     ladderGroup.add(greenDot);
 
     const sqPostGeo = new THREE.BoxGeometry(30, 930, 30);
-    const rearSqPost = new THREE.Mesh(sqPostGeo, ladderPaintMat);
-    rearSqPost.position.set(xRearInner - 15, -450, 0);
-    rearSqPost.castShadow = true;
+    const rearSqPost = new THREE.Mesh(sqPostGeo, ladderPaintMat); rearSqPost.position.set(xRearInner - 15, -450, 0); rearSqPost.castShadow = true;
     const hollowTop = new THREE.Mesh(new THREE.BoxGeometry(22, 6, 22), new THREE.MeshStandardMaterial({ color: 0x111827, roughness: 0.9 }));
     hollowTop.position.set(xRearInner - 15, 13, 0);
-    const frontSqPost = new THREE.Mesh(sqPostGeo, ladderPaintMat);
-    frontSqPost.position.set(xFrontInner + 15, -450, 0);
-    frontSqPost.castShadow = true;
+    const frontSqPost = new THREE.Mesh(sqPostGeo, ladderPaintMat); frontSqPost.position.set(xFrontInner + 15, -450, 0); frontSqPost.castShadow = true;
     ladderGroup.add(rearSqPost, hollowTop, frontSqPost);
 
     ladderGroup.add(createPipe(new THREE.Vector3(xFrontInner + 15, yTopRail, 0), new THREE.Vector3(xFrontInner + 15, yTopRail, -basketWidthZ), ladderPaintMat, 14));
     ladderGroup.add(createPipe(new THREE.Vector3(xFrontInner + 15, yMidRail, 0), new THREE.Vector3(xFrontInner + 15, yMidRail, -basketWidthZ), ladderPaintMat, 14));
-    const farFrontPost = new THREE.Mesh(sqPostGeo, ladderPaintMat);
-    farFrontPost.position.set(xFrontInner + 15, -450, -basketWidthZ);
-    const farRearPost = new THREE.Mesh(sqPostGeo, ladderPaintMat);
-    farRearPost.position.set(xRearInner - 15, -450, -basketWidthZ);
+    const farFrontPost = new THREE.Mesh(sqPostGeo, ladderPaintMat); farFrontPost.position.set(xFrontInner + 15, -450, -basketWidthZ);
+    const farRearPost = new THREE.Mesh(sqPostGeo, ladderPaintMat); farRearPost.position.set(xRearInner - 15, -450, -basketWidthZ);
     ladderGroup.add(farFrontPost, farRearPost);
     ladderGroup.add(createPipe(new THREE.Vector3(xRearInner, yTopRail, -basketWidthZ), new THREE.Vector3(xFrontInner + 15, yTopRail, -basketWidthZ), ladderPaintMat, 14));
     ladderGroup.add(createPipe(new THREE.Vector3(xRearInner, yMidRail, -basketWidthZ), new THREE.Vector3(xFrontInner + 15, yMidRail, -basketWidthZ), ladderPaintMat, 14));
@@ -1061,30 +1042,22 @@
     ladderGroup.add(createPipe(new THREE.Vector3(xRearInner - 15, -10, 0), new THREE.Vector3(xRearInner - 260, yPlatform, 0), ladderPaintMat, 13));
 
     const platMesh = new THREE.Mesh(new THREE.BoxGeometry(630, 22, basketWidthZ), ladderDarkMat);
-    platMesh.position.set(0, yPlatform, -basketWidthZ / 2);
-    platMesh.receiveShadow = true;
-    const toeSide = new THREE.Mesh(new THREE.BoxGeometry(630, 80, 6), ladderPaintMat);
-    toeSide.position.set(0, yPlatform + 40, -3);
-    const toeFront = new THREE.Mesh(new THREE.BoxGeometry(6, 80, basketWidthZ), ladderPaintMat);
-    toeFront.position.set(xFrontInner + 12, yPlatform + 40, -basketWidthZ / 2);
+    platMesh.position.set(0, yPlatform, -basketWidthZ / 2); platMesh.receiveShadow = true;
+    const toeSide = new THREE.Mesh(new THREE.BoxGeometry(630, 80, 6), ladderPaintMat); toeSide.position.set(0, yPlatform + 40, -3);
+    const toeFront = new THREE.Mesh(new THREE.BoxGeometry(6, 80, basketWidthZ), ladderPaintMat); toeFront.position.set(xFrontInner + 12, yPlatform + 40, -basketWidthZ / 2);
     ladderGroup.add(platMesh, toeSide, toeFront);
 
-    // Existing Black Scanner Holder in right 5 cm zone
+    // Existing Scanner Holder in right 5 cm zone
     const blkPlasticMat = new THREE.MeshStandardMaterial({ color: 0x181A1F, roughness: 0.38, metalness: 0.15 });
-    const scClamp = new THREE.Mesh(new THREE.BoxGeometry(44, 42, 42), blkPlasticMat);
-    scClamp.position.set(277, yTopRail + 4, 0);
-    const scTube = new THREE.Mesh(new THREE.CylinderGeometry(22, 20, 125, 24), blkPlasticMat);
-    scTube.position.set(277, yTopRail - 45, 22);
-    scTube.rotation.set(-0.25, 0, 0.35);
+    const scClamp = new THREE.Mesh(new THREE.BoxGeometry(44, 42, 42), blkPlasticMat); scClamp.position.set(277, yTopRail + 4, 0);
+    const scTube = new THREE.Mesh(new THREE.CylinderGeometry(22, 20, 125, 24), blkPlasticMat); scTube.position.set(277, yTopRail - 45, 22); scTube.rotation.set(-0.25, 0, 0.35);
     scannerGroup.add(scClamp, scTube);
 
     // Server Rack + Compute Shelf
     const rackX = 480;
     const rackPostMat = new THREE.MeshStandardMaterial({ color: 0x94A3B8, metalness: 0.72, roughness: 0.32 });
-    const rPost1 = new THREE.Mesh(new THREE.BoxGeometry(45, 1600, 45), rackPostMat);
-    rPost1.position.set(rackX, -300, -40);
-    const rPost2 = new THREE.Mesh(new THREE.BoxGeometry(45, 1600, 45), rackPostMat);
-    rPost2.position.set(rackX, -300, -560);
+    const rPost1 = new THREE.Mesh(new THREE.BoxGeometry(45, 1600, 45), rackPostMat); rPost1.position.set(rackX, -300, -40);
+    const rPost2 = new THREE.Mesh(new THREE.BoxGeometry(45, 1600, 45), rackPostMat); rPost2.position.set(rackX, -300, -560);
     const sidePanel = new THREE.Mesh(new THREE.BoxGeometry(380, 1600, 8), new THREE.MeshStandardMaterial({ color: 0x64748B, metalness: 0.6, roughness: 0.4, transparent: true, opacity: 0.85 }));
     sidePanel.position.set(rackX + 190, -300, -20);
     const csChassis = new THREE.Mesh(new THREE.BoxGeometry(360, 118, 480), new THREE.MeshStandardMaterial({ color: 0xCBD5E1, metalness: 0.82, roughness: 0.22 }));
@@ -1095,160 +1068,118 @@
     portStrip.position.set(rackX - 14, 72, -260);
     rackGroup.add(rPost1, rPost2, sidePanel, csChassis, csFace, portStrip);
 
-    // Shelf Assembly Coordinates
-    const xCantL = -235, xCantR = 235;
-    const xVertL = -185, xVertR = 185;
-    const xDiagL = -135, xDiagR = 135;
-    const yMidCross = -220;
-    const zProtrude = 350;
-    const xFrontBarEnd = 260;
+    // =========================================================================
+    // POCKET COORDINATES (490 x 440 x 110 mm, 5 cm margins left & right!)
+    // =========================================================================
+    const xBackPost = 195;   // Rear posts at X = ±195 mm (clear of standoff collars)
+    const xPocketOut = 240;  // Outer pocket frame at X = ±240 mm (50 mm clear to scanner & rear post!)
+    const zFront = 110;      // 110 mm outward projection from ladder side rail
 
-    // Step 1: Vertical Posts + Mid Crossbar
-    step1Group.add(createPipe(new THREE.Vector3(xVertL, yTopRail, 0), new THREE.Vector3(xVertL, yMidRail, 0), pipePrimaryMat));
-    step1Group.add(createPipe(new THREE.Vector3(xVertR, yTopRail, 0), new THREE.Vector3(xVertR, yMidRail, 0), pipePrimaryMat));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertL, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0)));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertR, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0)));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertL, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertR, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
-    step1Group.add(createPipe(new THREE.Vector3(xVertL, yMidCross, 0), new THREE.Vector3(xVertR, yMidCross, 0), pipePrimaryMat));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertL, yMidCross, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(1, 0, 0)));
-    step1Group.add(createHJ1(new THREE.Vector3(xVertR, yMidCross, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(-1, 0, 0)));
+    // STEP 1: Rear Vertical Posts (420 mm) + 4× HJ-1 on Top & Mid Rails
+    step1Group.add(createPipe(new THREE.Vector3(-xBackPost, yTopRail, 0), new THREE.Vector3(-xBackPost, yMidRail, 0), pipePrimaryMat));
+    step1Group.add(createPipe(new THREE.Vector3(xBackPost, yTopRail, 0), new THREE.Vector3(xBackPost, yMidRail, 0), pipePrimaryMat));
+    step1Group.add(createHJ1(new THREE.Vector3(-xBackPost, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0)));
+    step1Group.add(createHJ1(new THREE.Vector3(xBackPost, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0)));
+    step1Group.add(createHJ1(new THREE.Vector3(-xBackPost, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
+    step1Group.add(createHJ1(new THREE.Vector3(xBackPost, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
 
-    // Step 2: Outward Cantilever Frame
-    step2Group.add(createPipe(new THREE.Vector3(xCantL, yTopRail, 0), new THREE.Vector3(xCantL, yTopRail, zProtrude), pipePrimaryMat));
-    step2Group.add(createPipe(new THREE.Vector3(xCantR, yTopRail, 0), new THREE.Vector3(xCantR, yTopRail, zProtrude), pipePrimaryMat));
-    step2Group.add(createHJ1(new THREE.Vector3(xCantL, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
-    step2Group.add(createHJ1(new THREE.Vector3(xCantR, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
-    step2Group.add(createPipe(new THREE.Vector3(-xFrontBarEnd, yTopRail, zProtrude), new THREE.Vector3(xFrontBarEnd, yTopRail, zProtrude), pipePrimaryMat));
-    step2Group.add(createHJ1(new THREE.Vector3(xCantL, yTopRail, zProtrude), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, -1)));
-    step2Group.add(createHJ1(new THREE.Vector3(xCantR, yTopRail, zProtrude), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, -1)));
+    // STEP 2: 4× Standoff Arms (100 mm) at X = ±240 mm + 4× HJ-1
+    step2Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, 0), new THREE.Vector3(-xPocketOut, yTopRail, zFront), pipePrimaryMat));
+    step2Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, 0), new THREE.Vector3(xPocketOut, yTopRail, zFront), pipePrimaryMat));
+    step2Group.add(createPipe(new THREE.Vector3(-xPocketOut, yMidRail, 0), new THREE.Vector3(-xPocketOut, yMidRail, zFront), pipePrimaryMat));
+    step2Group.add(createPipe(new THREE.Vector3(xPocketOut, yMidRail, 0), new THREE.Vector3(xPocketOut, yMidRail, zFront), pipePrimaryMat));
 
-    // Step 3: Diagonal Truss Struts 32° + Red Caps
-    const dBtmL = new THREE.Vector3(xDiagL, yMidCross, 0);
-    const dTopL = new THREE.Vector3(xDiagL, yTopRail, zProtrude);
-    const dBtmR = new THREE.Vector3(xDiagR, yMidCross, 0);
-    const dTopR = new THREE.Vector3(xDiagR, yTopRail, zProtrude);
-    step3Group.add(createPipe(dBtmL, dTopL, pipeBraceMat));
-    step3Group.add(createPipe(dBtmR, dTopR, pipeBraceMat));
-    const vDiagUp = new THREE.Vector3().subVectors(dTopL, dBtmL).normalize();
-    const vDiagDn = vDiagUp.clone().negate();
-    step3Group.add(createHJ1(dBtmL, new THREE.Vector3(1, 0, 0), vDiagUp));
-    step3Group.add(createHJ1(dBtmR, new THREE.Vector3(1, 0, 0), vDiagUp));
-    step3Group.add(createHJ1(dTopL, new THREE.Vector3(1, 0, 0), vDiagDn));
-    step3Group.add(createHJ1(dTopR, new THREE.Vector3(1, 0, 0), vDiagDn));
-    step3Group.add(createEndCap(new THREE.Vector3(-xFrontBarEnd, yTopRail, zProtrude), new THREE.Vector3(-1, 0, 0)));
-    step3Group.add(createEndCap(new THREE.Vector3(xFrontBarEnd, yTopRail, zProtrude), new THREE.Vector3(1, 0, 0)));
+    step2Group.add(createHJ1(new THREE.Vector3(-xPocketOut, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
+    step2Group.add(createHJ1(new THREE.Vector3(xPocketOut, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
+    step2Group.add(createHJ1(new THREE.Vector3(-xPocketOut, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
+    step2Group.add(createHJ1(new THREE.Vector3(xPocketOut, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
 
-    // Step 4: Shelf Board 540×370×16 mm + ESD Mat + Rim
-    const boardW = 540, boardD = 370, boardThick = 16;
-    const yBoardCenter = yTopRail + R_pipe + 4 + boardThick / 2;
-    const zBoardCenter = zProtrude / 2;
-    const boardAssembly = new THREE.Group();
-    boardAssembly.position.set(0, yBoardCenter, zBoardCenter);
+    // STEP 3: Front Vertical + Horizontal Frame + 4× HJ-2 3D Corner Clamps
+    step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zFront), new THREE.Vector3(-xPocketOut, yMidRail, zFront), pipeBraceMat));
+    step3Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, zFront), new THREE.Vector3(xPocketOut, yMidRail, zFront), pipeBraceMat));
+    step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zFront), new THREE.Vector3(xPocketOut, yTopRail, zFront), pipeBraceMat));
+    step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yMidRail, zFront), new THREE.Vector3(xPocketOut, yMidRail, zFront), pipeBraceMat));
 
-    const dspMesh = new THREE.Mesh(new THREE.BoxGeometry(boardW, boardThick, boardD), woodMat);
-    dspMesh.castShadow = true; dspMesh.receiveShadow = true;
-    const matMesh = new THREE.Mesh(new THREE.BoxGeometry(boardW - 10, 3, boardD - 10), rubberMat);
-    matMesh.position.y = boardThick / 2 + 1.5;
-    matMesh.receiveShadow = true;
+    // 4× HJ-2 Corners at (±240, 0/-440, 110)
+    step3Group.add(createHJ2(new THREE.Vector3(-xPocketOut, yTopRail, zFront), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 0, -1)));
+    step3Group.add(createHJ2(new THREE.Vector3(xPocketOut, yTopRail, zFront), new THREE.Vector3(-1, 0, 0), new THREE.Vector3(0, -1, 0), new THREE.Vector3(0, 0, -1)));
+    step3Group.add(createHJ2(new THREE.Vector3(-xPocketOut, yMidRail, zFront), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, -1)));
+    step3Group.add(createHJ2(new THREE.Vector3(xPocketOut, yMidRail, zFront), new THREE.Vector3(-1, 0, 0), new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, 0, -1)));
 
-    const rimMetalMat = new THREE.MeshStandardMaterial({ color: 0x384256, metalness: 0.75, roughness: 0.28 });
-    const rimH = 28, rimT = 4;
-    const rimOuterZ = new THREE.Mesh(new THREE.BoxGeometry(boardW + rimT * 2, rimH, rimT), rimMetalMat);
-    rimOuterZ.position.set(0, 4, boardD / 2 + rimT / 2);
-    const rimLeftX = new THREE.Mesh(new THREE.BoxGeometry(rimT, rimH, boardD), rimMetalMat);
-    rimLeftX.position.set(-boardW / 2 - rimT / 2, 4, 0);
-    const rimRightX = new THREE.Mesh(new THREE.BoxGeometry(rimT, rimH, boardD), rimMetalMat);
-    rimRightX.position.set(boardW / 2 + rimT / 2, 4, 0);
-    boardAssembly.add(dspMesh, matMesh, rimOuterZ, rimLeftX, rimRightX);
+    // STEP 4: Pocket Enclosure Walls & Cushioned Bottom (Individually animated in Exploded View!)
+    const yMidPocket = -220;
+    const wallFront = new THREE.Mesh(new THREE.BoxGeometry(490, 440, 8), pocketWallMat);
+    wallFront.position.set(0, yMidPocket, zFront + 18); wallFront.castShadow = true; wallFront.receiveShadow = true;
 
-    const screwGeo = new THREE.CylinderGeometry(4.5, 4.5, 2, 14);
-    [[-235, -140], [-235, 0], [-235, 140], [235, -140], [235, 0], [235, 140]].forEach(([sx, sz]) => {
-      const sc = new THREE.Mesh(screwGeo, clampBoltMat);
-      sc.position.set(sx, boardThick / 2 + 3.2, sz);
-      boardAssembly.add(sc);
-    });
-    step4Group.add(boardAssembly);
+    const wallBack = new THREE.Mesh(new THREE.BoxGeometry(490, 440, 8), pocketWallMat);
+    wallBack.position.set(0, yMidPocket, 18); wallBack.castShadow = true; wallBack.receiveShadow = true;
 
-    // Step 5: Swiveling Tablet Stand + Service Tablet
-    const tabletPivotGroup = new THREE.Group();
-    const yStandBase = yBoardCenter + boardThick / 2 + 3;
-    tabletPivotGroup.position.set(0, yStandBase, zBoardCenter + 15);
-    step5Group.add(tabletPivotGroup);
+    const wallLeft = new THREE.Mesh(new THREE.BoxGeometry(8, 440, 110), pocketSideMat);
+    wallLeft.position.set(-245, yMidPocket, zFront / 2 + 10); wallLeft.castShadow = true;
 
-    const standMat = new THREE.MeshStandardMaterial({ color: 0x1E2430, metalness: 0.45, roughness: 0.42 });
-    const standAccentMat = new THREE.MeshStandardMaterial({ color: 0xF7A600, metalness: 0.55, roughness: 0.30 });
-    const standBase = new THREE.Mesh(new THREE.BoxGeometry(285, 10, 175), standMat);
-    standBase.position.y = 5; standBase.castShadow = true;
-    const frontLipBar = new THREE.Mesh(new THREE.BoxGeometry(285, 28, 16), standMat);
-    frontLipBar.position.set(0, 14, -80); frontLipBar.castShadow = true;
-    const lipGoldStripe = new THREE.Mesh(new THREE.BoxGeometry(286, 4, 17), standAccentMat);
-    lipGoldStripe.position.set(0, 26, -80);
+    const wallRight = new THREE.Mesh(new THREE.BoxGeometry(8, 440, 110), pocketSideMat);
+    wallRight.position.set(245, yMidPocket, zFront / 2 + 10); wallRight.castShadow = true;
 
-    const cheekShape = new THREE.Shape();
-    cheekShape.moveTo(-65, 10); cheekShape.lineTo(75, 10); cheekShape.lineTo(20, 138); cheekShape.lineTo(-10, 138); cheekShape.closePath();
-    const cheekGeo = new THREE.ExtrudeGeometry(cheekShape, { depth: 8, bevelEnabled: false });
-    cheekGeo.rotateY(Math.PI / 2);
-    const cheekL = new THREE.Mesh(cheekGeo, standMat); cheekL.position.set(-138, 0, 0); cheekL.castShadow = true;
-    const cheekR = new THREE.Mesh(cheekGeo, standMat); cheekR.position.set(130, 0, 0); cheekR.castShadow = true;
+    const floorGroup = new THREE.Group();
+    floorGroup.position.set(0, yMidRail + 18, zFront / 2 + 8);
+    const floorBoard = new THREE.Mesh(new THREE.BoxGeometry(480, 12, 92), pocketFloorMat);
+    floorBoard.castShadow = true; floorBoard.receiveShadow = true;
+    const foamPad = new THREE.Mesh(new THREE.BoxGeometry(470, 10, 82), rubberMat);
+    foamPad.position.y = 11;
+    floorGroup.add(floorBoard, foamPad);
 
-    const backRest = new THREE.Mesh(new THREE.BoxGeometry(276, 155, 8), standMat);
-    backRest.position.set(0, 74, -22); backRest.rotation.x = 0.48; backRest.castShadow = true;
-    tabletPivotGroup.add(standBase, frontLipBar, lipGoldStripe, cheekL, cheekR, backRest);
+    // Front Gold Safety Accent Trim Strip along top lip of pocket
+    const topLipTrim = new THREE.Mesh(
+      new THREE.BoxGeometry(492, 6, 10),
+      new THREE.MeshStandardMaterial({ color: 0xF7A600, metalness: 0.6, roughness: 0.3 })
+    );
+    topLipTrim.position.set(0, yTopRail - 2, zFront + 18);
 
-    const tabletHolder = new THREE.Group();
-    tabletHolder.position.set(0, 88, -32);
-    tabletHolder.rotation.x = 0.48;
-    tabletPivotGroup.add(tabletHolder);
+    step4Group.add(wallFront, wallBack, wallLeft, wallRight, floorGroup, topLipTrim);
 
-    const tabBody = new THREE.Mesh(new THREE.BoxGeometry(268, 178, 12), new THREE.MeshStandardMaterial({ color: 0x0F131A, roughness: 0.35, metalness: 0.25 }));
+    // STEP 5: ITEMS INSIDE POCKET (Rugged Tablet + A4 Clipboard + Screwdriver)
+    const itemsGroup = new THREE.Group();
+    step5Group.add(itemsGroup);
+
+    // 1. Rugged 11" Service Tablet sitting vertically inside left-center of pocket (peeking above top rim for easy grab!)
+    const tabletMesh = new THREE.Group();
+    tabletMesh.position.set(-85, -135, 62);
+    tabletMesh.rotation.x = 0.06;
+    const tabBody = new THREE.Mesh(new THREE.BoxGeometry(210, 290, 16), new THREE.MeshStandardMaterial({ color: 0x0F131A, roughness: 0.35, metalness: 0.25 }));
     tabBody.castShadow = true;
-    tabletHolder.add(tabBody);
+    const tabScreen = new THREE.Mesh(
+      new THREE.PlaneGeometry(186, 260),
+      new THREE.MeshBasicMaterial({ color: 0x0284C7 })
+    );
+    tabScreen.position.set(0, 0, -8.5);
+    tabScreen.rotation.y = Math.PI;
+    // Orange protective bumper corners on tablet
+    const bumperMat = new THREE.MeshStandardMaterial({ color: 0xF7A600, roughness: 0.4 });
+    const topBumper = new THREE.Mesh(new THREE.BoxGeometry(214, 14, 18), bumperMat);
+    topBumper.position.y = 142;
+    tabletMesh.add(tabBody, tabScreen, topBumper);
 
-    const screenMat = new THREE.MeshBasicMaterial();
-    const screenMesh = new THREE.Mesh(new THREE.PlaneGeometry(246, 158), screenMat);
-    screenMesh.position.set(0, 0, -6.5);
-    screenMesh.rotation.y = Math.PI;
-    tabletHolder.add(screenMesh);
+    // 2. A4 Inspection Clipboard next to tablet
+    const clipBoard = new THREE.Group();
+    clipBoard.position.set(110, -150, 48);
+    clipBoard.rotation.x = -0.05;
+    const cbPlate = new THREE.Mesh(new THREE.BoxGeometry(200, 295, 5), new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.6 }));
+    const cbPaper = new THREE.Mesh(new THREE.BoxGeometry(184, 265, 2), new THREE.MeshStandardMaterial({ color: 0xF8FAFC, roughness: 0.9 }));
+    cbPaper.position.z = 3.5;
+    const cbClip = new THREE.Mesh(new THREE.BoxGeometry(65, 24, 12), clampMetalMat);
+    cbClip.position.set(0, 134, 6);
+    clipBoard.add(cbPlate, cbPaper, cbClip);
 
-    tabletPivotGroup.rotation.y = THREE.MathUtils.degToRad(-15);
+    // 3. Insulated Screwdriver sitting on right side of pocket
+    const driverGroup = new THREE.Group();
+    driverGroup.position.set(215, -160, 76);
+    const drvHandle = new THREE.Mesh(new THREE.CylinderGeometry(11, 13, 105, 14), new THREE.MeshStandardMaterial({ color: 0xEF4444, roughness: 0.4 }));
+    drvHandle.position.y = 85;
+    const drvShaft = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 150, 10), clampBoltMat);
+    drvShaft.position.y = -40;
+    driverGroup.add(drvHandle, drvShaft);
 
-    function updateTabletScreenTexture() {
-      const s = I18N[currentLang].screen;
-      const c = document.createElement('canvas');
-      c.width = 512; c.height = 340;
-      const ctx = c.getContext('2d');
-      ctx.fillStyle = '#0B1220'; ctx.fillRect(0, 0, 512, 340);
-      ctx.fillStyle = '#162033'; ctx.fillRect(0, 0, 512, 38);
-      ctx.fillStyle = '#F7A600'; ctx.font = 'bold 15px sans-serif';
-      ctx.fillText(s.header, 14, 25);
-      ctx.fillStyle = '#0ECB81'; ctx.fillText('● ONLINE', 425, 25);
-
-      ctx.strokeStyle = '#26354D'; ctx.lineWidth = 2;
-      ctx.fillStyle = '#111A2B'; ctx.fillRect(16, 54, 226, 125); ctx.strokeRect(16, 54, 226, 125);
-      ctx.fillStyle = '#94A3B8'; ctx.font = '13px monospace'; ctx.fillText(s.slot, 28, 78);
-      ctx.fillStyle = '#0ECB81'; ctx.font = 'bold 25px monospace'; ctx.fillText('PASS 100%', 28, 114);
-      ctx.fillStyle = '#CBD5E1'; ctx.font = '12px sans-serif';
-      ctx.fillText('PSU 1/2: OK • Temp: 34°C', 28, 145);
-      ctx.fillText('BMC Link: 10GbE Up', 28, 165);
-
-      ctx.fillStyle = '#111A2B'; ctx.fillRect(258, 54, 238, 125); ctx.strokeRect(258, 54, 238, 125);
-      ctx.fillStyle = '#F7A600'; ctx.font = 'bold 13px sans-serif'; ctx.fillText(s.checklist, 270, 78);
-      ctx.fillStyle = '#E2E8F0'; ctx.font = '12.5px sans-serif';
-      ctx.fillText(s.c1, 270, 104);
-      ctx.fillText(s.c2, 270, 128);
-      ctx.fillText(s.c3, 270, 152);
-
-      ctx.fillStyle = '#0ECB81'; ctx.fillRect(16, 200, 480, 44);
-      ctx.fillStyle = '#06281B'; ctx.font = 'bold 17px sans-serif'; ctx.textAlign = 'center';
-      ctx.fillText(s.btn, 256, 228);
-      ctx.fillStyle = '#64748B'; ctx.font = '12px monospace';
-      ctx.fillText(s.footer, 256, 285);
-
-      if (screenMat.map) screenMat.map.dispose();
-      screenMat.map = new THREE.CanvasTexture(c);
-      screenMat.needsUpdate = true;
-    }
+    itemsGroup.add(tabletMesh, clipBoard, driverGroup);
 
     // =========================================================================
     // 6. LOCALIZED 3D DIMENSION CALLOUTS
@@ -1287,16 +1218,15 @@
         dimsGroup.add(sp);
       }
 
-      addDim(new THREE.Vector3(xFrontBarEnd, yTopRail, 0), new THREE.Vector3(xFrontBarEnd, yTopRail, zProtrude), new THREE.Vector3(55, 10, 0), d.out);
-      addDim(new THREE.Vector3(-boardW / 2, yBoardCenter, zProtrude), new THREE.Vector3(boardW / 2, yBoardCenter, zProtrude), new THREE.Vector3(0, 20, 65), d.width);
-      addDim(new THREE.Vector3(xVertL, yTopRail, 0), new THREE.Vector3(xVertL, yMidRail, 0), new THREE.Vector3(-85, 0, 0), d.rails);
-      addDim(new THREE.Vector3(xRearInner, yTopRail, 0), new THREE.Vector3(xCantL - 15, yTopRail, 0), new THREE.Vector3(0, 75, -20), d.left5, 0x0ECB81, '#0ECB81');
-      addDim(new THREE.Vector3(xCantR + 15, yTopRail, 0), new THREE.Vector3(xFrontInner, yTopRail, 0), new THREE.Vector3(0, 75, -20), d.right5, 0x0ECB81, '#0ECB81');
-      addDim(dBtmL, dTopL, new THREE.Vector3(-60, -25, 25), d.diag, 0x3888FF, '#60A5FA');
+      addDim(new THREE.Vector3(xPocketOut, yTopRail, 0), new THREE.Vector3(xPocketOut, yTopRail, zFront), new THREE.Vector3(45, 25, 0), d.depth);
+      addDim(new THREE.Vector3(-245, yMidRail, zFront + 22), new THREE.Vector3(245, yMidRail, zFront + 22), new THREE.Vector3(0, -55, 20), d.width);
+      addDim(new THREE.Vector3(-xPocketOut, yTopRail, zFront), new THREE.Vector3(-xPocketOut, yMidRail, zFront), new THREE.Vector3(-75, 0, 20), d.height, 0x3888FF, '#60A5FA');
+      addDim(new THREE.Vector3(xRearInner, yTopRail, 0), new THREE.Vector3(-xPocketOut - 15, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.left5, 0x0ECB81, '#0ECB81');
+      addDim(new THREE.Vector3(xPocketOut + 15, yTopRail, 0), new THREE.Vector3(xFrontInner, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.right5, 0x0ECB81, '#0ECB81');
     }
 
     // =========================================================================
-    // 7. CAMERA TWEEN & EXPLODED VIEW
+    // 7. CAMERA TWEEN, EXPLODED VIEW & WALL X-RAY
     // =========================================================================
     function tweenCamera(posObj, targetObj) {
       const sPos = camera.position.clone(), sTgt = controls.target.clone();
@@ -1317,24 +1247,41 @@
 
     function applyExplosion(pct) {
       const t = pct / 100;
-      step1Group.position.set(0, 0, -t * 70);
-      step2Group.position.set(0, t * 45, t * 90);
-      step3Group.position.set(0, -t * 55, t * 140);
-      boardAssembly.position.set(0, yBoardCenter + t * 155, zBoardCenter + t * 90);
-      tabletPivotGroup.position.set(0, yStandBase + t * 280, zBoardCenter + 15 + t * 90);
-      tabletHolder.position.set(0, 88 + t * 95, -32 - t * 35);
+      step2Group.position.set(0, 0, t * 50);
+      step3Group.position.set(0, 0, t * 110);
+      wallFront.position.set(0, yMidPocket, zFront + 18 + t * 185);
+      topLipTrim.position.set(0, yTopRail - 2 + t * 60, zFront + 18 + t * 185);
+      wallBack.position.set(0, yMidPocket, 18 - t * 45);
+      wallLeft.position.set(-245 - t * 90, yMidPocket, zFront / 2 + 10 + t * 90);
+      wallRight.position.set(245 + t * 90, yMidPocket, zFront / 2 + 10 + t * 90);
+      floorGroup.position.set(0, yMidRail + 18 - t * 95, zFront / 2 + 8 + t * 90);
+      itemsGroup.position.set(0, t * 230, t * 80);
+    }
+
+    let isXray = false;
+    function setXray(enabled) {
+      isXray = enabled;
+      document.getElementById('chkGhost').checked = enabled;
+      pocketWallMat.opacity = enabled ? 0.28 : 1.0;
+      pocketSideMat.opacity = enabled ? 0.35 : 1.0;
+      pocketWallMat.depthWrite = !enabled;
+      pocketSideMat.depthWrite = !enabled;
+      const btn = document.getElementById('btnQuickXray');
+      btn.className = enabled
+        ? 'pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg text-[11px] font-bold text-bybit-gold border-bybit-gold active-scale'
+        : 'pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg text-[11px] font-semibold text-slate-300 hover:text-white active-scale';
     }
 
     // =========================================================================
-    // 8. RENDER UI: STEPPER, BOM & LANGUAGE SWITCHER
+    // 8. UI RENDERING (STEPPER, BOM, I18N)
     // =========================================================================
     const stepCameras = [
-      { cam: { x: -780, y: 480, z: 920 }, target: { x: 0, y: -60, z: 120 } },  // 0: Overview
-      { cam: { x: -520, y: -60, z: 780 }, target: { x: 0, y: -200, z: 0 } },   // 1: Vertical legs
-      { cam: { x: -640, y: 340, z: 760 }, target: { x: 0, y: -40, z: 160 } },  // 2: Cantilever frame
-      { cam: { x: 1050, y: -40, z: 160 }, target: { x: 0, y: -90, z: 150 } },  // 3: Diagonal truss (side view!)
-      { cam: { x: -620, y: 460, z: 780 }, target: { x: 0, y: 20, z: 160 } },   // 4: Board & mat
-      { cam: { x: -720, y: 460, z: 860 }, target: { x: 0, y: 30, z: 140 } }    // 5: Tablet stand
+      { cam: { x: -720, y: 380, z: 880 }, target: { x: 0, y: -180, z: 40 } },   // 0: Overview
+      { cam: { x: -480, y: -120, z: 760 }, target: { x: 0, y: -220, z: 0 } },   // 1: Rear posts
+      { cam: { x: -640, y: 180, z: 740 }, target: { x: 0, y: -200, z: 50 } },   // 2: Standoffs
+      { cam: { x: -660, y: 200, z: 780 }, target: { x: 0, y: -200, z: 80 } },   // 3: Front HJ-2 frame
+      { cam: { x: -680, y: 260, z: 840 }, target: { x: 0, y: -200, z: 60 } },   // 4: Pocket walls
+      { cam: { x: -680, y: 380, z: 820 }, target: { x: 0, y: -150, z: 60 } }    // 5: Items inside
     ];
 
     function renderStepPanel() {
@@ -1422,14 +1369,13 @@
         `;
       }
 
-      // Update 3D group visibility for currentStep
-      const chkTab = document.getElementById('chkTablet').checked;
-      const maxVisible = (currentStep === 0) ? 5 : currentStep;
-      step1Group.visible = maxVisible >= 1;
-      step2Group.visible = maxVisible >= 2;
-      step3Group.visible = maxVisible >= 3;
-      step4Group.visible = maxVisible >= 4;
-      step5Group.visible = (maxVisible >= 5) && chkTab;
+      const chkItems = document.getElementById('chkItems').checked;
+      const maxVis = (currentStep === 0) ? 5 : currentStep;
+      step1Group.visible = maxVis >= 1;
+      step2Group.visible = maxVis >= 2;
+      step3Group.visible = maxVis >= 3;
+      step4Group.visible = maxVis >= 4;
+      step5Group.visible = (maxVis >= 5) && chkItems;
     }
 
     function renderBOMPanel() {
@@ -1440,7 +1386,6 @@
             <h2 class="text-sm sm:text-base font-bold text-white">${b.title}</h2>
             <p class="text-xs text-bybit-gray mt-0.5">${b.sub}</p>
           </div>
-
           <div class="space-y-2">
             <div class="flex items-center justify-between">
               <span class="font-bold text-bybit-gold uppercase tracking-wider text-[11px]">${b.sec1}</span>
@@ -1449,20 +1394,10 @@
             <div class="rounded-xl border border-bybit-border overflow-hidden">
               <table class="w-full text-left border-collapse">
                 <thead class="bg-bybit-card text-bybit-gray text-[10px] uppercase">
-                  <tr>
-                    <th class="p-2">${b.colPart}</th>
-                    <th class="p-2 whitespace-nowrap">${b.colLen}</th>
-                    <th class="p-2 whitespace-nowrap">${b.colQty}</th>
-                  </tr>
+                  <tr><th class="p-2">${b.colPart}</th><th class="p-2 whitespace-nowrap">${b.colLen}</th><th class="p-2 whitespace-nowrap">${b.colQty}</th></tr>
                 </thead>
                 <tbody class="divide-y divide-bybit-border">
-                  ${b.pipes.map(p => `
-                    <tr class="hover:bg-white/5">
-                      <td class="p-2 text-slate-200">${p.n}</td>
-                      <td class="p-2 font-mono font-bold text-bybit-gold whitespace-nowrap">${p.l}</td>
-                      <td class="p-2 font-mono text-white whitespace-nowrap">${p.q}</td>
-                    </tr>
-                  `).join('')}
+                  ${b.pipes.map(p => `<tr class="hover:bg-white/5"><td class="p-2 text-slate-200">${p.n}</td><td class="p-2 font-mono font-bold text-bybit-gold whitespace-nowrap">${p.l}</td><td class="p-2 font-mono text-white whitespace-nowrap">${p.q}</td></tr>`).join('')}
                 </tbody>
               </table>
             </div>
@@ -1471,31 +1406,17 @@
               <span class="text-bybit-gray">${b.totalLabel}</span>
               <span class="font-mono font-bold text-emerald-400">${b.totalVal}</span>
             </div>
-            <div class="p-2.5 rounded-xl bg-bybit-gold/10 border border-bybit-gold/30 text-[11px] text-slate-200">
-              ${b.orderTip}
-            </div>
+            <div class="p-2.5 rounded-xl bg-bybit-gold/10 border border-bybit-gold/30 text-[11px] text-slate-200">${b.orderTip}</div>
           </div>
-
           <div class="space-y-2">
             <div class="font-bold text-bybit-gold uppercase tracking-wider text-[11px]">${b.sec2}</div>
             <div class="space-y-2">
-              ${b.items.map(it => `
-                <div class="bybit-card p-2.5 rounded-xl">
-                  <div class="flex items-center justify-between gap-2">
-                    <span class="font-bold text-white">${it.n}</span>
-                    <span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold whitespace-nowrap">${it.q}</span>
-                  </div>
-                  <p class="text-[11px] text-bybit-gray mt-1">${it.d}</p>
-                </div>
-              `).join('')}
+              ${b.items.map(it => `<div class="bybit-card p-2.5 rounded-xl"><div class="flex items-center justify-between gap-2"><span class="font-bold text-white">${it.n}</span><span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold whitespace-nowrap">${it.q}</span></div><p class="text-[11px] text-bybit-gray mt-1">${it.d}</p></div>`).join('')}
             </div>
           </div>
-
           <div class="space-y-1.5">
             <div class="font-bold text-bybit-gold uppercase tracking-wider text-[11px]">${b.sec3}</div>
-            <ul class="bybit-card p-3 rounded-xl space-y-1 text-[11px] text-slate-300">
-              ${b.tools.map(tl => `<li>• ${tl}</li>`).join('')}
-            </ul>
+            <ul class="bybit-card p-3 rounded-xl space-y-1 text-[11px] text-slate-300">${b.tools.map(tl => `<li>• ${tl}</li>`).join('')}</ul>
           </div>
         </div>
       `;
@@ -1526,14 +1447,15 @@
       document.getElementById('layersBtnLabel').textContent = t.layersBtnLabel;
       document.getElementById('layersDropdownTitle').textContent = t.layersDropdownTitle;
       document.getElementById('lblDims').textContent = t.lblDims;
+      document.getElementById('lblGhost').textContent = t.lblGhost;
       document.getElementById('lblLadder').textContent = t.lblLadder;
-      document.getElementById('lblTablet').textContent = t.lblTablet;
+      document.getElementById('lblItems').textContent = t.lblItems;
       document.getElementById('lblRack').textContent = t.lblRack;
       document.getElementById('lblScanner').textContent = t.lblScanner;
       document.getElementById('lblPipeColor').textContent = t.lblPipeColor;
       document.querySelectorAll('.pipe-color-btn').forEach((b, i) => b.textContent = t.pipeColors[i]);
       document.getElementById('lblExplode').textContent = t.lblExplode;
-      document.getElementById('lblSwivel').textContent = t.lblSwivel;
+      document.getElementById('lblQuickXray').textContent = t.lblQuickXray;
       document.getElementById('tabStepper').textContent = t.tabStepper;
       document.getElementById('tabBOM').textContent = t.tabBOM;
 
@@ -1542,7 +1464,7 @@
       document.getElementById('svgTitleSide').textContent = t.modal.side;
       document.getElementById('svgTitleTop').textContent = t.modal.top;
       document.getElementById('hjSpecTitle').textContent = t.modal.hjTitle;
-      document.getElementById('hjSpecDesc').textContent = t.modal.hjDesc;
+      document.getElementById('hjSpecDesc').innerHTML = t.modal.hjDesc;
 
       document.querySelectorAll('.lang-btn').forEach(btn => {
         const active = btn.dataset.lang === lang;
@@ -1552,7 +1474,6 @@
       });
 
       rebuildDimensions();
-      updateTabletScreenTexture();
       renderStepPanel();
       renderBOMPanel();
     }
@@ -1567,33 +1488,25 @@
     }
 
     function switchSidebarTab(which) {
-      const tabS = document.getElementById('tabStepper');
-      const tabB = document.getElementById('tabBOM');
-      const panS = document.getElementById('panelStepper');
-      const panB = document.getElementById('panelBOM');
+      const tabS = document.getElementById('tabStepper'), tabB = document.getElementById('tabBOM');
+      const panS = document.getElementById('panelStepper'), panB = document.getElementById('panelBOM');
       if (which === 'stepper') {
         tabS.className = 'flex-1 min-h-[36px] py-1.5 px-2 rounded-lg bybit-btn-gold text-xs font-bold transition active-scale flex items-center justify-center';
         tabB.className = 'flex-1 min-h-[36px] py-1.5 px-2 rounded-lg bg-bybit-card hover:bg-slate-800 text-bybit-gray hover:text-white font-medium text-xs transition active-scale flex items-center justify-center';
-        panS.classList.remove('hidden');
-        panB.classList.add('hidden');
+        panS.classList.remove('hidden'); panB.classList.add('hidden');
       } else {
         tabB.className = 'flex-1 min-h-[36px] py-1.5 px-2 rounded-lg bybit-btn-gold text-xs font-bold transition active-scale flex items-center justify-center';
         tabS.className = 'flex-1 min-h-[36px] py-1.5 px-2 rounded-lg bg-bybit-card hover:bg-slate-800 text-bybit-gray hover:text-white font-medium text-xs transition active-scale flex items-center justify-center';
-        panB.classList.remove('hidden');
-        panS.classList.add('hidden');
+        panB.classList.remove('hidden'); panS.classList.add('hidden');
       }
     }
 
     // =========================================================================
-    // 9. EVENT LISTENERS & MOBILE LAYOUT MODES
+    // 9. EVENT LISTENERS
     // =========================================================================
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
-    });
-
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => applyLanguage(btn.dataset.lang)));
     document.getElementById('tabStepper').addEventListener('click', () => switchSidebarTab('stepper'));
     document.getElementById('tabBOM').addEventListener('click', () => switchSidebarTab('bom'));
-
     document.getElementById('btnPrev').addEventListener('click', () => goToStep(currentStep - 1));
     document.getElementById('btnNext').addEventListener('click', () => {
       if (currentStep === 0) goToStep(1);
@@ -1601,77 +1514,47 @@
       else goToStep(0);
     });
     document.getElementById('btnOverviewMode').addEventListener('click', () => goToStep(0));
-    document.querySelectorAll('.goto-pill').forEach(p => {
-      p.addEventListener('click', () => goToStep(parseInt(p.dataset.goto)));
-    });
+    document.querySelectorAll('.goto-pill').forEach(p => p.addEventListener('click', () => goToStep(parseInt(p.dataset.goto))));
 
-    // Dropdowns
-    const viewsDropdown = document.getElementById('viewsDropdown');
-    const layersDropdown = document.getElementById('layersDropdown');
-    document.getElementById('btnToggleViews').addEventListener('click', e => {
-      e.stopPropagation();
-      viewsDropdown.classList.toggle('hidden');
-      layersDropdown.classList.add('hidden');
-    });
+    const viewsDropdown = document.getElementById('viewsDropdown'), layersDropdown = document.getElementById('layersDropdown');
+    document.getElementById('btnToggleViews').addEventListener('click', e => { e.stopPropagation(); viewsDropdown.classList.toggle('hidden'); layersDropdown.classList.add('hidden'); });
     document.getElementById('btnCloseViews').addEventListener('click', () => viewsDropdown.classList.add('hidden'));
-    document.getElementById('btnToggleLayers').addEventListener('click', e => {
-      e.stopPropagation();
-      layersDropdown.classList.toggle('hidden');
-      viewsDropdown.classList.add('hidden');
-    });
+    document.getElementById('btnToggleLayers').addEventListener('click', e => { e.stopPropagation(); layersDropdown.classList.toggle('hidden'); viewsDropdown.classList.add('hidden'); });
     document.getElementById('btnCloseLayers').addEventListener('click', () => layersDropdown.classList.add('hidden'));
     window.addEventListener('click', e => {
       if (!viewsDropdown.contains(e.target)) viewsDropdown.classList.add('hidden');
       if (!layersDropdown.contains(e.target)) layersDropdown.classList.add('hidden');
     });
 
-    // Camera Presets
     document.querySelectorAll('.cam-opt').forEach(btn => {
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.cam-opt').forEach(b => {
-          b.className = 'cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition';
-        });
+        document.querySelectorAll('.cam-opt').forEach(b => b.className = 'cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition');
         btn.className = 'cam-opt w-full text-left px-2.5 py-1.5 rounded-lg bg-bybit-gold/15 text-bybit-gold font-semibold transition hover:bg-bybit-gold/25';
         viewsDropdown.classList.add('hidden');
         const mode = btn.dataset.cam;
-        if (mode === 'iso') tweenCamera({ x: -780, y: 480, z: 920 }, { x: 0, y: -60, z: 120 });
-        else if (mode === 'sketchSide') tweenCamera({ x: 1080, y: -40, z: 160 }, { x: 0, y: -90, z: 150 });
-        else if (mode === 'photo1') tweenCamera({ x: -240, y: 520, z: -620 }, { x: 30, y: -40, z: 140 });
-        else if (mode === 'photo2') tweenCamera({ x: -520, y: 120, z: 980 }, { x: 80, y: -120, z: 0 });
-        else if (mode === 'top') tweenCamera({ x: 0, y: 1250, z: 130 }, { x: 0, y: 0, z: 120 });
+        if (mode === 'iso') tweenCamera({ x: -720, y: 380, z: 880 }, { x: 0, y: -180, z: 40 });
+        else if (mode === 'sketchSide') tweenCamera({ x: 1020, y: -150, z: 80 }, { x: 0, y: -200, z: 40 });
+        else if (mode === 'photo1') tweenCamera({ x: -240, y: 500, z: -600 }, { x: 20, y: -150, z: 60 });
+        else if (mode === 'photo2') tweenCamera({ x: -120, y: -120, z: 960 }, { x: 0, y: -200, z: 40 });
+        else if (mode === 'top') tweenCamera({ x: 0, y: 1200, z: 60 }, { x: 0, y: 0, z: 50 });
       });
     });
 
-    // Zoom & Reset Buttons
-    document.getElementById('btnResetCam').addEventListener('click', () => tweenCamera({ x: -780, y: 480, z: 920 }, { x: 0, y: -60, z: 120 }));
-    document.getElementById('btnZoomIn').addEventListener('click', () => {
-      camera.position.lerp(controls.target, 0.18);
-      controls.update();
-    });
-    document.getElementById('btnZoomOut').addEventListener('click', () => {
-      const dir = camera.position.clone().sub(controls.target).multiplyScalar(1.22);
-      camera.position.copy(controls.target).add(dir);
-      controls.update();
-    });
+    document.getElementById('btnResetCam').addEventListener('click', () => tweenCamera({ x: -720, y: 380, z: 880 }, { x: 0, y: -180, z: 40 }));
+    document.getElementById('btnZoomIn').addEventListener('click', () => { camera.position.lerp(controls.target, 0.18); controls.update(); });
+    document.getElementById('btnZoomOut').addEventListener('click', () => { const dir = camera.position.clone().sub(controls.target).multiplyScalar(1.22); camera.position.copy(controls.target).add(dir); controls.update(); });
 
-    // Sliders
     document.getElementById('explodedSlider').addEventListener('input', e => {
       const v = parseInt(e.target.value);
       document.getElementById('explodedVal').textContent = `${v}%`;
       applyExplosion(v);
     });
-    document.getElementById('tabletSwivelSlider').addEventListener('input', e => {
-      const deg = parseInt(e.target.value);
-      tabletPivotGroup.rotation.y = THREE.MathUtils.degToRad(-deg);
-      document.getElementById('swivelVal').textContent = `${deg}°`;
-    });
 
-    // Layers & Pipe Theme
+    document.getElementById('chkGhost').addEventListener('change', e => setXray(e.target.checked));
+    document.getElementById('btnQuickXray').addEventListener('click', () => setXray(!isXray));
     document.getElementById('chkDims').addEventListener('change', e => dimsGroup.visible = e.target.checked);
     document.getElementById('chkLadder').addEventListener('change', e => ladderGroup.visible = e.target.checked);
-    document.getElementById('chkTablet').addEventListener('change', e => {
-      step5Group.visible = e.target.checked && (currentStep === 0 || currentStep === 5);
-    });
+    document.getElementById('chkItems').addEventListener('change', e => { step5Group.visible = e.target.checked && (currentStep === 0 || currentStep === 5); });
     document.getElementById('chkRack').addEventListener('change', e => rackGroup.visible = e.target.checked);
     document.getElementById('chkScanner').addEventListener('change', e => scannerGroup.visible = e.target.checked);
 
@@ -1693,29 +1576,19 @@
       });
     });
 
-    // Mobile Mode Bar (Split / 3D / Guide)
-    const viewport3D = document.getElementById('viewport3D');
-    const sidebarPanel = document.getElementById('sidebarPanel');
+    const viewport3D = document.getElementById('viewport3D'), sidebarPanel = document.getElementById('sidebarPanel');
     function setMobileMode(mode) {
-      const bSplit = document.getElementById('btnModeSplit');
-      const b3D = document.getElementById('btnMode3D');
-      const bSteps = document.getElementById('btnModeSteps');
+      const bSplit = document.getElementById('btnModeSplit'), b3D = document.getElementById('btnMode3D'), bSteps = document.getElementById('btnModeSteps');
       [bSplit, b3D, bSteps].forEach(b => b.className = 'flex-1 py-1.5 px-2 rounded-lg text-xs font-medium transition flex items-center justify-center gap-1 bg-bybit-card text-bybit-gray hover:text-white active-scale');
-
       if (mode === 'split') {
         bSplit.className = 'flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1 bybit-btn-gold active-scale';
-        viewport3D.classList.remove('hidden', 'h-full');
-        viewport3D.classList.add('h-[44dvh]');
-        sidebarPanel.classList.remove('hidden');
+        viewport3D.classList.remove('hidden', 'h-full'); viewport3D.classList.add('h-[44dvh]'); sidebarPanel.classList.remove('hidden');
       } else if (mode === '3d') {
         b3D.className = 'flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1 bybit-btn-gold active-scale';
-        viewport3D.classList.remove('hidden', 'h-[44dvh]');
-        viewport3D.classList.add('h-full', 'flex-1');
-        sidebarPanel.classList.add('hidden');
+        viewport3D.classList.remove('hidden', 'h-[44dvh]'); viewport3D.classList.add('h-full', 'flex-1'); sidebarPanel.classList.add('hidden');
       } else {
         bSteps.className = 'flex-1 py-1.5 px-2 rounded-lg text-xs font-bold transition flex items-center justify-center gap-1 bybit-btn-gold active-scale';
-        viewport3D.classList.add('hidden');
-        sidebarPanel.classList.remove('hidden');
+        viewport3D.classList.add('hidden'); sidebarPanel.classList.remove('hidden');
       }
       setTimeout(resizeRenderer, 50);
     }
@@ -1723,7 +1596,6 @@
     document.getElementById('btnMode3D').addEventListener('click', () => setMobileMode('3d'));
     document.getElementById('btnModeSteps').addEventListener('click', () => setMobileMode('steps'));
 
-    // Modal Drawing
     const modalDrawing = document.getElementById('modalDrawing');
     document.getElementById('btnOpenDrawing').addEventListener('click', () => modalDrawing.classList.remove('hidden'));
     document.getElementById('btnCloseDrawing').addEventListener('click', () => modalDrawing.classList.add('hidden'));
@@ -1746,7 +1618,6 @@
     window.addEventListener('resize', resizeRenderer);
     new ResizeObserver(resizeRenderer).observe(container);
 
-    // Initialize in Polish (PL) by default!
     applyLanguage(currentLang);
     resizeRenderer();
 
