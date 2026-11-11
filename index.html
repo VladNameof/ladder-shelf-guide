@@ -155,7 +155,7 @@
         <div class="pointer-events-auto bybit-panel px-2.5 py-1.5 rounded-lg text-xs shadow-xl max-w-[210px] sm:max-w-xs">
           <div class="font-bold text-white flex items-center gap-1.5 truncate">
             <span class="w-2 h-2 rounded-full bg-bybit-gold animate-pulse flex-shrink-0"></span>
-            <span id="hudStatus" class="truncate text-[11px] sm:text-xs">Kieszeń: góra przy poręczy, dół 15°</span>
+            <span id="hudStatus" class="truncate text-[11px] sm:text-xs">Kieszeń: pionowy tył, wlot 115 mm, skos 15°</span>
           </div>
           <div id="hudRotate" class="hidden md:block text-[10px] text-bybit-gray mt-0.5">
             • Obrót: <strong>LPM / 1 palec</strong> | Przybliżenie: <strong>kółko / 2 palce</strong>
@@ -165,10 +165,10 @@
         <!-- Right Menus: Angle Switcher + Camera Views + Layers/Color -->
         <div class="pointer-events-auto flex items-center gap-1.5 flex-shrink-0">
 
-          <!-- Interactive Angle Switcher Button (15° vs 0°) -->
-          <button id="btnToggleAngle" class="bybit-panel px-2.5 py-1.5 rounded-lg text-xs font-semibold text-bybit-gold border border-bybit-gold/40 flex items-center gap-1.5 shadow-lg active-scale" title="Przełącz kąt nachylenia dołu (15° vs 0° pion)">
+          <!-- Interactive Side Profile / 3D Isometric View Switcher -->
+          <button id="btnToggleSideView" class="bybit-panel px-2.5 py-1.5 rounded-lg text-xs font-semibold text-bybit-gold border border-bybit-gold/40 flex items-center gap-1.5 shadow-lg active-scale" title="Szybki przełącznik: profil trójkątny z boku vs izometria 3D">
             <span>📐</span>
-            <span id="lblAngleToggle">Dół: <strong>Kąt 15°</strong></span>
+            <span id="lblSideViewToggle">Profil: <strong>Bok (trójkąt)</strong></span>
           </button>
 
           <!-- Camera Presets Dropdown -->
@@ -189,7 +189,7 @@
                 🖐️ <span id="camErgo">Widok operatora (góra przy dłoni)</span>
               </button>
               <button data-cam="sketchSide" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
-                ✏️ <span id="camSide">Profil z boku (dół pod kątem 15°)</span>
+                ✏️ <span id="camSide">Profil trójkątny z boku (pionowy tył, skos 15°)</span>
               </button>
               <button data-cam="photo1" class="cam-opt w-full text-left px-2.5 py-1.5 rounded-lg text-slate-300 hover:bg-bybit-card hover:text-white transition">
                 👷 <span id="camInside">Widok z podestu drabiny</span>
@@ -332,16 +332,16 @@
     <div class="bybit-panel w-full max-w-3xl rounded-2xl border border-bybit-border p-4 sm:p-6 max-h-[90vh] overflow-y-auto custom-scroll">
       <div class="flex items-center justify-between pb-3 border-b border-bybit-border">
         <div>
-          <h3 id="modalDrawTitle" class="text-sm sm:text-base font-bold text-white">Rysunek techniczny: góra przy poręczy, dół pod kątem 15°</h3>
-          <p id="modalDrawSub" class="text-xs text-bybit-gray">Przekrój boczny z pochyleniem dołu, odstępy 5 cm, wektor sięgania i specyfikacja zacisków</p>
+          <h3 id="modalDrawTitle" class="text-sm sm:text-base font-bold text-white">Rysunek techniczny: profil trójkątny (pionowy tył, wlot 115 mm, skos 15°)</h3>
+          <p id="modalDrawSub" class="text-xs text-bybit-gray">Przekrój boczny klina, odstępy 5 cm, wektor sięgania i specyfikacja zacisków</p>
         </div>
         <button id="btnCloseDrawing" class="w-8 h-8 rounded-lg bg-bybit-card text-bybit-gray hover:text-white border border-bybit-border flex items-center justify-center font-bold">✕</button>
       </div>
 
       <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- SVG 1: Side View (Top Close to Ladder Rail, Bottom Angled 15° Outward) -->
+        <!-- SVG 1: Side View (Vertical Rear at Ladder, 115 mm Mouth, 15° Front Hypotenuse) -->
         <div class="bybit-card rounded-xl p-3">
-          <div id="svgTitleSide" class="text-xs font-bold text-bybit-gold mb-2">1. Przekrój z boku: Góra przy poręczy (30 mm), dół pod kątem 15° (145 mm)</div>
+          <div id="svgTitleSide" class="text-xs font-bold text-bybit-gold mb-2">1. Przekrój z boku: Pionowy tył (30 mm), wlot 115 mm, przedni skos 15° (455 mm)</div>
           <svg viewBox="0 0 340 260" class="w-full h-auto bg-[#0D1119] rounded-lg border border-bybit-border">
             <!-- Ladder vertical post & rails -->
             <rect x="70" y="30" width="14" height="215" fill="#CBD5E1" opacity="0.25"/>
@@ -354,52 +354,54 @@
             <rect x="77" y="45" width="22" height="10" rx="3" fill="#82182B"/>
             <circle cx="77" cy="50" r="8" fill="#505A67" stroke="#F7A600" stroke-width="1.5"/>
 
-            <!-- Bottom Standoff 145mm (WYSUNIĘTY DO WIERZCHOŁKA TRÓJKĄTA!) -->
-            <rect x="77" y="190" width="85" height="10" rx="3" fill="#82182B"/>
+            <!-- Bottom Standoff 30mm (RÓWNIEŻ PRZY PORĘCZY - WIERZCHOŁEK KLINA!) -->
+            <rect x="77" y="190" width="22" height="10" rx="3" fill="#82182B"/>
             <circle cx="77" cy="195" r="8" fill="#505A67" stroke="#F7A600" stroke-width="1.5"/>
 
-            <!-- Triangular Pocket Profile: Top (99,50) to (162,50) to Apex (162,195) -->
+            <!-- Triangular Pocket Profile: Top Rear (99,50), Top Front (162,50), Bottom Apex (99,195) -->
             <!-- Shaded triangular side wall -->
-            <polygon points="99,50 162,50 162,195" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" stroke-width="1.5"/>
+            <polygon points="99,50 162,50 99,195" fill="rgba(56,189,248,0.12)" stroke="#38BDF8" stroke-width="1.5"/>
 
+            <!-- Rear vertical pipe (440mm along ladder) -->
+            <line x1="99" y1="50" x2="99" y2="195" stroke="#82182B" stroke-width="10" stroke-linecap="round"/>
             <!-- Top horizontal mouth pipe (115mm) -->
             <line x1="99" y1="50" x2="162" y2="50" stroke="#9B1C33" stroke-width="10" stroke-linecap="round"/>
-            <!-- Front vertical pipe (440mm) -->
-            <line x1="162" y1="50" x2="162" y2="195" stroke="#9B1C33" stroke-width="10" stroke-linecap="round"/>
-            <!-- Rear inclined pipe (Length ~455mm at 15° hypotenuse) -->
-            <line x1="99" y1="50" x2="162" y2="195" stroke="#82182B" stroke-width="10" stroke-linecap="round"/>
+            <!-- Front inclined pipe (Length ~455mm at 15° hypotenuse) -->
+            <line x1="162" y1="50" x2="99" y2="195" stroke="#9B1C33" stroke-width="10" stroke-linecap="round"/>
 
             <!-- HJ-2 3D Corner at top front -->
             <circle cx="162" cy="50" r="8.5" fill="#505A67" stroke="#F7A600" stroke-width="2"/>
-            <!-- Bottom apex joint -->
-            <circle cx="162" cy="195" r="8.5" fill="#505A67" stroke="#F7A600" stroke-width="2"/>
+            <!-- HJ-1 at top rear -->
+            <circle cx="99" cy="50" r="8.5" fill="#505A67" stroke="#F7A600" stroke-width="2"/>
+            <!-- Bottom apex joint at ladder -->
+            <circle cx="99" cy="195" r="8.5" fill="#505A67" stroke="#F7A600" stroke-width="2"/>
 
             <!-- Cushioned V-Apex at Bottom -->
-            <line x1="156" y1="190" x2="168" y2="190" stroke="#C47B35" stroke-width="6" stroke-linecap="round"/>
+            <line x1="93" y1="190" x2="105" y2="190" stroke="#C47B35" stroke-width="6" stroke-linecap="round"/>
 
-            <!-- Tablet inside triangular pocket (leaning on 15° hypotenuse into V-apex) -->
-            <polygon points="107,32 119,32 162,185 152,185" fill="#0EA5E9" stroke="#0284C7" stroke-width="1.5"/>
+            <!-- Tablet inside triangular pocket (resting in the wedge) -->
+            <polygon points="107,35 119,35 106,185 99,185" fill="#0EA5E9" stroke="#0284C7" stroke-width="1.5"/>
             <!-- Orange bumper on top edge -->
-            <rect x="105" y="26" width="16" height="6" rx="2" fill="#F7A600"/>
+            <rect x="105" y="29" width="16" height="6" rx="2" fill="#F7A600"/>
 
-            <!-- 15° Angle Arc & Annotation from top vertical reference -->
-            <line x1="99" y1="50" x2="99" y2="195" stroke="#64748B" stroke-width="1.5" stroke-dasharray="4,4"/>
-            <path d="M 99 135 A 85 85 0 0 0 120 133" fill="none" stroke="#F7A600" stroke-width="2.5"/>
-            <text x="135" y="142" fill="#F7A600" font-size="12" font-weight="bold" font-family="monospace">15°</text>
+            <!-- 15° Wedge Angle Arc at Bottom Apex -->
+            <path d="M 99 155 A 40 40 0 0 1 109 160" fill="none" stroke="#F7A600" stroke-width="2.5"/>
+            <text x="115" y="168" fill="#F7A600" font-size="12" font-weight="bold" font-family="monospace">15°</text>
 
-            <!-- Pull-out Vector Arrow right at Handrail -->
-            <line x1="113" y1="42" x2="100" y2="-5" stroke="#10B981" stroke-width="2.5" stroke-dasharray="4,3"/>
-            <polygon points="100,-5 98,6 106,3" fill="#10B981"/>
-            <text x="175" y="15" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">Zew 115 mm przy poręczy</text>
-            <text x="175" y="27" fill="#6EE7B7" font-size="9" text-anchor="middle">(swobodne wyjmowanie)</text>
+            <!-- Pull-out Vector Arrow out of Mouth -->
+            <line x1="130" y1="42" x2="148" y2="-5" stroke="#10B981" stroke-width="2.5" stroke-dasharray="4,3"/>
+            <polygon points="148,-5 142,6 150,2" fill="#10B981"/>
+            <text x="180" y="15" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">Wlot 115 mm przy poręczy</text>
+            <text x="180" y="27" fill="#6EE7B7" font-size="9" text-anchor="middle">(swobodne sięganie dłonią)</text>
 
             <!-- Labels -->
             <text x="40" y="118" fill="#CBD5E1" font-size="10" font-weight="bold" text-anchor="middle">Bok drabiny</text>
             <text x="40" y="132" fill="#94A3B8" font-size="9" text-anchor="middle">(2 poręcze)</text>
-            <text x="268" y="125" fill="#F7A600" font-size="11" font-weight="bold" text-anchor="middle">Trójkąt (klin)</text>
-            <text x="268" y="140" fill="#CBD5E1" font-size="10" font-family="monospace" text-anchor="middle">440 mm wys.</text>
-            <text x="180" y="222" fill="#38BDF8" font-size="10" font-family="monospace" text-anchor="middle">Wierzchołek: 145 mm</text>
-            <text x="115" y="70" fill="#ADB5BD" font-size="8" font-family="monospace">góra 30 mm</text>
+            <text x="268" y="110" fill="#F7A600" font-size="11" font-weight="bold" text-anchor="middle">Trójkątny klin</text>
+            <text x="268" y="125" fill="#CBD5E1" font-size="10" font-family="monospace" text-anchor="middle">Pionowy tył 440 mm</text>
+            <text x="268" y="140" fill="#94A3B8" font-size="9" font-family="monospace" text-anchor="middle">Skos przedni 455 mm (15°)</text>
+            <text x="140" y="222" fill="#38BDF8" font-size="10" font-family="monospace" text-anchor="middle">Wierzchołek przy drabinie (30 mm)</text>
+            <text x="110" y="70" fill="#ADB5BD" font-size="8" font-family="monospace">wsporniki: góra i dół po 30 mm</text>
           </svg>
         </div>
 
@@ -425,18 +427,18 @@
               <text x="48" y="28" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
               <line x1="260" y1="34" x2="284" y2="34" stroke="#10B981" stroke-width="2"/>
               <text x="272" y="28" fill="#10B981" font-size="10" font-weight="bold" text-anchor="middle">5 cm</text>
-              <text x="160" y="94" fill="#F7A600" font-size="10" font-family="monospace" text-anchor="middle">Góra przy poręczy: 30 mm • Dół pod kątem: 145 mm</text>
+              <text x="160" y="94" fill="#F7A600" font-size="10" font-family="monospace" text-anchor="middle">Góra i dół przy poręczach: 30 mm • Wlot: 115 mm</text>
             </svg>
           </div>
 
           <div class="p-2.5 rounded-lg bg-[#0D1119] border border-bybit-border text-xs space-y-1.5">
             <div class="flex items-center justify-between">
               <span id="hjSpecTitle" class="font-bold text-white">🔩 Zaciski z projektu Compute Shelf:</span>
-              <span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold">8× HJ-1 + 4× HJ-2</span>
+              <span class="px-2 py-0.5 rounded bg-bybit-gold/20 text-bybit-gold font-mono font-bold">8× HJ-1 + 2× HJ-2</span>
             </div>
             <p id="hjSpecDesc" class="text-[11px] text-bybit-gray">
-              • <strong>8× HJ-1 (trójnik T):</strong> górne krótkie wsporniki (30 mm) trzymają wlot tuż przy poręczy, dolne długie (145 mm) odchylają dół pod kątem 15°.<br>
-              • <strong>4× HJ-2 (narożnik 3D):</strong> łączą przednie narożniki pod kątem 90°×90°×90° bez wystających ostrych krawędzi.
+              • <strong>8× HJ-1 (trójnik T):</strong> 4× na słupki bazowe + 4× na wsporniki (30 mm) do obu poręczy drabiny.<br>
+              • <strong>2× HJ-2 (narożnik 3D):</strong> łączą przednie górne narożniki wlotu bez ostrych krawędzi.
             </p>
           </div>
         </div>
@@ -494,14 +496,14 @@
         btnNext: "Następny krok →",
         btnFinish: "✓ Zakończ (Cały model)",
         reqPartsTitle: "Wymagane elementy w tym kroku:",
-        angleToggleText15: "Forma: <strong>Trójkąt 15°</strong>",
-        angleToggleText0: "Forma: <strong>Pion 0°</strong>",
+        angleToggleText15: "Profil: <strong>Bok (trójkąt)</strong>",
+        angleToggleText0: "Widok: <strong>Izometria 3D</strong>",
         overview: {
-          title: "Ergonomiczna kieszeń w kształcie trójkąta (klin 15°, Lean Pipe Ø28 mm)",
-          desc: "Zgodnie z wymaganiami montażowymi <strong>kieszeń ma formę trójkąta (klina) odchylonego od drabiny pod kątem 15°</strong>. Wlot kieszeni o szerokości 115 mm znajduje się tuż przy górnej poręczy drabiny (wspornik 30 mm), a boki zbiegają się ku dołowi w wierzchołek trójkąta wysunięty na 145 mm. Dzięki trójkątnemu przekrojowi tablet samoczynnie osadza się w dolnym profilu V, opierając się o ściankę tylną pod kątem 15°, co gwarantuje natychmiastowy chwyt i doskonałą widoczność.",
-          m1Label: "Wymiary i geometria:", m1Val: "490×440×115 mm • Trójkąt 15°",
+          title: "Ergonomiczna kieszeń w kształcie trójkątnego klina (pionowy tył, wlot 115 mm, skos 15°)",
+          desc: "Gotowy model kieszeni po montażu: <strong>tył przylega pionowo do drabiny</strong> (krótkie odsadzki 30 mm na obu szczeblach), <strong>szeroki wlot 115 mm</strong> znajduje się poziomo przy górnej poręczy, a <strong>przednia ścianka schodzi skośnie pod kątem 15° (455 mm)</strong> do dolnego wierzchołka przy drabinie. Tablet i narzędzia bezpiecznie spoczywają w klinie, a ich górna część wystaje przy samej dłoni operatora.",
+          m1Label: "Wymiary i geometria:", m1Val: "490×440×115 mm • Klin 15°",
           m2Label: "Odstępy boczne:", m2Val: "po 5 cm (lewo i skaner)",
-          m3Label: "Rury Ø28 mm:", m3Val: "3,75 m netto (13 odcinków)",
+          m3Label: "Rury Ø28 mm:", m3Val: "4,36 m netto (15 odcinków)",
           m4Label: "Zaciski:", m4Val: "8× HJ-1 + 2× HJ-2",
           btnBOMCard: "Otwórz kartę cięcia rur i wykaz BOM →",
           btnSketchCard: "Zobacz rysunek techniczny (przekrój trójkątny) →"
@@ -513,58 +515,57 @@
             parts: ["2 szt. × 420 mm (słupki bazowe)", "4 szt. zacisków HJ-1 + śruby M6"]
           },
           {
-            title: "Montaż wsporników wyjścia: góra 30 mm, dół 145 mm (wierzchołek trójkąta)",
-            desc: "Zamontuj wsporniki wyjścia: na górnej poręczy 2 krótkie rury po 30 mm (wlot tuż przy poręczy!), a na środkowej poręczy 2 rury po 145 mm (4× HJ-1). Wyznaczają one wierzchołki trójkątnego profilu.",
-            parts: ["2 szt. × 30 mm (górne wsporniki przy poręczy)", "2 szt. × 145 mm (dolne wsporniki wierzchołka 15°)", "4 szt. zacisków HJ-1"]
+            title: "Montaż wsporników do poręczy: góra 30 mm, dół 30 mm",
+            desc: "Zamontuj wsporniki wyjścia: na górnej poręczy 2 rury po 30 mm, a na środkowej poręczy 2 rury po 30 mm (4× HJ-1). Dzięki temu tył kieszeni przylega pionowo do drabiny, a dolny wierzchołek nie wystaje w ciąg komunikacyjny.",
+            parts: ["4 szt. × 30 mm (wsporniki do poręczy drabiny)", "4 szt. zacisków HJ-1"]
           },
           {
             title: "Montaż trójkątnej ramy nośnej",
-            desc: "Połącz 2 pionowe przednie rury (440 mm), 2 skośne tylne rury (455 mm pod kątem 15°), belki poziome (460 mm) oraz górne poprzeczki wlotu (115 mm). Przednie górne narożniki łączone są zaciskami HJ-2.",
-            parts: ["2 szt. × 440 mm (pionowy przód)", "2 szt. × 455 mm (skośny tył 15°)", "3 szt. × 460 mm (belki poziome)", "2 szt. × 115 mm (wlot)", "2 szt. zacisków HJ-2"]
+            desc: "Połącz 2 pionowe tylne rury (440 mm), 2 przednie skośne rury (455 mm pod kątem 15°), belki poziome (460 mm) oraz górne poprzeczki wlotu (115 mm). Przednie górne narożniki łączone są zaciskami HJ-2.",
+            parts: ["2 szt. × 440 mm (pionowy tył)", "2 szt. × 455 mm (przedni skos 15°)", "3 szt. × 460 mm (belki poziome)", "2 szt. × 115 mm (wlot)", "2 szt. zacisków HJ-2"]
           },
           {
-            title: "Montaż poszycia: trójkątne boki, skośny tył i pionowy przód",
-            desc: "Przykręć wkrętami 4,2×25 mm ścianki z PCW/sklejki 8 mm: 2 trójkątne boki (115×440 mm), tylną ściankę oporową 15° (490×455 mm), przednią pionową (490×400 mm z obniżonym rantem) oraz listwę tłumiącą w dolnym rowku V.",
-            parts: ["Ścianki boczne trójkątne 115×440×8 mm (2 szt.)", "Ścianka tylna 490×455×8 mm (1 szt.)", "Ścianka przednia 490×400×8 mm (1 szt.)", "Wkładka V amortyzująca w dnie"]
+            title: "Montaż poszycia: trójkątne boki, pionowy tył i przedni skośny front",
+            desc: "Przykręć wkrętami 4,2×25 mm ścianki z PCW/sklejki 8 mm: 2 trójkątne boki (115×440 mm), tylną pionową ściankę oporową (490×440 mm), przednią skośną (490×418 mm pod kątem 15° z obniżonym rantem i złotą listwą) oraz amortyzację dolnego wierzchołka V.",
+            parts: ["Ścianki boczne trójkątne 115×440×8 mm (2 szt.)", "Ścianka tylna pionowa 490×440×8 mm (1 szt.)", "Ścianka przednia skośna 490×418×8 mm (1 szt.)", "Wkładka V amortyzująca w dnie"]
           },
           {
-            title: "Ergonomiczne użytkowanie: tablet w klinie pod kątem 15°",
-            desc: "Trójkątny карман gotowy! Szeroki wlot 115 mm u góry ułatwia wkładanie tabletu i dokumentów bez celowania, a dolny profil V stabilnie centruje sprzęt pod naturalnym kątem widzenia 15°.",
-            parts: ["Tablet serwisowy i podkładka A4", "Gotowy карман trójkątny na drabinie"]
+            title: "Ergonomiczne użytkowanie: tablet i narzędzia w trójkątnym klinie",
+            desc: "Kieszeń gotowa! Szeroki wlot 115 mm u góry ułatwia wkładanie tabletu i dokumentów, a dolny profil V stabilnie centruje sprzęt przy drabinie pod naturalnym kątem sięgania 15°.",
+            parts: ["Tablet serwisowy, podkładka A4 i narzędzia", "Gotowa kieszeń trójkątna na drabinie"]
           }
         ],
         dims: {
           depth: ["115 mm", "szerokość wlotu"],
           width: ["490 mm", "szerokość kieszeni"],
           height: ["440 mm", "wysokość ramy"],
-          angle: ["15°", "kąt klina"],
+          slope: ["455 mm", "przedni skos 15°"],
           left5: ["5 cm (50 mm)", "odstęp z lewej"],
           right5: ["5 cm (50 mm)", "strefa skanera"]
         },
         bom: {
           title: "Karta cięcia rur i wykaz materiałów (BOM)",
-          sub: "Trójkątny profil (wlot 115 mm, wierzchołek 145 mm) — 100% z typowych rur Ø28 mm i zacisków HJ-1 / HJ-2.",
+          sub: "Profil trójkątnego klina (pionowy tył, wlot 115 mm, wierzchołek 30 mm przy drabinie) — 100% z typowych rur Ø28 mm i zacisków HJ-1 / HJ-2.",
           sec1: "1. Karta cięcia rur Lean Pipe Ø28 mm",
-          badge1: "13 odcinków • 3,75 m netto",
+          badge1: "15 odcinków • 4,36 m netto",
           colPart: "Element", colLen: "Długość", colQty: "Ilość",
           pipes: [
-            { n: "Słupki bazowe tylne (pionowe, X = ±195 mm)*", l: "420 mm", q: "2 szt." },
-            { n: "Słupki przednie ramy (pionowe)", l: "440 mm", q: "2 szt." },
-            { n: "Słupki tylne skośne (hipotenuza 15°)", l: "455 mm", q: "2 szt." },
-            { n: "Górne wsporniki (górna poręcz, przy drabinie)", l: "30 mm", q: "2 szt." },
-            { n: "Dolne wsporniki (wierzchołek trójkąta 15°)", l: "145 mm", q: "2 szt." },
+            { n: "Słupki bazowe pionowe (pionowe, X = ±195 mm)*", l: "420 mm", q: "2 szt." },
+            { n: "Tylne pionowe słupki ramy (pionowe przy drabinie)", l: "440 mm", q: "2 szt." },
+            { n: "Przednie słupki skośne ramy (hipotenuza 15°)", l: "455 mm", q: "2 szt." },
             { n: "Górne poprzeczki głębokości (wlot kieszeni)", l: "115 mm", q: "2 szt." },
-            { n: "Belki poziome (góra przód, góra tył, dół wierzchołek)", l: "460 mm", q: "3 szt." }
+            { n: "Wsporniki do poręczy drabiny (góra i dół po 30 mm)", l: "30 mm", q: "4 szt." },
+            { n: "Belki poziome (góra tył, góra przód, dół wierzchołek)", l: "460 mm", q: "3 szt." }
           ],
           note: "* Przed cięciem słupków zmierz dokładny rozstaw osiowy między poręczami drabiny (~420–440 mm).",
           totalLabel: "Całkowita długość rur netto:",
-          totalVal: "3,75 m (3 740 mm)",
-          orderTip: "💡 <strong>Zakup rur:</strong> wystarczą <strong>2 standardowe odcinki handlowe po 2,0 m</strong> (4,0 m łącznie z naddatkiem na cięcie).",
+          totalVal: "4,36 m (4 360 mm)",
+          orderTip: "💡 <strong>Zakup rur:</strong> wystarczą <strong>3 standardowe odcinki handlowe po 2,0 m</strong> (lub 1× 3,0 m + 1× 2,0 m).",
           sec2: "2. Zaciski HJ-1 / HJ-2 i panele kieszeni",
           items: [
-            { n: "Zacisk teowy HJ-1 (1 śruba M6)", q: "8 szt.", d: "4× na słupki bazowe + 4× na wsporniki do poręczy (płynny obrót kąta 15°)." },
+            { n: "Zacisk teowy HJ-1 (1 śruba M6)", q: "8 szt.", d: "4× na słupki bazowe + 4× na wsporniki do poręczy drabiny." },
             { n: "Zacisk narożny 3D HJ-2 (2 śruby M6)", q: "2 szt.", d: "2 przednie górne narożniki wlotu kieszeni." },
-            { n: "Panele poszycia (PCW spienione / sklejka 8 mm)", q: "4 szt.", d: "Boki trójkątne 115×440 (2×), Tył 490×455 (1×), Przód pionowy 490×400 (1×) + pianka tłumiąca wierzchołka." },
+            { n: "Panele poszycia (PCW spienione / sklejka 8 mm)", q: "4 szt.", d: "Boki trójkątne 115×440 (2×), Tył pionowy 490×440 (1×), Przód skośny 490×418 (1×) + pianka tłumiąca wierzchołka." },
             { n: "Wkręty samowiercące z podkładką 4,2 × 25 mm", q: "16 szt.", d: "Mocowanie paneli bezpośrednio do rur Lean Pipe." }
           ],
           sec3: "3. Wymagane narzędzia",
@@ -576,12 +577,12 @@
           ]
         },
         modal: {
-          title: "Rysunek techniczny: profil trójkątny (klin 15°)",
-          sub: "Przekrój trójkątny boczny, wlot 115 mm, wierzchołek 145 mm, odstępy 5 cm",
-          side: "1. Przekrój z boku: profil trójkątny (wlot 115 mm, wierzchołek 145 mm)",
+          title: "Rysunek techniczny: profil trójkątny (pionowy tył, wlot 115 mm, skos 15°)",
+          sub: "Przekrój trójkątny boczny, wlot 115 mm, wierzchołek 30 mm przy drabinie, odstępy 5 cm",
+          side: "1. Przekrój z boku: profil trójkątny (pionowy tył, wlot 115 mm, skos 15°)",
           top: "2. Odstępy 5 cm od końców poręczy (600 mm)",
           hjTitle: "🔩 Zaciski z projektu Compute Shelf:",
-          hjDesc: "• <strong>8× HJ-1 (trójnik T):</strong> górne krótkie wsporniki (30 mm) trzymają wlot tuż przy poręczy, dolne (145 mm) podtrzymują wierzchołek trójkąta.<br>• <strong>2× HJ-2 (narożnik 3D):</strong> łączą górne przednie narożniki wlotu — gładki bezpieczny profil."
+          hjDesc: "• <strong>8× HJ-1 (trójnik T):</strong> 4× na słupki bazowe + 4× na wsporniki (30 mm) do obu poręczy drabiny.<br>• <strong>2× HJ-2 (narożnik 3D):</strong> łączą górne przednie narożniki wlotu — gładki bezpieczny profil."
         }
       },
 
@@ -629,14 +630,14 @@
         btnNext: "Следующий шаг →",
         btnFinish: "✓ Завершить (Вся модель)",
         reqPartsTitle: "Детали на этом шаге:",
-        angleToggleText15: "Форма: <strong>Треугольник 15°</strong>",
-        angleToggleText0: "Форма: <strong>Прямоугольник 0°</strong>",
+        angleToggleText15: "Профиль: <strong>Бок (клин)</strong>",
+        angleToggleText0: "Вид: <strong>Изометрия 3D</strong>",
         overview: {
-          title: "Эргономичный карман треугольной формы (клин 15°, Lean Pipe Ø28 мм)",
-          desc: "Конструкция выполнена строго по вашим поправкам: <strong>карман имеет форму треугольника (клина), отклонённого от лестницы наружу под углом 15°</strong>. Верхняя горловина шириной 115 мм находится вплотную к верхнему поручню (вынос 30 мм), а боковые стенки сходятся книзу в остриё треугольника (вынос 145 мм). Планшет свободно скользит вниз и надёжно фиксируется в V-образном дне, опираясь на наклонную спинку 15°, что обеспечивает мгновенное извлечение одной рукой и прямой обзор экрана.",
-          m1Label: "Габариты и геометрия:", m1Val: "490×440×115 мм • Треугольник 15°",
+          title: "Эргономичный карман в форме треугольного клина (вертикальный зад, зев 115 мм, скос 15°)",
+          desc: "Готовая модель кармана в собранном виде: <strong>задняя стенка прилегает вертикально к лестнице</strong> (короткие проставки 30 мм на обеих перекладинах), <strong>широкий зев 115 мм</strong> расположен горизонтально у верхнего поручня, а <strong>передняя панель спускается под углом 15° (455 мм)</strong> к нижней вершине у лестницы. Планшет и инструменты надежно фиксируются в клине, а их верхняя часть выступает прямо под рукой оператора.",
+          m1Label: "Габариты и геометрия:", m1Val: "490×440×115 мм • Клин 15°",
           m2Label: "Отступы с боков:", m2Val: "по 5 см (лево и сканер)",
-          m3Label: "Трубы Ø28 мм:", m3Val: "3.75 м нетто (13 деталей)",
+          m3Label: "Трубы Ø28 мм:", m3Val: "4.36 м нетто (15 деталей)",
           m4Label: "Зажимы:", m4Val: "8× HJ-1 + 2× HJ-2",
           btnBOMCard: "Открыть карту нарезки и BOM →",
           btnSketchCard: "Открыть чертёж (треугольный профиль) →"
@@ -648,23 +649,23 @@
             parts: ["2 шт. × 420 мм (базовые стойки)", "4 шт. зажимов HJ-1 + болты М6"]
           },
           {
-            title: "Монтаж распорок выноса: верх 30 мм, низ 145 мм (вершина треугольника)",
-            desc: "Установите распорки разной длины: на верхнем поручне 2 короткие трубки по 30 мм (зев вплотную к перилам!), а на среднем поручне 2 трубки по 145 мм (4× HJ-1). Они формируют точки треугольного профиля.",
-            parts: ["2 шт. × 30 мм (верхние распорки у поручня)", "2 шт. × 145 мм (нижние распорки вершины 15°)", "4 шт. зажимов HJ-1"]
+            title: "Монтаж проставок к поручням: верх 30 мм, низ 30 мм",
+            desc: "Закрепите проставки: на верхнем поручне 2 трубки по 30 мм, и на среднем поручне 2 трубки по 30 мм (4× HJ-1). Задняя грань кармана встает строго вертикально вплотную к лестнице, а низ не выступает в проход.",
+            parts: ["4 шт. × 30 мм (проставки к поручням лестницы)", "4 шт. зажимов HJ-1"]
           },
           {
             title: "Сборка треугольного несущего каркаса",
-            desc: "Соедините 2 вертикальные стойки переда (440 мм), 2 наклонные задние стойки (455 мм, гипотенуза 15°), 3 горизонтальные балки (460 мм) и верхние поперечины зева (115 мм). Верхние углы соединяются зажимами HJ-2.",
-            parts: ["2 шт. × 440 мм (вертикальный перед)", "2 шт. × 455 мм (наклонный зад 15°)", "3 шт. × 460 мм (горизонтали)", "2 шт. × 115 мм (поперечины зева)", "2 шт. зажимов HJ-2"]
+            desc: "Соберите раму: 2 задние вертикальные стойки (440 мм), 2 передние наклонные стойки (455 мм, гипотенуза 15°), 3 горизонтальные перекладины (460 мм) и верхние поперечины зева (115 мм). Передние верхние углы соединяются зажимами HJ-2.",
+            parts: ["2 шт. × 440 мм (вертикальный зад)", "2 шт. × 455 мм (передний скос 15°)", "3 шт. × 460 мм (горизонтали)", "2 шт. × 115 мм (зев)", "2 шт. зажимов HJ-2"]
           },
           {
-            title: "Обшивка: треугольные боковины, наклонная спинка и вертикальный фасад",
-            desc: "Прикрутите саморезами 4.2×25 мм листы 8 мм: 2 треугольных боковины (115×440 мм), наклонную спинку 15° (490×455 мм), передний фасад (490×400 мм с заниженным эргономичным краем) и уплотнитель в нижний V-паз.",
-            parts: ["Боковины треугольные 115×440×8 мм (2 шт.)", "Стенка задняя 490×455×8 мм (1 шт.)", "Фасад передний 490×400×8 мм (1 шт.)", "Мягкий вкладыш в V-дно"]
+            title: "Обшивка: треугольные боковины, вертикальная спинка и наклонный фасад",
+            desc: "Прикрутите саморезами 4.2×25 мм листы 8 мм: 2 треугольных боковины (115×440 мм), вертикальную заднюю спинку (490×440 мм), наклонный передний фасад (490×418 мм под углом 15° с заниженным эргономичным краем и золотой накладкой) и амортизатор в нижнее V-дно.",
+            parts: ["Боковины треугольные 115×440×8 мм (2 шт.)", "Стенка задняя вертикальная 490×440×8 мм (1 шт.)", "Фасад наклонный 490×418×8 мм (1 шт.)", "Мягкий вкладыш в V-дно"]
           },
           {
-            title: "Эргономичное использование: планшет в клиновидном кармане под 15°",
-            desc: "Треугольный карман готов! Широкий зев 115 мм сверху позволяет легко вкладывать планшет и папку А4 без точного прицеливания, а нижний V-профиль мягко центрирует инструмент под удобным углом 15°.",
+            title: "Эргономичное использование: планшет и инструмент в клиновидном кармане",
+            desc: "Карман готов! Широкий зев 115 мм сверху позволяет легко опускать планшет и папку А4 без точного прицеливания, а нижний V-профиль мягко центрирует инструмент у лестницы под удобным углом 15°.",
             parts: ["Планшет, папка А4 и инструмент", "Готовый треугольный карман на лестнице"]
           }
         ],
@@ -672,34 +673,33 @@
           depth: ["115 мм", "ширина зева"],
           width: ["490 мм", "ширина кармана"],
           height: ["440 мм", "высота рамы"],
-          angle: ["15°", "угол клина"],
+          slope: ["455 мм", "передний скос 15°"],
           left5: ["5 см (50 мм)", "отступ слева"],
           right5: ["5 см (50 мм)", "зона сканера"]
         },
         bom: {
           title: "Карта нарезки труб и комплектация (BOM)",
-          sub: "Треугольный профиль (зев 115 мм, вершина 145 мм) — 100% из стандартных труб Ø28 мм и зажимов HJ-1 / HJ-2.",
+          sub: "Треугольный профиль клина (вертикальный зад, зев 115 мм, вершина 30 мм у лестницы) — 100% из стандартных труб Ø28 мм и зажимов HJ-1 / HJ-2.",
           sec1: "1. Нарезка труб Lean Pipe Ø28 мм",
-          badge1: "13 деталей • 3.75 м нетто",
+          badge1: "15 деталей • 4.36 м нетто",
           colPart: "Деталь", colLen: "Длина", colQty: "Кол-во",
           pipes: [
             { n: "Базовые вертикальные стойки (X = ±195 мм)*", l: "420 мм", q: "2 шт." },
-            { n: "Стойки передние рамы (вертикальные)", l: "440 мм", q: "2 шт." },
-            { n: "Стойки задние наклонные (гипотенуза 15°)", l: "455 мм", q: "2 шт." },
-            { n: "Верхние распорки (верхний поручень, у лестницы)", l: "30 мм", q: "2 шт." },
-            { n: "Нижние распорки (вершина треугольника 15°)", l: "145 мм", q: "2 шт." },
+            { n: "Задние вертикальные стойки рамы (у лестницы)", l: "440 мм", q: "2 шт." },
+            { n: "Передние наклонные стойки (гипотенуза 15°)", l: "455 мм", q: "2 шт." },
             { n: "Верхние поперечины глубины (зев кармана)", l: "115 мм", q: "2 шт." },
+            { n: "Проставки к поручням лестницы (верх и низ по 30 мм)", l: "30 мм", q: "4 шт." },
             { n: "Перекладины горизонтальные (верх перед, верх зад, низ вершина)", l: "460 мм", q: "3 шт." }
           ],
           note: "* Перед резкой стоек измерьте точный просвет между верхним и средним поручнями вашей лестницы (~420–440 мм).",
           totalLabel: "Суммарный метраж труб нетто:",
-          totalVal: "3.75 м (3 740 мм)",
-          orderTip: "💡 <strong>Закупка:</strong> достаточно <strong>2 стандартных отрезков по 2.0 м</strong> (4.0 м суммарно с запасом на распил).",
+          totalVal: "4.36 м (4 360 мм)",
+          orderTip: "💡 <strong>Закупка:</strong> достаточно <strong>3 стандартных отрезков по 2.0 м</strong> (или 1× 3.0 м + 1× 2.0 м).",
           sec2: "2. Зажимы HJ-1 / HJ-2 и стенки кармана",
           items: [
-            { n: "Зажим Т-образный HJ-1 (1 болт М6)", q: "8 шт.", d: "4× на базовые стойки + 4× на распорки к поручням (поворот на угол 15°)." },
+            { n: "Зажим Т-образный HJ-1 (1 болт М6)", q: "8 шт.", d: "4× на базовые стойки + 4× на проставки к поручням лестницы." },
             { n: "Зажим 3D-угловой HJ-2 (2 болта М6)", q: "2 шт.", d: "2 верхних передних угла зева кармана." },
-            { n: "Стенки кармана (ПВХ / фанера 8 мм)", q: "4 дет.", d: "Бока треугольные 115×440 (2×), Задняя спинка 490×455 (1×), Передний фасад 490×400 (1×) + мягкий вкладыш в вершину." },
+            { n: "Стенки кармана (ПВХ / фанера 8 мм)", q: "4 дет.", d: "Бока треугольные 115×440 (2×), Спинка вертикальная 490×440 (1×), Передний наклонный фасад 490×418 (1×) + мягкий вкладыш в вершину." },
             { n: "Саморезы с прессшайбой 4.2 × 25 мм", q: "16 шт.", d: "Крепление обшивки кармана непосредственно к трубам Lean Pipe." }
           ],
           sec3: "3. Инструмент",
@@ -711,12 +711,12 @@
           ]
         },
         modal: {
-          title: "Технический чертёж: треугольный профиль (клин 15°)",
-          sub: "Профиль сбоку в виде треугольника, зев 115 мм, вершина 145 мм, отступы 5 см",
-          side: "1. Вид сбоку: треугольный профиль (зев 115 мм, вершина 145 мм)",
+          title: "Технический чертёж: профиль клина (вертикальный зад, зев 115 мм, скос 15°)",
+          sub: "Профиль сбоку в виде треугольника, зев 115 мм, вершина 30 мм у лестницы, отступы 5 см",
+          side: "1. Вид сбоку: треугольный профиль (вертикальный зад, зев 115 мм, скос 15°)",
           top: "2. Отступы по 5 см от краев поручня (600 мм)",
           hjTitle: "🔩 Зажимы из проекта Compute Shelf:",
-          hjDesc: "• <strong>8× HJ-1 (Т-стык):</strong> короткие верхние (30 мм) крепят зев у перил, длинные нижние (145 мм) держат вершину треугольника.<br>• <strong>2× HJ-2 (3D-угол):</strong> формируют 2 верхних передних угла зева с гладким безопасным профилем."
+          hjDesc: "• <strong>8× HJ-1 (Т-стык):</strong> 4× на базовые стойки + 4× на проставки (30 мм) к обеим перекладинам лестницы.<br>• <strong>2× HJ-2 (3D-угол):</strong> формируют 2 верхних передних угла зева с гладким безопасным профилем."
         }
       },
 
@@ -764,14 +764,14 @@
         btnNext: "Next Step →",
         btnFinish: "✓ Finish (Full Model)",
         reqPartsTitle: "Components for this step:",
-        angleToggleText15: "Shape: <strong>Triangle 15°</strong>",
-        angleToggleText0: "Shape: <strong>Vertical 0°</strong>",
+        angleToggleText15: "Profile: <strong>Side (Wedge)</strong>",
+        angleToggleText0: "View: <strong>3D Isometric</strong>",
         overview: {
-          title: "Ergonomic Triangular Wedge Pocket (15° Incline, Lean Pipe Ø28 mm)",
-          desc: "Engineered per your requirements: <strong>the pocket has a triangular wedge profile angled away from the ladder at 15°</strong>. The 115 mm top mouth sits right along the upper guardrail (30 mm standoff), while the side walls taper downward into a single apex standoff at 145 mm. The tablet naturally glides down into the bottom V-cushion and rests against the 15° inclined rear backboard, providing effortless retrieval and perfect screen visibility.",
-          m1Label: "Pocket & Geometry:", m1Val: "490×440×115 mm • Triangle 15°",
+          title: "Ergonomic Triangular Wedge Pocket (Vertical Back, 115 mm Mouth, 15° Slope)",
+          desc: "Finished assembled pocket model: <strong>the rear sits vertically against the ladder</strong> (compact 30 mm standoffs on both rails), the <strong>wide 115 mm mouth</strong> is positioned horizontally along the upper handrail, and the <strong>front fascia slopes down at 15° (455 mm)</strong> to the bottom apex at the ladder. Rugged tablet and tools nest securely inside the wedge with immediate hand grasp.",
+          m1Label: "Pocket & Geometry:", m1Val: "490×440×115 mm • 15° Wedge",
           m2Label: "Side Margins:", m2Val: "5 cm left & scanner side",
-          m3Label: "Ø28 mm Pipes:", m3Val: "13 pcs (3.75 m net)",
+          m3Label: "Ø28 mm Pipes:", m3Val: "4.36 m net (15 cuts)",
           m4Label: "Clamps:", m4Val: "8× HJ-1 + 2× HJ-2",
           btnBOMCard: "Open Pipe Cut List & BOM →",
           btnSketchCard: "View Technical Blueprint (Triangle Profile) →"
@@ -783,22 +783,22 @@
             parts: ["2 pcs × 420 mm (base vertical posts)", "4 pcs HJ-1 clamps + M6 bolts"]
           },
           {
-            title: "Install Standoffs: Top 30 mm (close to rail), Bottom 145 mm (triangle apex)",
-            desc: "Clamp 2 short top standoffs (30 mm) to keep the mouth close to the rail, and 2 bottom standoffs (145 mm) to establish the lower apex of the triangle (4× HJ-1).",
-            parts: ["2 pcs × 30 mm (top standoffs at rail)", "2 pcs × 145 mm (bottom apex standoffs)", "4 pcs HJ-1 clamps"]
+            title: "Install Standoffs: Top 30 mm, Bottom 30 mm (close to ladder)",
+            desc: "Clamp 4 short standoffs (30 mm) to the top and middle ladder rails (4× HJ-1). This mounts the rear face vertically along the ladder without protruding into the aisle.",
+            parts: ["4 pcs × 30 mm (rail standoffs)", "4 pcs HJ-1 clamps"]
           },
           {
             title: "Assemble Triangular Frame",
-            desc: "Join 2 vertical front uprights (440 mm), 2 inclined rear uprights (455 mm at 15°), 3 horizontal crossbars (460 mm), and 2 top depth spacers (115 mm). Front top corners use 2× HJ-2 3D clamps.",
-            parts: ["2 pcs × 440 mm (front uprights)", "2 pcs × 455 mm (rear 15° uprights)", "3 pcs × 460 mm (horizontals)", "2 pcs × 115 mm (mouth spacers)", "2 pcs HJ-2 corners"]
+            desc: "Join 2 vertical rear uprights (440 mm), 2 front diagonal uprights (455 mm at 15° slope), 3 horizontal crossbars (460 mm), and 2 top mouth spacers (115 mm). Front top corners use 2× HJ-2 3D clamps.",
+            parts: ["2 pcs × 440 mm (rear vertical uprights)", "2 pcs × 455 mm (front 15° diagonal uprights)", "3 pcs × 460 mm (horizontals)", "2 pcs × 115 mm (mouth spacers)", "2 pcs HJ-2 corners"]
           },
           {
-            title: "Attach Triangular Side Enclosures & 15° Backboard",
-            desc: "Fasten 8 mm PVC/plywood panels: 2 triangular side walls (115×440 mm), rear backboard (490×455 mm), vertical front fascia (490×400 mm with lowered lip), and bottom apex V-cushion.",
-            parts: ["Triangular side walls 115×440×8 mm (2 pcs)", "Rear backboard 490×455×8 mm (1 pc)", "Front fascia 490×400×8 mm (1 pc)", "Bottom apex dampener"]
+            title: "Attach Triangular Side Enclosures & 15° Sloped Fascia",
+            desc: "Fasten 8 mm PVC/plywood panels: 2 triangular side walls (115×440 mm), vertical rear backboard (490×440 mm), sloped front fascia (490×418 mm at 15° with lowered rim and gold trim), and bottom apex V-cushion.",
+            parts: ["Triangular side walls 115×440×8 mm (2 pcs)", "Rear backboard 490×440×8 mm (1 pc)", "Sloped front fascia 490×418×8 mm (1 pc)", "Bottom apex dampener"]
           },
           {
-            title: "Effortless Retrieval: Tablet nested in 15° triangular wedge",
+            title: "Effortless Retrieval: Tablet & tools nested in triangular wedge",
             desc: "Assembly complete! The wide 115 mm mouth along the top guardrail makes dropping in tablets or folders effortless, while the bottom V-profile centers items securely at an optimal 15° ergonomic angle.",
             parts: ["Rugged tablet, A4 clipboard & tools", "Completed triangular wedge pocket"]
           }
@@ -807,34 +807,33 @@
           depth: ["115 mm", "mouth depth"],
           width: ["490 mm", "pocket width"],
           height: ["440 mm", "frame height"],
-          angle: ["15°", "wedge angle"],
+          slope: ["455 mm", "front 15° slope"],
           left5: ["5 cm (50 mm)", "left margin"],
           right5: ["5 cm (50 mm)", "scanner zone"]
         },
         bom: {
           title: "Pipe Cutting Chart & Bill of Materials (BOM)",
-          sub: "Triangular wedge profile (115 mm mouth, 145 mm apex) — 100% standard Ø28 mm Lean Pipes and HJ-1 / HJ-2 clamps.",
+          sub: "Triangular wedge profile (vertical back, 115 mm mouth, 30 mm apex at ladder) — 100% standard Ø28 mm Lean Pipes and HJ-1 / HJ-2 clamps.",
           sec1: "1. Lean Pipe Ø28 mm Cut List",
-          badge1: "13 cuts • 3.75 m net",
+          badge1: "15 cuts • 4.36 m net",
           colPart: "Component", colLen: "Length", colQty: "Qty",
           pipes: [
             { n: "Rear vertical base posts (X = ±195 mm)*", l: "420 mm", q: "2 pcs" },
-            { n: "Front vertical posts (vertical)", l: "440 mm", q: "2 pcs" },
-            { n: "Rear inclined posts (15° hypotenuse)", l: "455 mm", q: "2 pcs" },
-            { n: "Top depth standoffs (top rail, close to ladder)", l: "30 mm", q: "2 pcs" },
-            { n: "Bottom apex standoffs (middle rail, 15° angle)", l: "145 mm", q: "2 pcs" },
+            { n: "Rear vertical frame uprights (vertical along ladder)", l: "440 mm", q: "2 pcs" },
+            { n: "Front diagonal uprights (15° hypotenuse slope)", l: "455 mm", q: "2 pcs" },
             { n: "Top mouth depth spacers (pocket mouth)", l: "115 mm", q: "2 pcs" },
-            { n: "Horizontal crossbars (top front, top rear, bottom apex)", l: "460 mm", q: "3 pcs" }
+            { n: "Standoffs to ladder rails (top & bottom 30 mm)", l: "30 mm", q: "4 pcs" },
+            { n: "Horizontal crossbars (top rear, top front, bottom apex)", l: "460 mm", q: "3 pcs" }
           ],
           note: "* Measure exact spacing between top and middle round rails on your ladder (~420–440 mm) before cutting.",
           totalLabel: "Total net pipe length:",
-          totalVal: "3.75 m (3 740 mm)",
-          orderTip: "💡 <strong>Stock:</strong> <strong>2× 2.0 m pipes</strong> (4.0 m total including blade kerf).",
+          totalVal: "4.36 m (4 360 mm)",
+          orderTip: "💡 <strong>Stock:</strong> <strong>3× 2.0 m pipes</strong> (or 1× 3.0 m + 1× 2.0 m).",
           sec2: "2. Clamps & Enclosure Panels",
           items: [
-            { n: "HJ-1 T-Clamp (1× M6 bolt)", q: "8 pcs", d: "4× on base posts + 4× on standoffs to rails (swivel locks 15° tilt)." },
+            { n: "HJ-1 T-Clamp (1× M6 bolt)", q: "8 pcs", d: "4× on base posts + 4× on standoffs to ladder rails." },
             { n: "HJ-2 3D Corner Clamp (2× M6 bolts)", q: "2 pcs", d: "2 front top corners for smooth mouth entry." },
-            { n: "Pocket Panels (8 mm PVC / Plywood)", q: "4 pcs", d: "Triangular sides 115×440 (2×), Backboard 490×455 (1×), Front fascia 490×400 (1×) + bottom V-damper." },
+            { n: "Pocket Panels (8 mm PVC / Plywood)", q: "4 pcs", d: "Triangular sides 115×440 (2×), Rear backboard 490×440 (1×), Sloped front fascia 490×418 (1×) + bottom V-damper." },
             { n: "4.2 × 25 mm Self-Drilling Screws", q: "16 pcs", d: "Secures enclosure panels directly to Lean Pipe frame." }
           ],
           sec3: "3. Required Tools",
@@ -846,12 +845,12 @@
           ]
         },
         modal: {
-          title: "Technical Blueprint: Triangular Wedge Profile (15° Angle)",
-          sub: "Triangular side profile, 115 mm mouth, 145 mm apex, 5 cm margins and clamp specs",
-          side: "1. Side Profile: Triangular Wedge (115 mm mouth, 145 mm apex)",
+          title: "Technical Blueprint: Triangular Wedge Profile (15° Slope)",
+          sub: "Triangular side profile, vertical back, 115 mm mouth, 30 mm apex, 5 cm margins",
+          side: "1. Side Profile: Triangular Wedge (vertical back, 115 mm mouth, 15° slope)",
           top: "2. 5 cm Side Rail Margins (600 mm Span)",
           hjTitle: "🔩 Compute Shelf Fixture Clamps:",
-          hjDesc: "• <strong>8× HJ-1 (T-joint):</strong> short top standoffs (30 mm) hold mouth close to rail, long bottom (145 mm) support triangle apex.<br>• <strong>2× HJ-2 (3D corner):</strong> connect 2 front top corners for a snag-free mouth."
+          hjDesc: "• <strong>8× HJ-1 (T-joint):</strong> 4× on base posts + 4× on standoffs (30 mm) to ladder rails.<br>• <strong>2× HJ-2 (3D corner):</strong> connect 2 front top corners for a snag-free mouth."
         }
       }
     };
@@ -1196,7 +1195,7 @@
       return mesh;
     }
 
-    function buildPocketScene(angleDeg) {
+    function buildPocketScene() {
       // Clear step groups
       while (step1Group.children.length > 0) step1Group.remove(step1Group.children[0]);
       while (step2Group.children.length > 0) step2Group.remove(step2Group.children[0]);
@@ -1205,20 +1204,21 @@
       while (step5Group.children.length > 0) step5Group.remove(step5Group.children[0]);
       while (angleGroup.children.length > 0) angleGroup.remove(angleGroup.children[0]);
 
-      const rad = (angleDeg * Math.PI) / 180;
-      const sinA = Math.sin(rad), cosA = Math.cos(rad);
-
-      // GEOMETRY: TRIANGULAR POCKET-WEDGE
-      // "карман должен быть в форме треугольника который отклонён от лестницы"
-      // Top is CLOSE to the ladder rail: zTopRear = 30 mm
-      const zTopRear = 30; // 30 mm standoff at top rail
+      // EXACT TRIANGULAR WEDGE PROFILE SHOWN IN USER PHOTO
+      // Rear: vertical along ladder at Z = 30 mm (Y: 0 -> -440)
+      // Top mouth: horizontal opening 115 mm (Z: 30 -> 145 mm at Y = 0)
+      // Front: diagonal slope / hypotenuse 455 mm from (Y = 0, Z = 145) down to (Y = -440, Z = 30)
+      // Bottom apex: at ladder middle rail at Z = 30 mm (Y = -440)
+      const zTopRear = 30; // 30 mm standoff from ladder
       const zTopFront = zTopRear + mouthDepth; // 145 mm (mouth opening 115 mm)
+      const zBotApex = zTopRear; // 30 mm (apex directly at ladder middle rail!)
 
-      // Bottom apex: meets at zBotApex = 145 mm at 15°, or 30 mm at 0°
-      const deltaZ = (angleDeg === 15) ? 115 : (440 * Math.tan(rad));
-      const zBotApex = zTopRear + deltaZ;
+      const dY = Math.abs(yTopRail - yMidRail); // 440 mm
+      const dZ = zTopFront - zBotApex; // 115 mm
+      const theta = Math.atan2(dZ, dY); // ~14.65° (~15°)
+      const hypotenuseLen = Math.sqrt(dY * dY + dZ * dZ); // ~454.8 mm
 
-      // STEP 1: Rear vertical base posts (420 mm) at X = ±195 mm (fixed to rails)
+      // STEP 1: Rear vertical base reinforcement posts (420 mm) at X = ±195 mm
       step1Group.add(createPipe(new THREE.Vector3(-xBackPost, yTopRail, 0), new THREE.Vector3(-xBackPost, yMidRail, 0), pipePrimaryMat));
       step1Group.add(createPipe(new THREE.Vector3(xBackPost, yTopRail, 0), new THREE.Vector3(xBackPost, yMidRail, 0), pipePrimaryMat));
       step1Group.add(createHJ1(new THREE.Vector3(-xBackPost, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0)));
@@ -1226,37 +1226,37 @@
       step1Group.add(createHJ1(new THREE.Vector3(-xBackPost, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
       step1Group.add(createHJ1(new THREE.Vector3(xBackPost, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
 
-      // STEP 2: Standoffs: Top = 30 mm (close to ladder), Bottom = zBotApex (145 mm)
-      // Top standoffs (from Z = 0 to Z = zTopRear at Y = 0)
+      // STEP 2: Standoffs to ladder: Top = 30 mm, Bottom = 30 mm (close to ladder on both rails!)
+      // Top standoffs (Z = 0 to Z = 30 mm at Y = 0)
       step2Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, 0), new THREE.Vector3(-xPocketOut, yTopRail, zTopRear), pipePrimaryMat));
       step2Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, 0), new THREE.Vector3(xPocketOut, yTopRail, zTopRear), pipePrimaryMat));
       step2Group.add(createHJ1(new THREE.Vector3(-xPocketOut, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
       step2Group.add(createHJ1(new THREE.Vector3(xPocketOut, yTopRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
 
-      // Bottom standoffs (from Z = 0 to Z = zBotApex at Y = -440)
+      // Bottom apex standoffs (Z = 0 to Z = 30 mm at Y = -440)
       step2Group.add(createPipe(new THREE.Vector3(-xPocketOut, yMidRail, 0), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), pipePrimaryMat));
       step2Group.add(createPipe(new THREE.Vector3(xPocketOut, yMidRail, 0), new THREE.Vector3(xPocketOut, yMidRail, zBotApex), pipePrimaryMat));
       step2Group.add(createHJ1(new THREE.Vector3(-xPocketOut, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
       step2Group.add(createHJ1(new THREE.Vector3(xPocketOut, yMidRail, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)));
 
-      // STEP 3: Triangular Frame: Top opening 115mm, vertical front 440mm, inclined rear 455mm
+      // STEP 3: Triangular Frame
       // Top rear horizontal crossbar (460 mm)
       step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopRear), new THREE.Vector3(xPocketOut, yTopRail, zTopRear), pipePrimaryMat));
       // Top front horizontal crossbar (460 mm)
       step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), new THREE.Vector3(xPocketOut, yTopRail, zTopFront), pipeBraceMat));
-      // Top side depth spacers (115 mm)
+      // Top mouth depth spacers (115 mm)
       step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopRear), new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), pipePrimaryMat));
       step3Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, zTopRear), new THREE.Vector3(xPocketOut, yTopRail, zTopFront), pipePrimaryMat));
 
-      // Front vertical uprights (440 mm)
-      step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), pipeBraceMat));
-      step3Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, zTopFront), new THREE.Vector3(xPocketOut, yMidRail, zBotApex), pipeBraceMat));
-
-      // Rear inclined uprights (455 mm at 15° hypotenuse)
+      // Rear vertical uprights (440 mm, vertical at Z = 30 mm along ladder)
       step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopRear), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), pipePrimaryMat));
       step3Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, zTopRear), new THREE.Vector3(xPocketOut, yMidRail, zBotApex), pipePrimaryMat));
 
-      // Bottom apex horizontal crossbar (460 mm)
+      // Front diagonal uprights (455 mm hypotenuse from Z = 145 down to Z = 30)
+      step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), pipeBraceMat));
+      step3Group.add(createPipe(new THREE.Vector3(xPocketOut, yTopRail, zTopFront), new THREE.Vector3(xPocketOut, yMidRail, zBotApex), pipeBraceMat));
+
+      // Bottom apex horizontal crossbar (460 mm at Z = 30 mm)
       step3Group.add(createPipe(new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), new THREE.Vector3(xPocketOut, yMidRail, zBotApex), pipePrimaryMat));
 
       // 2× HJ-2 Corners at top front
@@ -1269,27 +1269,31 @@
       step3Group.add(createHJ1(new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
       step3Group.add(createHJ1(new THREE.Vector3(xPocketOut, yMidRail, zBotApex), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 1, 0)));
 
-      // STEP 4: Triangular Pocket Enclosure (Triangular Side Walls, 15° Backboard, Vertical Front Fascia)
-      const yMid = (yTopRail + yMidRail) / 2; // -220 mm
-      const zMidRear = (zTopRear + zBotApex) / 2; // 87.5 mm
-
-      // Rear Inclined Backboard (490 × 455 × 8 mm, inclined at 15°)
-      wallBackMesh = new THREE.Mesh(new THREE.BoxGeometry(490, 455, 8), pocketWallMat);
-      wallBackMesh.position.set(0, yMid, zMidRear + 4);
-      wallBackMesh.rotation.x = -rad;
-      wallBackMesh.castShadow = true; wallBackMesh.receiveShadow = true;
-
-      // Front Vertical Fascia (490 × 400 × 8 mm, vertical at zTopFront, lowered top rim for rapid grip)
-      wallFrontMesh = new THREE.Mesh(new THREE.BoxGeometry(490, 400, 8), pocketWallMat);
-      wallFrontMesh.position.set(0, yMid - 20, zTopFront + 4);
-      wallFrontMesh.rotation.x = 0;
-      wallFrontMesh.castShadow = true; wallFrontMesh.receiveShadow = true;
-
-      // Left & Right Triangular Side Walls!
+      // STEP 4: Enclosure Panels (Exact Triangular Geometry)
+      // Left & Right Triangular Side Walls! (Exact right-angled triangle)
       wallLeftMesh = createTriangularWallMesh(-245 - 8, 8, zTopRear, zTopFront, zBotApex, yTopRail, yMidRail, pocketSideMat);
       wallRightMesh = createTriangularWallMesh(245, 8, zTopRear, zTopFront, zBotApex, yTopRail, yMidRail, pocketSideMat);
 
-      // Floor / V-Apex Cushion at Bottom
+      // Rear Vertical Backboard (490 × 440 × 8 mm, vertical at Z = 26 mm)
+      wallBackMesh = new THREE.Mesh(new THREE.BoxGeometry(490, 440, 8), pocketWallMat);
+      wallBackMesh.position.set(0, (yTopRail + yMidRail) / 2, zTopRear - 4);
+      wallBackMesh.castShadow = true; wallBackMesh.receiveShadow = true;
+
+      // Front Inclined Fascia (490 × 418 × 8 mm, inclined at theta ~14.65°, lowered rim at Y = -35)
+      wallFrontMesh = new THREE.Mesh(new THREE.BoxGeometry(490, 418, 8), pocketWallMat);
+      wallFrontMesh.position.set(0, -238.5, 86.8);
+      wallFrontMesh.rotation.x = theta;
+      wallFrontMesh.castShadow = true; wallFrontMesh.receiveShadow = true;
+
+      // Top Safety Lip Trim (Gold trim along lowered front rim at Y = -35)
+      topLipTrimMesh = new THREE.Mesh(
+        new THREE.BoxGeometry(492, 6, 10),
+        new THREE.MeshStandardMaterial({ color: 0xF7A600, metalness: 0.65, roughness: 0.28 })
+      );
+      topLipTrimMesh.position.set(0, -35, 140);
+      topLipTrimMesh.rotation.x = theta;
+
+      // Bottom apex floor cushion
       floorGroupMesh = new THREE.Group();
       floorGroupMesh.position.set(0, yMidRail + 8, zBotApex);
       const floorApex = new THREE.Mesh(new THREE.BoxGeometry(480, 12, 32), pocketFloorMat);
@@ -1297,19 +1301,12 @@
       foamPad.position.y = 8;
       floorGroupMesh.add(floorApex, foamPad);
 
-      // Gold Top Safety Lip Trim along front rim at Y = -35, Z = zTopFront + 4
-      topLipTrimMesh = new THREE.Mesh(
-        new THREE.BoxGeometry(492, 6, 10),
-        new THREE.MeshStandardMaterial({ color: 0xF7A600, metalness: 0.65, roughness: 0.28 })
-      );
-      topLipTrimMesh.position.set(0, yTopRail - 35, zTopFront + 4);
-
       step4Group.add(wallFrontMesh, wallBackMesh, wallLeftMesh, wallRightMesh, floorGroupMesh, topLipTrimMesh);
 
-      // STEP 5: Items inside triangular wedge (Tablet, Clipboard, Screwdriver)
+      // STEP 5: Items inside triangular wedge
       tabletGroupMesh = new THREE.Group();
-      tabletGroupMesh.position.set(-85, -160, zMidRear + 24);
-      tabletGroupMesh.rotation.x = -rad;
+      tabletGroupMesh.position.set(-85, -195, 68);
+      tabletGroupMesh.rotation.x = theta;
       const tabBody = new THREE.Mesh(new THREE.BoxGeometry(210, 290, 16), new THREE.MeshStandardMaterial({ color: 0x0F131A, roughness: 0.35, metalness: 0.25 }));
       tabBody.castShadow = true;
       const tabScreen = new THREE.Mesh(new THREE.PlaneGeometry(186, 260), new THREE.MeshBasicMaterial({ color: 0x0284C7 }));
@@ -1320,8 +1317,8 @@
       tabletGroupMesh.add(tabBody, tabScreen, topBumper);
 
       clipboardGroupMesh = new THREE.Group();
-      clipboardGroupMesh.position.set(110, -170, zMidRear + 20);
-      clipboardGroupMesh.rotation.x = -rad;
+      clipboardGroupMesh.position.set(110, -205, 64);
+      clipboardGroupMesh.rotation.x = theta;
       const cbPlate = new THREE.Mesh(new THREE.BoxGeometry(200, 295, 5), new THREE.MeshStandardMaterial({ color: 0x475569, roughness: 0.6 }));
       const cbPaper = new THREE.Mesh(new THREE.BoxGeometry(184, 265, 2), new THREE.MeshStandardMaterial({ color: 0xF8FAFC, roughness: 0.9 }));
       cbPaper.position.z = 3.5;
@@ -1330,8 +1327,8 @@
       clipboardGroupMesh.add(cbPlate, cbPaper, cbClip);
 
       driverGroupMesh = new THREE.Group();
-      driverGroupMesh.position.set(215, -190, zMidRear + 36);
-      driverGroupMesh.rotation.x = -rad;
+      driverGroupMesh.position.set(215, -225, 76);
+      driverGroupMesh.rotation.x = theta;
       const drvHandle = new THREE.Mesh(new THREE.CylinderGeometry(11, 13, 105, 14), new THREE.MeshStandardMaterial({ color: 0xEF4444, roughness: 0.4 }));
       drvHandle.position.y = 85;
       const drvShaft = new THREE.Mesh(new THREE.CylinderGeometry(3, 3, 150, 10), clampBoltMat);
@@ -1340,52 +1337,59 @@
 
       step5Group.add(tabletGroupMesh, clipboardGroupMesh, driverGroupMesh);
 
-      // ANGLE INDICATOR & EXTRACTION TRAJECTORY (3D Arc + Arrow)
-      if (angleDeg > 1) {
-        const xInd = -xPocketOut - 18;
-        // Vertical dashed reference line from top pivot
-        const refPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yMidRail, zTopRear)];
-        const refLine = new THREE.Line(
-          new THREE.BufferGeometry().setFromPoints(refPts),
-          new THREE.LineDashedMaterial({ color: 0x64748B, dashSize: 10, gapSize: 6, depthTest: false })
-        );
-        refLine.computeLineDistances();
-        angleGroup.add(refLine);
+      // 3D Angle & Trajectory Guides (Wedge Angle ~15° Arc at Bottom Apex)
+      const xInd = -xPocketOut - 18;
+      // Vertical dashed reference line along rear
+      const refPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yMidRail, zTopRear)];
+      const refLine = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(refPts),
+        new THREE.LineDashedMaterial({ color: 0x64748B, dashSize: 10, gapSize: 6, depthTest: false })
+      );
+      refLine.computeLineDistances();
+      angleGroup.add(refLine);
 
-        // Inclined reference line
-        const incPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yMidRail, zBotApex)];
-        const incLine = new THREE.Line(
-          new THREE.BufferGeometry().setFromPoints(incPts),
-          new THREE.LineBasicMaterial({ color: 0xF7A600, depthTest: false, transparent: true, opacity: 0.85 })
-        );
-        angleGroup.add(incLine);
+      // Top mouth reference line
+      const mouthPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yTopRail, zTopFront)];
+      const mouthLine = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(mouthPts),
+        new THREE.LineDashedMaterial({ color: 0xF7A600, dashSize: 10, gapSize: 6, depthTest: false })
+      );
+      mouthLine.computeLineDistances();
+      angleGroup.add(mouthLine);
 
-        // Angle Arc Curve at top
-        const arcPts = [];
-        const arcR = 180;
-        for (let i = 0; i <= 24; i++) {
-          const a = (i / 24) * rad;
-          arcPts.push(new THREE.Vector3(xInd, yTopRail - arcR * Math.cos(a), zTopRear + arcR * Math.sin(a)));
-        }
-        const arcLine = new THREE.Line(
-          new THREE.BufferGeometry().setFromPoints(arcPts),
-          new THREE.LineBasicMaterial({ color: 0xF7A600, linewidth: 3, depthTest: false })
-        );
-        angleGroup.add(arcLine);
+      // Inclined front hypotenuse line
+      const incPts = [new THREE.Vector3(xInd, yTopRail, zTopFront), new THREE.Vector3(xInd, yMidRail, zBotApex)];
+      const incLine = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(incPts),
+        new THREE.LineBasicMaterial({ color: 0xF7A600, depthTest: false, transparent: true, opacity: 0.85 })
+      );
+      angleGroup.add(incLine);
 
-        // Angle 15° Sprite Badge
-        const angleSprite = createLabelSprite(angleDeg + '°', currentLang === 'pl' ? 'Kąt dołu' : (currentLang === 'ru' ? 'Наклон низа' : 'Bottom tilt'), '#F7A600');
-        angleSprite.position.set(xInd, yTopRail - arcR * 0.75, zTopRear + arcR * Math.sin(rad * 0.5) + 35);
-        angleGroup.add(angleSprite);
-
-        // Green Pull-out Trajectory Arrow right at Top Rail
-        const arrowDir = new THREE.Vector3(0, Math.cos(rad), -Math.sin(rad)).normalize();
-        const arrowOrigin = new THREE.Vector3(-85, yTopRail + 15, zTopRear + 35);
-        const arrowHelper = new THREE.ArrowHelper(arrowDir, arrowOrigin, 150, 0x10B981, 32, 18);
-        arrowHelper.line.material.depthTest = false;
-        arrowHelper.cone.material.depthTest = false;
-        angleGroup.add(arrowHelper);
+      // Angle Arc at bottom apex (between vertical rear and inclined front)
+      const arcPts = [];
+      const arcR = 160;
+      for (let i = 0; i <= 24; i++) {
+        const a = (i / 24) * theta;
+        arcPts.push(new THREE.Vector3(xInd, yMidRail + arcR * Math.cos(a), zBotApex + arcR * Math.sin(a)));
       }
+      const arcLine = new THREE.Line(
+        new THREE.BufferGeometry().setFromPoints(arcPts),
+        new THREE.LineBasicMaterial({ color: 0xF7A600, linewidth: 3, depthTest: false })
+      );
+      angleGroup.add(arcLine);
+
+      // Wedge Angle Badge
+      const angleSprite = createLabelSprite('15°', currentLang === 'pl' ? 'Klin kieszeni' : (currentLang === 'ru' ? 'Клин кармана' : 'Wedge angle'), '#F7A600');
+      angleSprite.position.set(xInd, yMidRail + 110, zBotApex + 45);
+      angleGroup.add(angleSprite);
+
+      // Ergonomic pull-out trajectory arrow out of the top mouth
+      const arrowDir = new THREE.Vector3(0, Math.cos(theta), Math.sin(theta)).normalize();
+      const arrowOrigin = new THREE.Vector3(-85, yTopRail + 20, (zTopRear + zTopFront) / 2);
+      const arrowHelper = new THREE.ArrowHelper(arrowDir, arrowOrigin, 150, 0x10B981, 32, 18);
+      arrowHelper.line.material.depthTest = false;
+      arrowHelper.cone.material.depthTest = false;
+      angleGroup.add(arrowHelper);
 
       rebuildDimensions();
     }
@@ -1414,11 +1418,9 @@
     function rebuildDimensions() {
       while (dimsGroup.children.length > 0) dimsGroup.remove(dimsGroup.children[0]);
       const d = I18N[currentLang].dims;
-      const rad = (currentAngleDeg * Math.PI) / 180;
       const zTopRear = 30;
       const zTopFront = zTopRear + mouthDepth; // 145 mm
-      const deltaZ = (currentAngleDeg === 15) ? 115 : (440 * Math.tan(rad));
-      const zBotApex = zTopRear + deltaZ;
+      const zBotApex = zTopRear; // 30 mm
 
       function addDim(p1, p2, offset, pair, hex = 0xF7A600, str = '#F7A600') {
         const a = p1.clone().add(offset), b = p2.clone().add(offset);
@@ -1432,15 +1434,20 @@
         dimsGroup.add(sp);
       }
 
+      // 1. Mouth opening: 115 mm at top rail
       addDim(new THREE.Vector3(xPocketOut, yTopRail, zTopRear), new THREE.Vector3(xPocketOut, yTopRail, zTopFront), new THREE.Vector3(45, 25, 0), d.depth);
+      // 2. Pocket width: 490 mm
       addDim(new THREE.Vector3(-245, yMidRail, zBotApex), new THREE.Vector3(245, yMidRail, zBotApex), new THREE.Vector3(0, -55, 20), d.width);
-      addDim(new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), new THREE.Vector3(-75, 0, 20), d.height, 0x3888FF, '#60A5FA');
+      // 3. Vertical frame height: 440 mm
+      addDim(new THREE.Vector3(-xPocketOut, yTopRail, zTopRear), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), new THREE.Vector3(-75, 0, -20), d.height, 0x3888FF, '#60A5FA');
+      // 4. Left 5 cm margin
       addDim(new THREE.Vector3(xRearInner, yTopRail, 0), new THREE.Vector3(-xPocketOut - 15, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.left5, 0x0ECB81, '#0ECB81');
+      // 5. Right 5 cm scanner margin
       addDim(new THREE.Vector3(xPocketOut + 15, yTopRail, 0), new THREE.Vector3(xFrontInner, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.right5, 0x0ECB81, '#0ECB81');
     }
 
     // =========================================================================
-    // 8. CAMERA TWEEN, EXPLODED VIEW & INTERACTIVE ANGLE SWITCHER
+    // 8. CAMERA TWEEN, EXPLODED VIEW & SIDE PROFILE QUICK TOGGLE
     // =========================================================================
     function tweenCamera(posObj, targetObj) {
       const sPos = camera.position.clone(), sTgt = controls.target.clone();
@@ -1459,48 +1466,49 @@
       requestAnimationFrame(frame);
     }
 
-    function togglePocketAngle() {
-      const targetDeg = (currentAngleDeg === 15) ? 0 : 15;
-      const startDeg = currentAngleDeg;
-      const t0 = performance.now();
-      const dur = 420;
-
-      function stepAngle(now) {
-        const p = Math.min((now - t0) / dur, 1);
-        const ease = 0.5 - Math.cos(p * Math.PI) / 2;
-        currentAngleDeg = Math.round(startDeg + (targetDeg - startDeg) * ease);
-        buildPocketScene(currentAngleDeg);
-        updateAngleButtonLabel();
-        if (p < 1) requestAnimationFrame(stepAngle);
+    let isSideView = false;
+    function toggleSideView() {
+      isSideView = !isSideView;
+      const lbl = document.getElementById('lblSideViewToggle');
+      if (lbl) {
+        lbl.innerHTML = isSideView
+          ? (currentLang === 'pl' ? 'Widok: <strong>Izometria 3D</strong>' : (currentLang === 'ru' ? 'Вид: <strong>Изометрия 3D</strong>' : 'View: <strong>3D Isometric</strong>'))
+          : (currentLang === 'pl' ? 'Profil: <strong>Bok (trójkąt)</strong>' : (currentLang === 'ru' ? 'Профиль: <strong>Бок (клин)</strong>' : 'Profile: <strong>Side (wedge)</strong>'));
       }
-      requestAnimationFrame(stepAngle);
+      if (isSideView) {
+        // Exact side perspective from user screenshot!
+        tweenCamera({ x: -980, y: -190, z: 85 }, { x: 0, y: -210, z: 85 });
+      } else {
+        const targetCam = stepCameras[currentStep];
+        tweenCamera(targetCam.cam, targetCam.target);
+      }
     }
 
-    function updateAngleButtonLabel() {
-      const btnLabel = document.getElementById('lblAngleToggle');
-      if (btnLabel) {
-        btnLabel.innerHTML = (currentAngleDeg === 15)
-          ? I18N[currentLang].angleToggleText15
-          : I18N[currentLang].angleToggleText0;
+    function updateSideViewButtonLabel() {
+      const lbl = document.getElementById('lblSideViewToggle');
+      if (lbl) {
+        lbl.innerHTML = isSideView
+          ? (currentLang === 'pl' ? 'Widok: <strong>Izometria 3D</strong>' : (currentLang === 'ru' ? 'Вид: <strong>Изометрия 3D</strong>' : 'View: <strong>3D Isometric</strong>'))
+          : (currentLang === 'pl' ? 'Profil: <strong>Bok (trójkąt)</strong>' : (currentLang === 'ru' ? 'Профиль: <strong>Бок (клин)</strong>' : 'Profile: <strong>Side (wedge)</strong>'));
       }
     }
 
     function applyExplosion(pct) {
       const t = pct / 100;
-      const rad = (currentAngleDeg * Math.PI) / 180;
-      const sinA = Math.sin(rad), cosA = Math.cos(rad);
+      const theta = Math.atan2(115, 440);
+      const sinT = Math.sin(theta), cosT = Math.cos(theta);
 
-      step2Group.position.set(0, 0, t * 50);
-      step3Group.position.set(0, t * 35 * sinA, t * 110 * cosA);
-      if (wallFrontMesh) wallFrontMesh.position.z = 145 + 4 + t * 160;
-      if (topLipTrimMesh) topLipTrimMesh.position.z = 145 + 4 + t * 160;
-      if (wallBackMesh) wallBackMesh.position.z = 87.5 - t * 45;
+      step2Group.position.set(0, 0, -t * 40);
+      step3Group.position.set(0, t * 20, t * 40);
+      if (wallFrontMesh) wallFrontMesh.position.set(0, -238.5 - t * 35 * sinT, 86.8 + t * 140 * cosT);
+      if (topLipTrimMesh) topLipTrimMesh.position.set(0, -35 - t * 35 * sinT, 140 + t * 140 * cosT);
+      if (wallBackMesh) wallBackMesh.position.z = 26 - t * 45;
       if (wallLeftMesh) wallLeftMesh.position.x = -245 - 8 - t * 85;
       if (wallRightMesh) wallRightMesh.position.x = 245 + t * 85;
       if (floorGroupMesh) floorGroupMesh.position.y = (yMidRail + 8) - t * 90;
       if (step5Group) {
-        // Items glide up and out right near the top handrail
-        step5Group.position.set(0, t * 240 * cosA, -t * 120 * sinA);
+        // Items glide up and out right through the top mouth along the wedge angle
+        step5Group.position.set(0, t * 240 * cosT, t * 120 * sinT);
       }
     }
 
@@ -1768,7 +1776,7 @@
       document.getElementById('hjSpecTitle').textContent = m.hjTitle;
       document.getElementById('hjSpecDesc').innerHTML = m.hjDesc;
 
-      updateAngleButtonLabel();
+      updateSideViewButtonLabel();
       renderStepPanel();
       renderBOMPanel();
       rebuildDimensions();
@@ -1816,8 +1824,9 @@
     document.getElementById('btnOverviewMode').addEventListener('click', () => goToStep(0));
     document.querySelectorAll('.goto-pill').forEach(p => p.addEventListener('click', () => goToStep(parseInt(p.dataset.goto))));
 
-    // Angle toggle button
-    document.getElementById('btnToggleAngle').addEventListener('click', togglePocketAngle);
+    // Side Profile toggle button (exact angle from user photo)
+    const btnSide = document.getElementById('btnToggleSideView');
+    if (btnSide) btnSide.addEventListener('click', toggleSideView);
 
     const viewsDropdown = document.getElementById('viewsDropdown'), layersDropdown = document.getElementById('layersDropdown');
     document.getElementById('btnToggleViews').addEventListener('click', e => { e.stopPropagation(); viewsDropdown.classList.toggle('hidden'); layersDropdown.classList.add('hidden'); });
@@ -1835,12 +1844,12 @@
         btn.className = 'cam-opt w-full text-left px-2.5 py-1.5 rounded-lg bg-bybit-gold/15 text-bybit-gold font-semibold transition hover:bg-bybit-gold/25';
         viewsDropdown.classList.add('hidden');
         const mode = btn.dataset.cam;
-        if (mode === 'iso') tweenCamera({ x: -740, y: 390, z: 890 }, { x: 0, y: -180, z: 50 });
-        else if (mode === 'ergo') tweenCamera({ x: -160, y: 360, z: -260 }, { x: -20, y: -80, z: 60 });
-        else if (mode === 'sketchSide') tweenCamera({ x: 1040, y: -140, z: 80 }, { x: 0, y: -200, z: 60 });
-        else if (mode === 'photo1') tweenCamera({ x: -240, y: 500, z: -600 }, { x: 20, y: -150, z: 60 });
-        else if (mode === 'photo2') tweenCamera({ x: -120, y: -120, z: 960 }, { x: 0, y: -200, z: 60 });
-        else if (mode === 'top') tweenCamera({ x: 0, y: 1200, z: 60 }, { x: 0, y: 0, z: 60 });
+        if (mode === 'iso') { isSideView = false; updateSideViewButtonLabel(); tweenCamera({ x: -740, y: 390, z: 890 }, { x: 0, y: -180, z: 50 }); }
+        else if (mode === 'ergo') { isSideView = false; updateSideViewButtonLabel(); tweenCamera({ x: -160, y: 360, z: -260 }, { x: -20, y: -80, z: 60 }); }
+        else if (mode === 'sketchSide') { isSideView = true; updateSideViewButtonLabel(); tweenCamera({ x: -980, y: -190, z: 85 }, { x: 0, y: -210, z: 85 }); }
+        else if (mode === 'photo1') { isSideView = false; updateSideViewButtonLabel(); tweenCamera({ x: -240, y: 500, z: -600 }, { x: 20, y: -150, z: 60 }); }
+        else if (mode === 'photo2') { isSideView = false; updateSideViewButtonLabel(); tweenCamera({ x: -120, y: -120, z: 960 }, { x: 0, y: -200, z: 60 }); }
+        else if (mode === 'top') { isSideView = false; updateSideViewButtonLabel(); tweenCamera({ x: 0, y: 1200, z: 60 }, { x: 0, y: 0, z: 60 }); }
       });
     });
 
@@ -1923,8 +1932,8 @@
     window.addEventListener('resize', resizeRenderer);
     new ResizeObserver(resizeRenderer).observe(container);
 
-    // Initial build of pocket scene: top at 30mm, bottom at 15° (145mm)
-    buildPocketScene(currentAngleDeg);
+    // Initial build of triangular wedge pocket scene (exact profile from photo)
+    buildPocketScene();
     applyLanguage(currentLang);
     resizeRenderer();
 
