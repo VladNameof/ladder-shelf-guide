@@ -2,7 +2,7 @@
 
 Ergonomiczna kieszeń robocza (`490 × 440 × 110 mm`) pochylona pod kątem **15° w stronę operatora**, montowana na lewej poręczy bocznej drabiny z podestem przy szafach serwerowych **Compute Shelf**.
 - **Kąt ergonomiczny 15°:** Zamiast niewygodnego pionowego szybu, kieszeń jest nachylona w stronę platformy roboczej. Zapewnia to natychmiastowy wgląd w ekran tabletu oraz **błyskawiczne wyjmowanie przedmiotów jedną ręką pod naturalnym kątem przedramienia**, bez zawadzania dłonią o górną poręcz drabiny.
-- **Różnica wysunięcia wsporników:** górny wspornik `145 mm`, dolny wspornik `30 mm`. Dzięki obrotowi zacisków **HJ-1** wokół okrągłych rur drabiny kąt 15° uzyskuje się bez jakiegokolwiek gięcia rur!
+- **Różnica wysunięcia wsporników:** górny wspornik **30 mm** (tuż przy górnej poręczy drabiny), dolny wspornik **145 mm** (wysunięcie dołu kieszeni na zewnątrz pod kątem 15°). Dzięki obrotowi zacisków **HJ-1** wokół okrągłych rur drabiny kąt 15° uzyskuje się bez jakiegokolwiek gięcia rur!
 - **Głębokość kieszeni na zewnątrz:** `110 mm` (światło wewnętrzne `~440 × 85 mm` — mieści tablet w pancernym etui, podkładkę A4 i narzędzia, zachowując bezpieczny prześwit do szafy Compute Shelf).
 - **Odstępy montażowe po bokach:** `5 cm (50 mm)` z lewej i prawej strony (zachowany fabryczny uchwyt skanera przy prawym słupku).
 - **Złącza:** **8× HJ-1** (4× do poręczy drabiny + 4× do ramy tylnej) + **4× HJ-2** (gładkie przednie narożniki 3D).
@@ -15,8 +15,8 @@ Ergonomiczna kieszeń robocza (`490 × 440 × 110 mm`) pochylona pod kątem **15
 |:---:|:---|:---:|:---:|:---:|:---|
 | **1** | **Słupki pionowe bazowe** | **420 mm*** | **2 szt.** | `840 mm` | Pomiędzy górną a środkową poręczą drabiny (`X = ±195 mm`, usztywnienie bazy) |
 | **2** | **Słupki przednie (pochylone 15°)** | **450 mm** | **2 szt.** | `900 mm` | Przednie krawędzie kieszeni pod kątem 15° (`X = ±240 mm`) |
-| **3** | **Górne wsporniki dystansowe** | **145 mm** | **2 szt.** | `290 mm` | Montowane na górnej poręczy drabiny (`Y = 0 mm`, wyjście do ramy kieszeni) |
-| **4** | **Dolne wsporniki dystansowe** | **30 mm** | **2 szt.** | `60 mm` | Montowane na środkowej poręczy drabiny (`Y = -440 mm`, wyjście do ramy kieszeni) |
+| **3** | **Górne wsporniki dystansowe (przy poręczy)** | **30 mm** | **2 szt.** | `60 mm` | Montowane na górnej poręczy drabiny (`Y = 0 mm`, wlot kieszeni przy samej barierce) |
+| **4** | **Dolne wsporniki dystansowe (kąt 15°)** | **145 mm** | **2 szt.** | `290 mm` | Montowane na środkowej poręczy drabiny (`Y = -440 mm`, odchylenie dołu o 15° na zewnątrz) |
 | **5** | **Belki poziome przednie** | **460 mm** | **2 szt.** | `920 mm` | Górna i dolna przednia krawędź kieszeni (łączone przez narożniki HJ-2) |
 
 * `*` *Wskazówka montażowa:* zmierz dokładny rozstaw osiowy między górną a środkową poręczą Twojej drabiny (`~420–440 mm`) przed ostatecznym docięciem słupków bazowych.
