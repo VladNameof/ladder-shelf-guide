@@ -1353,7 +1353,7 @@
         angleGroup.add(refLine);
 
         // Inclined reference line
-        const incPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yMidRail, zBotRear)];
+        const incPts = [new THREE.Vector3(xInd, yTopRail, zTopRear), new THREE.Vector3(xInd, yMidRail, zBotApex)];
         const incLine = new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(incPts),
           new THREE.LineBasicMaterial({ color: 0xF7A600, depthTest: false, transparent: true, opacity: 0.85 })
@@ -1415,8 +1415,10 @@
       while (dimsGroup.children.length > 0) dimsGroup.remove(dimsGroup.children[0]);
       const d = I18N[currentLang].dims;
       const rad = (currentAngleDeg * Math.PI) / 180;
-      const deltaZ = 440 * Math.tan(rad);
-      const zBot = 30 + deltaZ;
+      const zTopRear = 30;
+      const zTopFront = zTopRear + mouthDepth; // 145 mm
+      const deltaZ = (currentAngleDeg === 15) ? 115 : (440 * Math.tan(rad));
+      const zBotApex = zTopRear + deltaZ;
 
       function addDim(p1, p2, offset, pair, hex = 0xF7A600, str = '#F7A600') {
         const a = p1.clone().add(offset), b = p2.clone().add(offset);
@@ -1430,9 +1432,9 @@
         dimsGroup.add(sp);
       }
 
-      addDim(new THREE.Vector3(xPocketOut, yTopRail, 30), new THREE.Vector3(xPocketOut, yTopRail, 140), new THREE.Vector3(45, 25, 0), d.depth);
-      addDim(new THREE.Vector3(-245, yMidRail, zBot + pocketDepth + 15), new THREE.Vector3(245, yMidRail, zBot + pocketDepth + 15), new THREE.Vector3(0, -55, 20), d.width);
-      addDim(new THREE.Vector3(-xPocketOut, yTopRail, 140), new THREE.Vector3(-xPocketOut, yMidRail, zBot + pocketDepth), new THREE.Vector3(-75, 0, 20), d.height, 0x3888FF, '#60A5FA');
+      addDim(new THREE.Vector3(xPocketOut, yTopRail, zTopRear), new THREE.Vector3(xPocketOut, yTopRail, zTopFront), new THREE.Vector3(45, 25, 0), d.depth);
+      addDim(new THREE.Vector3(-245, yMidRail, zBotApex), new THREE.Vector3(245, yMidRail, zBotApex), new THREE.Vector3(0, -55, 20), d.width);
+      addDim(new THREE.Vector3(-xPocketOut, yTopRail, zTopFront), new THREE.Vector3(-xPocketOut, yMidRail, zBotApex), new THREE.Vector3(-75, 0, 20), d.height, 0x3888FF, '#60A5FA');
       addDim(new THREE.Vector3(xRearInner, yTopRail, 0), new THREE.Vector3(-xPocketOut - 15, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.left5, 0x0ECB81, '#0ECB81');
       addDim(new THREE.Vector3(xPocketOut + 15, yTopRail, 0), new THREE.Vector3(xFrontInner, yTopRail, 0), new THREE.Vector3(0, 75, -15), d.right5, 0x0ECB81, '#0ECB81');
     }
